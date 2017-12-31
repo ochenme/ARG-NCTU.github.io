@@ -80,9 +80,9 @@ function add_news(time, content, img)
 					'<td background="images/index_35.gif" width="270">' +
 					'<table width="85%" align="center" >' +
 						'<td>' +
-							'<p><font size="4pt"><strong>' + time + '</strong></p>' +
+							'<p align="center"><font size="4pt"><strong>' + time + '</strong></p>' +
 							
-							'<p><font size="3pt">' + content + '</p>' +
+							'<p align="center"><font size="3pt">' + content + '</p>' +
 						'</td>' +
 					'</table>' +
 					'</td>' +
