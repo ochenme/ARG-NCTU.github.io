@@ -7,7 +7,8 @@
 <meta name="keywords" content="keywords"/> 
 <meta name="author" content="author"/> 
 <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
-<title>Robotic Vision at NCTU</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>Duckietown at NCTU</title>
 </head>
 
 <body>
@@ -48,64 +49,227 @@
 			<p style="text-align:justify">
 			Duckietown NCTU is the first branch of the MIT Duckietown (<a target="self" href="http://duckietown.mit.edu">http://duckietown.mit.edu</a>). We offer a graduate-level course Robotic Vision and a undergraduate-level course Creative Software Project in NCTU. Both courses aim at hands-on projects focusing on self-driving vehicles or assistive technology. Please see the detail in <a target="self" href="http://duckietown.nctu.edu.tw">http://duckietown.nctu.edu.tw</a>. In addition, we offer all-level course Robotics Seminar. The goal of this is to encourage interest in robotics field and build the connection between NCTU and international robotics team.
 			</p>
-			
-			<a id="csp2017"></a>
-			<h1>Creative Software Project 2017</h1>
-			<img src="courses/csp2017.jpg" width="320" height="213">
-			<br>
-
-			<a id="sis2017"></a>
-			<h1>Sensing & Intelligent System 2017</h1>
-			<img src="courses/sis2017.jpg" width="320" height="240">
-			<br>
-
-			<a id="rs2017"></a>
-			<h1>Robotics Seminar 2017</h1>
-			<img src="courses/robotics-seminar-nctu.jpg" width="320" height="240">
-			<br>
-
-			<a id="rv2017"></a>
-			<h1>Robotic Vision 2017</h1>
-		    <img src="courses/rv2017.jpg" width="320">
-		    <br>
-
-			<a id="csp2016"></a>
-			<h1>Creative Software Project 2016</h1>
-		    <img src="courses/csp2016.jpg" width="320" height="240">
-			<br>
-
-			<a id="rv2016"></a>
-			<h1>Robotic Vision 2016</h1>
-		    <img src="courses/rv2016.jpg" width="320" height="240">
-			<br>
-			
-	       	<marquee style="overflow:hidden;width:500px;height:150px;background-color:hidden;">
+	       	<!--<marquee style="overflow:hidden;width:500px;height:150px;background-color:hidden;">
 	        	<img src="courses/map.jpg" style="border:1px solid;width:200px;height:150px">
 	        	<img src="courses/phone.jpg" style="border:1px solid;width:200px;height:150px">
 	        	<img src="courses/ship.jpg" style="border:1px solid;width:200px;height:150px">
 	        	<img src="courses/duckiecar.jpg" style="border:1px solid;width:200px;height:150px">  
 	        </marquee>		
-			
+			-->
+
+	        <!--tmp 20180307 begin -->
+
+	        <h1 style="text-align:justify;" id="photo">Photo Gallery</h1>
+			<div class="slideshow-container">
+				<div class="mySlides fade">
+					<div class="captiontext">Creative Software Project 2017</div>
+					<img src="courses/csp2017.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+					<div class="captiontext">Sensing &amp; Intelligent System 2017</div>
+					<img src="courses/sis2017.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+					<div class="captiontext">Robotics Seminar 2017</div>
+					<img src="courses/robotics-seminar-nctu.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+					<div class="captiontext">Robotic Vision 2017</div>
+					<img src="courses/rv2017.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+					<div class="captiontext">Creative Software Project 2016</div>
+					<img src="courses/csp2016.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+					<div class="captiontext">Robotic Vision 2016</div>
+					<img src="courses/rv2016.jpg" style="width:100%">
+				</div>
+
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+
+			<br>
+
+			<script type="text/javascript">
+				var slideIndex = 1;
+				showSlides(slideIndex);
+
+				function plusSlides(n) {
+				  showSlides(slideIndex += n);
+				}
+
+				function currentSlide(n) {
+				  showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+				  var i;
+				  var slides = document.getElementsByClassName("mySlides");
+				  var dots = document.getElementsByClassName("dot");
+				  if (n > slides.length) {slideIndex = 1}    
+				  if (n < 1) {slideIndex = slides.length}
+				  for (i = 0; i < slides.length; i++) {
+				      slides[i].style.display = "none";  
+				  }
+				  for (i = 0; i < dots.length; i++) {
+				      dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";  
+				  dots[slideIndex-1].className += " active";
+				}
+			</script>
+			<!--tmp 20180307 end -->
+
+			<!-- Simplified version of Pi2 duckiebot -->
+			<h1 style="text-align:justify;" id="pi2_tutorial">Pi 2 Duckiebot Tutorial</h1>
+			<p style="text-align:justify">
+			We simplified from the MIT Duckietown for college students who do not have strong relevant backgrounds. In addition, we offered Pi 3 duckiebot tutorial called "Duckiebook". Should you have any question, please contact our TA. Please visit our <a href="people.html">people page</a>.
+			</p>
+
+			<table id="materials">
+				<tr>
+					<th>Prerequisites</th>
+					<th>Main steps</th>
+				</tr>
+				<tr>
+					<td>		
+						<a href="https://drive.google.com/open?id=1UC-IFqzAv7GVbLiMAbkEoQVQaCu343d_Sx5jYRMbGbc">
+							<i class="material-icons">description</i> 0. VirtualBox Setup
+						</a>
+					</td>
+					<td>
+						<a href="https://drive.google.com/open?id=1oyuo1pklUDYhpM7GHCtqVo7w5oQKZdj6PPGQaKthoIU">
+							<i class="material-icons">description</i> A. Setup Duckiebot Solfware
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="https://drive.google.com/open?id=1dwOw21YYtn863yGoJPxK6XtPC8W8Ck0QP1zl1US4ZFY">
+							<i class="material-icons">description</i> 1. Check Your Hardware
+						</a>
+					</td>
+					<td>
+						<a href="https://drive.google.com/open?id=1McY6IWKBgYfCOzAzXUKWYAVVBMVLDmyMI4tYBjepQXk">
+							<i class="material-icons">description</i> B. Setup Duckietop
+						</a>
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<a href="https://drive.google.com/open?id=1jjcpjWPX_EZO9O4BjTgEWCn9RO2o0E2BxvKrXIiES1Y">
+							<i class="material-icons">description</i> 2. Setup Duckiebot Hostname
+						</a>
+					</td>
+					<td>
+						<a href="https://drive.google.com/open?id=1zJlc-AA_gd7KEpro3F7YdbMten_HFoB4I1JfT1vTqmw">
+							<i class="material-icons">description</i> C. Camera setup
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="https://drive.google.com/open?id=1-hEft0XZwepfHm6QbfI8tBRwGg4LhxOGhTHjsMfsQeo">
+							<i class="material-icons">description</i> 3. Setup Duckiebot Network
+						</a>
+					</td>
+					<td>
+						<a href="https://drive.google.com/open?id=1dRhL_aRk1xYAbNkc8kvsDVqa7VRL8qLZxVjgO8yxdT4">
+							<i class="material-icons">description</i> D. Camera Calibration
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="https://drive.google.com/open?id=16Y1HNIM4y7gwcfyuEzxrQl4aCKeXRgd1Y8xQaNvCMYk">
+							<i class="material-icons">description</i> 4. Address Reservation for duckiebot
+						</a>
+					</td>
+					<td>
+						<a href="https://drive.google.com/open?id=1oxeHTQns7YVOpkiYo7-tQxqEM5bQysaPGQRTaGojmtI">
+							<i class="material-icons">description</i> E. Wheel Calibration
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<a href="https://drive.google.com/open?id=1pvdV8Ev_hqGbGyxYCVh2tmCe_fsJ44fIwUotHlvkGz4">
+							<i class="material-icons">description</i> F. Log data
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<a href="https://drive.google.com/open?id=1-8H5LJuMNatZUhwnbwBBUvNQzsrTFo8-GN74wAsyUEk">
+							<i class="material-icons">description</i> G. Create ROS package (Python)
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<a href="https://drive.google.com/open?id=1bOyX1NLxMyr0TG_jeSx3fe3TXvIqmzIfF4lH3G0cGHI">
+							<i class="material-icons">description</i> H. Lane following
+						</a>
+					</td>
+				</tr>	
+			</table>	
+
+			<br>
+			<hr>
+			<br>
+
+			<!-- MIT version of Pi2 duckiebot -->
+			<h1 style="text-align:justify" id="pi2_tutorial_mit">Pi 2 Duckiebot Tutorial (MIT)</h1>
+
+			<table align="center">
+				<td>
+					<td>
+						<p>MIT Duckietown Materials Spring 2016, please visit <a href="http://duckietown.mit.edu/materials.html" target="_blank">MIT Duckietown Website</a></p>
+						<img src="materials/flow.png" width="100%">
+						</td>			
+					</td>	
+			</table>
+
+			<br>
+			<hr>
+
+			<h1 style="text-align:justify" id="pi3_tutorial">Pi 3 Duckiebot Tutorial</h1>
+			<tr>
+				<table align="center">
+					<td>
+						<td>
+							<p>Duckietown Materials for Pi 3 system, please visit <a href="http://book.duckietown.org/master/duckiebook/index.html" target="_blank">The Duckietown Book (Duckiebook)</a></p>
+						</td>			
+					</td>	
+				</table>
+			</tr>
+
+			<br>
+
+
+
+
 		</div>
-		
-		
 		
 		<div class="navigation">
-		
-		    <!--<img src="courses/duckietown-nctu.png" width="200" height="210">
-			-->
 			<ul>
-				<li><a href="courses.html#">Duckietown NCTU</a></li>
-				<li><a href="courses.html#csp2017">Creative Software Project 2017</a></li>
-				<li><a href="courses.html#sis2017">Sensing & Intelligent System 2017</a></li>
-				<li><a href="courses.html#rs2017">Robotics Seminar 2017</a></li> 
-				<li><a href="courses.html#rv2017">Robotic Vision 2017</a></li>
-				<li><a href="courses.html#csp2016">Creative Software Project 2016</a></li>
-				<li><a href="courses.html#rv2016">Robotic Vision 2016</a></li>
+				<li><a href="courses.html">Welcome</a></li>
+				<li><a href="courses.html#photo">Photo Gallery</a></li>
+				<li><a href="courses.html#pi2_tutorial">Pi 2 A to H</a></li>
+				<li><a href="courses.html#pi2_tutorial_mit">Pi 2 Tutorial(MIT)</a></li>
+				<li><a href="courses.html#pi3_tutorial_">Pi 3 Duckiebook</a></li>
 			</ul>
-		
 		</div>
-
 
 		<div class="clearer">&nbsp;</div>
 
