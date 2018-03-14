@@ -7,6 +7,7 @@
 <meta name="keywords" content="keywords"/> 
 <meta name="author" content="author"/> 
 <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <title>Robotic Vision at NCTU</title>
 </head>
 
@@ -34,9 +35,7 @@
 		<a href="robots_ch.html">機器人</a> 
 		<a href="research_ch.html">研究</a> 
 		<a href="publications_ch.html">成果</a> 
-		<a href="courses_ch.html">課程</a>
-		<a href="materials_ch.html">教材</a>
-		
+		<a href="courses_ch.html">課程</a>		
 	</div>
 
 	<div class="main">		
@@ -49,62 +48,215 @@
 			Duckietown NCTU 是 MIT Duckietown (<a target="self" href="http://duckietown.mit.edu">http://duckietown.mit.edu</a>)第一個分支，我們開辦了研究所課程-機器人視覺以及大學部課程- 軟體創意專題，兩大課程目標在於自走車與輔助科技相關專題的實作，更詳細的介紹在<a target="self" href="http://duckietown.nctu.edu.tw">http://duckietown.nctu.edu.tw</a>。此外，我們也開辦了適合各學級學生的機器人系列講座，激發學生投入機器人領域的動機，也讓交通大學學生與國際機器人研究團隊接軌。
 			</p>
 
-			<a id="csp2017"></a>
-			<h1>軟體創意專題 2017</h1>
-			<img src="courses/csp2017.jpg" width="320" height="213">
+			<h1 style="text-align:justify;" id="photo">課程花絮</h1>
+			<div class="slideshow-container">
+				<div class="mySlides fade">
+					<div class="captiontext">軟體創意專題 2017</div>
+					<img src="courses/csp2017.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+					<div class="captiontext">感知與智慧系統 2017</div>
+					<img src="courses/sis2017.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+					<div class="captiontext">機器人系列講座 2017</div>
+					<img src="courses/robotics-seminar-nctu.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+					<div class="captiontext">機器人視覺 2017</div>
+					<img src="courses/rv2017.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+					<div class="captiontext">軟體創意專題 2016</div>
+					<img src="courses/csp2016.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+					<div class="captiontext">機器人視覺 2016</div>
+					<img src="courses/rv2016.jpg" style="width:100%">
+				</div>
+
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+
+			<br>
+			<!-- script for gallery-->
+			<script type="text/javascript">
+				var slideIndex = 1;
+				showSlides(slideIndex);
+
+				function plusSlides(n) {
+				  showSlides(slideIndex += n);
+				}
+
+				function currentSlide(n) {
+				  showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+				  var i;
+				  var slides = document.getElementsByClassName("mySlides");
+				  var dots = document.getElementsByClassName("dot");
+				  if (n > slides.length) {slideIndex = 1}    
+				  if (n < 1) {slideIndex = slides.length}
+				  for (i = 0; i < slides.length; i++) {
+				      slides[i].style.display = "none";  
+				  }
+				  for (i = 0; i < dots.length; i++) {
+				      dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";  
+				  dots[slideIndex-1].className += " active";
+				}
+			</script>
+
+			<!-- Simplified version of Pi2 duckiebot -->
+			<h1 style="text-align:justify;" id="pi2_tutorial">Pi 2 Duckiebot Tutorial</h1>
+			<p style="text-align:justify">
+			我們將MIT的教材簡化為A-H的主要步驟，也適合非電資領域的學者上手。此外我們也提供了樹梅派3核心的小鴨車機器人教材稱為"Duckiebook"，如果過程中遇到任何問題，歡迎大家訪問我們的<a href="people_ch.html">實驗室成員</a>。
+
+			<table id="materials">
+				<tr>
+					<th>前置要求</th>
+					<th>主要步驟</th>
+				</tr>
+				<tr>
+					<td>		
+						<a href="https://drive.google.com/open?id=1UC-IFqzAv7GVbLiMAbkEoQVQaCu343d_Sx5jYRMbGbc">
+							<i class="material-icons">description</i> 0. 安裝虛擬機
+						</a>
+					</td>
+					<td>
+						<a href="https://drive.google.com/open?id=1oyuo1pklUDYhpM7GHCtqVo7w5oQKZdj6PPGQaKthoIU">
+							<i class="material-icons">description</i> A. Duckiebot軟體設置
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="https://drive.google.com/open?id=1dwOw21YYtn863yGoJPxK6XtPC8W8Ck0QP1zl1US4ZFY">
+							<i class="material-icons">description</i> 1. 檢查你的硬體裝備
+						</a>
+					</td>
+					<td>
+						<a href="https://drive.google.com/open?id=1McY6IWKBgYfCOzAzXUKWYAVVBMVLDmyMI4tYBjepQXk">
+							<i class="material-icons">description</i> B. 安置給Duckiebot使用的電腦Duckiebtop
+						</a>
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<a href="https://drive.google.com/open?id=1jjcpjWPX_EZO9O4BjTgEWCn9RO2o0E2BxvKrXIiES1Y">
+							<i class="material-icons">description</i> 2. 幫你的Duckiebot取名
+						</a>
+					</td>
+					<td>
+						<a href="https://drive.google.com/open?id=1zJlc-AA_gd7KEpro3F7YdbMten_HFoB4I1JfT1vTqmw">
+							<i class="material-icons">description</i> C. 魚眼相機設置
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="https://drive.google.com/open?id=1-hEft0XZwepfHm6QbfI8tBRwGg4LhxOGhTHjsMfsQeo">
+							<i class="material-icons">description</i> 3. Duckiebot外部網域設置
+						</a>
+					</td>
+					<td>
+						<a href="https://drive.google.com/open?id=1dRhL_aRk1xYAbNkc8kvsDVqa7VRL8qLZxVjgO8yxdT4">
+							<i class="material-icons">description</i> D. 魚眼相機鏡頭校正
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="https://drive.google.com/open?id=16Y1HNIM4y7gwcfyuEzxrQl4aCKeXRgd1Y8xQaNvCMYk">
+							<i class="material-icons">description</i> 4. Duckiebot內部網域設置
+						</a>
+					</td>
+					<td>
+						<a href="https://drive.google.com/open?id=1oxeHTQns7YVOpkiYo7-tQxqEM5bQysaPGQRTaGojmtI">
+							<i class="material-icons">description</i> E. 車輪校正
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<a href="https://drive.google.com/open?id=1pvdV8Ev_hqGbGyxYCVh2tmCe_fsJ44fIwUotHlvkGz4">
+							<i class="material-icons">description</i> F. 數據獲得及存取
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<a href="https://drive.google.com/open?id=1-8H5LJuMNatZUhwnbwBBUvNQzsrTFo8-GN74wAsyUEk">
+							<i class="material-icons">description</i> G. 用Python語法書寫ROS package
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<a href="https://drive.google.com/open?id=1bOyX1NLxMyr0TG_jeSx3fe3TXvIqmzIfF4lH3G0cGHI">
+							<i class="material-icons">description</i> H. 跟軌跡行走任務
+						</a>
+					</td>
+				</tr>	
+			</table>	
+
+			<br>
+			<hr>
 			<br>
 
-			<a id="sis2017"></a>
-			<h1>感知與智慧系統 2017</h1>
-			<img src="courses/sis2017.jpg" width="320" height="240">
+			<!-- MIT version of Pi2 duckiebot -->
+			<h1 style="text-align:justify" id="pi2_tutorial_mit">Pi 2 Duckiebot Tutorial (MIT)</h1>
+
+			<table align="center">
+				<td>
+					<td>
+						<p>MIT Duckietown 春季班教材, 請訪問 <a href="http://duckietown.mit.edu/materials.html" target="_blank">MIT Duckietown 網頁</a></p>
+						<img src="materials/flow_ch.png" width="100%">
+					</td>			
+				</td>	
+			</table>
+
+			<br>
+			<hr>
+
+			<h1 style="text-align:justify" id="pi3_tutorial">Pi 3 Duckiebot Tutorial</h1>
+			<tr>
+				<table align="center">
+					<td>
+						<td>
+							<p>Pi 3 Duckietown 教材 , 歡迎訪問 <a href="http://book.duckietown.org/master/duckiebook/index.html" target="_blank">The Duckietown Book (Duckiebook)</a></p>
+						</td>			
+					</td>	
+				</table>
+			</tr>
+
 			<br>
 
-			<a id="rs2017"></a>
-			<h1>機器人系列講座 2017</h1>
-			<img src="courses/robotics-seminar-nctu.jpg" width="320" height="240">
-			<br>
 
-			<a id="rv2017"></a>
-			<h1>機器人視覺 2017</h1>
-			<img src="courses/rv2017.jpg" width="320">
-			<br>
 
-			<a id="csp2016"></a>
-			<h1>軟體創意專題 2016</h1>
-			<img src="courses/csp2016.jpg" width="320" height="240">
-			<br>
-
-			<a id="rv2016"></a>
-			<h1>機器人視覺 2016</h1>
-			<img src="courses/rv2016.jpg" width="320" height="240">
-			<br>
-
-			<marquee style="overflow:hidden;width:500px;height:150px;background-color:hidden;">
-			<img src="courses/map.jpg" style="border:1px solid;width:200px;height:150px">
-			<img src="courses/phone.jpg" style="border:1px solid;width:200px;height:150px">
-			<img src="courses/ship.jpg" style="border:1px solid;width:200px;height:150px">
-			<img src="courses/duckiecar.jpg" style="border:1px solid;width:200px;height:150px">  
-			</marquee>  
 
 		</div>
-
-
-		<div class="navigation"> 
-
-			<!--<img src="courses/duckietown-nctu.png" width="200" height="210"> 
-			--> 
-
+		
+		<div class="navigation">
 			<ul>
-				<li><a href="courses_ch.html#">Duckietown NCTU</a></li>
-				<li><a href="courses_ch.html#csp2017">軟體創意專題 2017</a></li>
-				<li><a href="courses_ch.html#sis2017">感知與智慧系統 2017</a></li>
-				<li><a href="courses_ch.html#rs2017">機器人系列講座 2017</a></li> 
-				<li><a href="courses_ch.html#rv2017">機器人視覺 2017</a></li>
-				<li><a href="courses_ch.html#csp2016">軟體創意專題 2016</a></li>
-				<li><a href="courses_ch.html#rv2016">機器人視覺 2016</a></li>
+				<li><a href="courses_ch.html">歡迎來到 Duckietown NCTU</a></li>
+				<li><a href="courses_ch.html#photo">課程花絮</a></li>
+				<li><a href="courses_ch.html#pi2_tutorial">Pi 2 教材A 到 H</a></li>
+				<li><a href="courses_ch.html#pi2_tutorial_mit">Pi 2 教材(MIT)</a></li>
+				<li><a href="courses_ch.html#pi3_tutorial_">Pi 3 Duckiebook</a></li>
 			</ul>
-
-		</div> 
+		</div>
 
 
 		<div class="clearer">&nbsp;</div>
