@@ -730,13 +730,18 @@ color: #777;
 .masked {
   /*ref: https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image*/
   height: 150px;
+  /*mask-size: 150px;*/
   background-color: #505050;
-  /*-webkit-mask-image: url("../img/icon/python.svg"), linear-gradient(to right, rgba(100, 100, 100, 1),  rgba(255, 255, 255, 0));*/
+
   /*mask-image: url("../img/icon/artifact_finding.png"); */
   mask-image: url("");
-  /*mask-size: 150px;*/
   mask-repeat: no-repeat;
   mask-position: center;
+
+  /*-webkit-mask-image: url("../img/icon/artifact_finding.png"), linear-gradient(to right, rgba(100, 100, 100, 1),  rgba(255, 255, 255, 0));*/
+  -webkit-mask-image: url("");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
 
 
 }
