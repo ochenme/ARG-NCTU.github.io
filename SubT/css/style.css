@@ -1,3 +1,5 @@
+@import url(animate.css);
+
 body, html {
 	font-family: 'Raleway', sans-serif;
 	text-rendering: optimizeLegibility !important;
@@ -183,7 +185,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	-o-background-size: cover;
 }
 .intro .overlay {
-	background: rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.8);
 }
 .intro h1 {
 	font-family: 'Dancing Script', cursive;
@@ -237,32 +239,35 @@ header .intro-text {
 	line-height: 24px;
 	margin: 15px 0 30px;
 }
-/* Menu Section */
-#restaurant-menu {
+
+
+/* Approach Section */
+#approach {
 	padding: 0 0 60px 0;
 }
-#restaurant-menu .section-title {
-	background: #444 url(../img/menu-bg.jpg) center center no-repeat fixed;
+#approach .section-title {
+	background: #444 url(../img/subway_tunnel.jpg) center center no-repeat fixed;
 	background-size: cover;
 }
-#restaurant-menu .section-title h2 {
+#approach .section-title h2 {
 	color: #fff;
 }
-#restaurant-menu img {
-	width: 300px;
-	box-shadow: 15px 0 #a7c44c;
+#approach img {
+	/*width: 300px;*/
+	width: 150px;
+	/*box-shadow: 15px 0 #a7c44c;*/
 }
-#restaurant-menu h3 {
+#approach h3 {
 	padding: 10px 0;
 	text-transform: uppercase;
 }
-#restaurant-menu .menu-section hr {
+#approach .menu-section hr {
 	margin: 0 auto;
 }
-#restaurant-menu .menu-section {
+#approach .menu-section {
 	margin: 0 20px 80px;
 }
-#restaurant-menu .menu-section-title {
+#approach .menu-section-title {
 	font-size: 26px;
 	display: block;
 	font-weight: 500;
@@ -270,26 +275,35 @@ header .intro-text {
 	margin: 20px 0;
 	text-align: center;
 }
-#restaurant-menu .menu-item {
+#approach .menu-item {
 	margin: 35px 0;
 	font-size: 18px;
 }
-#restaurant-menu .menu-item-name {
+#approach .menu-item-name {
 	font-weight: 600;
 	font-size: 17px;
 	color: #555;
 	border-bottom: 2px dotted rgb(213, 213, 213);
 }
-#restaurant-menu .menu-item-description {
+#approach .menu-item-description {
 	font-style: italic;
 	font-size: 15px;
 }
-#restaurant-menu .menu-item-price {
+#approach .menu-item-price {
 	float: right;
 	font-weight: 600;
 	color: #555;
 	margin-top: -26px;
 }
+
+#approach .tab-button:hover{color:#000!important;background-color:#111!important}
+
+#approach .tab-container{
+	height: 400px;
+}
+
+#approach .tab-container:after,.tab-container:before{content:"";display:table;clear:both}
+
 /* Portfolio Section */
 #portfolio {
 	padding: 0 0 120px 0;
@@ -422,7 +436,7 @@ ol.type li a:hover {
 }
 #advisor .overlay {
 	padding: 120px 0 80px 0;
-	background: rgba(0, 0, 0, 0.6);
+	background: rgba(0, 0, 0, 0.5);
 }
 #advisor h2, #advisor p {
 	color: #fff;
@@ -437,7 +451,7 @@ ol.type li a:hover {
 	margin: 5px 0;
 }
 #advisor img {
-	width: 280px;
+	width: 240px;
 }
 #advisor .thumbnail {
 	background: transparent;
@@ -475,7 +489,7 @@ ol.type li a:hover {
 }
 #team .overlay {
 	padding: 120px 0 80px 0;
-	background: rgba(0, 0, 0, 0.6);
+	background: rgba(0, 0, 0, 0.5);
 }
 #team h2, #team p {
 	color: #fff;
@@ -490,7 +504,7 @@ ol.type li a:hover {
 	margin: 5px 0;
 }
 #team img {
-	width: 280px;
+	width: 240px;
 }
 #team .thumbnail {
 	background: transparent;
@@ -550,6 +564,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8eb640', end
 	font-size: 20px;
 	margin: 5px 0;
 }
+
+
 /* Contact Section */
 #contact {
 	padding: 100px 0 60px 0;
@@ -641,11 +657,11 @@ color: #777;
 	padding: 20px 0;
 	margin-top: 50px;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#779936+0,8eb640+50 */
-	background: rgb(119,153,54); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(119,153,54,1) 0%, rgba(142,182,64,1) 50%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(119,153,54,1) 0%, rgba(142,182,64,1) 50%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(119,153,54,1) 0%, rgba(142,182,64,1) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#779936', endColorstr='#8eb640', GradientType=0 ); /* IE6-9 */
+	background: rgb(30,30,30); /* Old browsers */
+	/*background: -moz-linear-gradient(top, rgba(119,153,54,1) 0%, rgba(142,182,64,1) 50%); *//* FF3.6-15 */
+	/*background: -webkit-linear-gradient(top, rgba(119,153,54,1) 0%, rgba(142,182,64,1) 50%);*/ /* Chrome10-25,Safari5.1-6 */
+	/*background: linear-gradient(to bottom, rgba(119,153,54,1) 0%, rgba(142,182,64,1) 50%);*/ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#779936', endColorstr='#8eb640', GradientType=0 ); /* IE6-9 */
 }
 #footer .social {
 	margin: 20px 0 30px 0;
@@ -673,3 +689,55 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#779936', end
 #footer a:hover {
 	color: #333;
 }
+
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.masked {
+  /*ref: https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image*/
+  height: 150px;
+  background-color: #505050;
+  /*-webkit-mask-image: url("../img/icon/python.svg"), linear-gradient(to right, rgba(100, 100, 100, 1),  rgba(255, 255, 255, 0));*/
+  /*mask-image: url("../img/icon/artifact_finding.png"); */
+  mask-image: url("");
+  /*mask-size: 150px;*/
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+
+}
+

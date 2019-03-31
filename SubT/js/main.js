@@ -1,3 +1,12 @@
+function openMethod(methodName) {
+            var i;
+            var x = document.getElementsByClassName("method");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            document.getElementById(methodName).style.display = "block";  
+}
+
 
 function main() {
 
@@ -75,6 +84,12 @@ function main() {
             effect: 'slideDown',  
             keyboardNav: true,                            
         });
+
+    var browserWindow = $(window);
+    // :: 8.0 wow Active Code
+    if (browserWindow.width() > 767) {
+        new WOW().init();
+    }
 
 }());
 

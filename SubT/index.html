@@ -23,6 +23,7 @@
 <link rel="stylesheet" type="text/css"  href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
 <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
@@ -48,7 +49,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about" class="page-scroll">About</a></li>
-        <li><a href="#restaurant-menu" class="page-scroll">Approach</a></li>
+        <li><a href="#approach" class="page-scroll">Approach</a></li>
         <li><a href="#advisor" class="page-scroll">Advisors</a></li>
         <li><a href="#team" class="page-scroll">Team Members</a></li>
 
@@ -73,7 +74,7 @@
   </div>
 </header>
 <!-- About Section -->
-<div id="about">
+<div id="about" class="top-features-area wow fadeInUp" data-wow-delay="300ms">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6 ">
@@ -86,18 +87,71 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
           <h3>Awarded Chefs</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 <!-- Restaurant Menu Section -->
-<div id="restaurant-menu">
+<div id="approach">
   <div class="section-title text-center center">
     <div class="overlay">
       <h2>Approach</h2>
       <hr>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed.PPPPP</p>
+    </div>
+  </div>
+
+  <div class="top-features-area wow fadeInUp" data-wow-delay="300ms">
+    <div class="container">
+      <div class="row">
+        <div class="features-content">
+          <div class="row">
+            <!-- Single Top Features -->
+            <div class="col-12 col-md-4 tab-button" onclick="openMethod('multi_vehicle')">
+                <div class="single-top-features d-flex align-items-center justify-content-center text-center">
+                    <div class="masked" style="mask-image: url(img/icon/multi_vehicle.png);"></div>
+                    <h3>Multi-Vehicle System</h3>
+                </div>
+            </div>
+            
+            <!-- Single Top Features -->
+            <div class="col-12 col-md-4 tab-button" onclick="openMethod('path_planning')">
+                <div class="single-top-features d-flex align-items-center justify-content-center text-center">
+                    <div class="masked" style="mask-image: url(img/icon/path_planning.png);"></div>
+                    <h3>Path Planning</h3>
+                </div>
+            </div>
+
+            <!-- Single Top Features -->
+            <div class="col-12 col-md-4 tab-button" onclick="openMethod('artifact_finding')">
+                <div class="single-top-features d-flex align-items-center justify-content-center text-center">
+                    <div class="masked" style="mask-image: url(img/icon/artifact_finding.png);"></div>
+                    <h3>Artifact Finding</h3>
+                </div>
+            </div>
+          </div>
+
+          <div class="row" style="padding-top: 50px;">
+            <div id="multi_vehicle" class="tab-container method">
+              <h2>Multi-Vehicle System</h2>
+              <p>approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description </p>
+            </div>
+
+            <div id="path_planning" class="tab-container method" style="display:none">
+              <h2>Path Planning</h2>
+              <p>approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description </p> 
+            </div>
+
+            <div id="artifact_finding" class="tab-container method" style="display:none">
+              <h2>Artifact Finding</h2>
+              <p>approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description approach description </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -138,7 +192,7 @@
       </div>
 
       <div id="row">
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/eric_lu.jpg" alt="..."></div>
             <div class="caption">
@@ -147,7 +201,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/sean_lu.jpg" alt="..."></div>
             <div class="caption">
@@ -156,7 +210,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/wolf_chen.jpg" alt="..."></div>
             <div class="caption">
@@ -165,7 +219,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/andy_ser.jpg" alt="..."></div>
             <div class="caption">
@@ -174,7 +228,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/david_chen.jpg" alt="..."></div>
             <div class="caption">
@@ -183,7 +237,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/sam_liu.jpg" alt="..."></div>
             <div class="caption">
@@ -192,7 +246,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/vincent_chen.jpg" alt="..."></div>
             <div class="caption">
@@ -201,7 +255,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/lily_chiu.jpg" alt="..."></div>
             <div class="caption">
@@ -210,7 +264,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/team_member.jpg" alt="..."></div>
             <div class="caption">
@@ -219,7 +273,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/ZongRu,Li.jpg" alt="..."></div>
             <div class="caption">
@@ -228,7 +282,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/alex.jpg" alt="..."></div>
             <div class="caption">
@@ -237,7 +291,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 team">
+        <div class="col-md-3 col-sm-6 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/Benson.jpg" alt="..."></div>
             <div class="caption">
@@ -255,13 +309,19 @@
 <!-- Footer Section -->
 <div id="footer">
   <div class="container text-center">
-    <div class="col-md-6 col-sm-6">
+    <div class="col-md-4 col-sm-4">
       <h3>Address</h3>
       <div class="contact-item">
         <p>(NCTU EE622) 1001 University Road, Hsinchu,<br>Taiwan 30010, ROC</p>
       </div>
     </div>
-    <div class="col-md-6 col-sm-6">
+    <div class="col-md-4 col-sm-4">
+      <h3>Lab website</h3>
+      <div class="contact-item">
+        <p>If you want to know more about <strong><a href="https://arg-nctu.github.io">ARG lab</a></strong>, Get in touch!</p>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4">
       <h3>Contact Info</h3>
       <div class="contact-item">
         <p>Email: argnctu@gmail.com</p>
@@ -289,6 +349,8 @@
 <script type="text/javascript" src="js/jquery.isotope.js"></script> 
 <script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
 <script type="text/javascript" src="js/contact_me.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
 </body>
 </html>
