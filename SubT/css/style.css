@@ -212,6 +212,9 @@ header .intro-text {
 	text-align: center;
 }
 /* About Section */
+#about h3, #about h2, #about p{
+    color: #eee;
+} 
 #about {
 	padding: 120px 0;
 }
@@ -242,6 +245,10 @@ header .intro-text {
 
 
 /* Approach Section */
+#approach h3, #approach h2, #approach p{
+    color: #eee;
+} 
+
 #approach {
 	padding: 0 0 60px 0;
 }
