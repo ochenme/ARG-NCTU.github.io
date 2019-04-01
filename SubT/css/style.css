@@ -213,7 +213,7 @@ header .intro-text {
 }
 /* About Section */
 #about h3, #about h2, #about p{
-    color: #eee;
+    color: #fff;
 } 
 #about {
 	padding: 120px 0;
@@ -246,7 +246,7 @@ header .intro-text {
 
 /* Approach Section */
 #approach h3, #approach h2, #approach p{
-    color: #eee;
+    color: #fff;
 } 
 
 #approach {
