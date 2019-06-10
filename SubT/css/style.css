@@ -303,6 +303,13 @@ header .intro-text {
 	margin-top: -26px;
 }
 
+#approach .about-img img {
+	display: block;
+	/*position: relative;*/
+	width: 600px;
+  	height: auto;
+}
+
 #approach .tab-button:hover{color:#000!important;background-color:#111!important}
 
 #approach .tab-container{
@@ -458,11 +465,13 @@ ol.type li a:hover {
 	margin: 5px 0;
 }
 #advisor img {
-	width: 240px;
+	/*width: 240px;*/
+	height: 200px;
 }
 #advisor .thumbnail {
 	background: transparent;
 	border: 0;
+	height: 320px;
 }
 #advisor .thumbnail .team-img {
 	display: inline-block;
@@ -516,6 +525,7 @@ ol.type li a:hover {
 #team .thumbnail {
 	background: transparent;
 	border: 0;
+	height: 320px;
 }
 #team .thumbnail .team-img {
 	display: inline-block;
