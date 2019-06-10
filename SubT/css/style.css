@@ -550,6 +550,64 @@ ol.type li a:hover {
 	font-size: 15px;
 }
 
+/* Sponsors Section */
+#sponsor {
+	/*color: #fff;*/
+/*	background: #444 url(../img/team-bg.jpg) center top no-repeat fixed;
+	background-size: cover;*/
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+#sponsor .overlay {
+	padding: 40px 0 40px 0;
+	background: rgba(255, 255, 255, 1);
+}
+#sponsor h2, #sponsor p {
+	sponsorcolor: #fff;
+}
+#sponsor hr {
+	background: #fff;
+}
+#sponsor h3 {
+	color: #fff;
+	font-weight: 400;
+	font-size: 16px;
+	margin: 5px 0;
+}
+#sponsor img {
+	height: 50px;
+}
+#sponsor .thumbnail {
+	background: transparent;
+	border: 0;
+	height: 50px;
+}
+#sponsor .thumbnail .sponsor-img {
+	display: inline-block;
+	position: relative;
+	height: 50px;
+}
+#sponsor .thumbnail .sponsor-img:before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	bottom: 8px;
+	left: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#sponsor .thumbnail .caption {
+	padding-top: 10px;
+}
+#sponsor .thumbnail .caption p {
+	color: rgba(255,255,255,0.7);
+	padding: 0 10px;
+	font-size: 15px;
+}
+
 
 /* Call Reservation Section */
 #call-reservation {
@@ -658,6 +716,7 @@ color: #777;
 #contact .contact-item p {
 	font-size: 16px;
 }
+
 /* Footer Section*/
 #footer {
 	background: #262626;
