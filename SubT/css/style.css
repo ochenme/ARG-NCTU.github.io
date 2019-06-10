@@ -227,6 +227,7 @@ header .intro-text {
 #about .about-img {
 	display: inline-block;
 	position: relative;
+	width: 350px;
 }
 #about .about-img:before {
 	display: block;
