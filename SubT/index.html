@@ -67,7 +67,7 @@
         <div class="row">
           <div class="intro-text">
             <h1><font size="80"><big><big>Team NCTU For<br>DARPA Subterranean Challenge</big></big></font></h1>
-            <p><!-- Institute of Electrical and Control Engineering, ARG Lab --> National Chiao Tung University, Taiwan<br>K-Best Technology Inc.</p>
+            <p><!-- Institute of Electrical and Control Engineering, ARG Lab --> National Chiao Tung University, Taiwan</p>
             <a href="#about" class="btn btn-custom btn-lg page-scroll">About Us</a> </div>
         </div>
       </div>
@@ -88,8 +88,13 @@
           <h2>About Us</h2>
           <hr>
           <h3>Our Mission</h3>
-          <p>The Team NCTU for DARPA Subterranean Challenge is composed of graduate and undergraduate students from Institute of Electrical and Control Engineering, Department of Electrical and Computer Engineering, Mechanical Engineering, and the Robotics Institute, supervised by Dr. Hsueh-Cheng Nick Wang. We hope to put together the efforts from talented and dedicated students here, and develop cutting-edge intelligent systems that solve the challenges encountering subterranean envinronments, where the robots must deal with rough terrain, degrading snesing, and severe communication.</p>
+          <p>
+The Team NCTU for DARPA Subterranean Challenge is composed of graduate and undergraduate students from Institute of Electrical and Control Engineering, Department of Electrical and Computer Engineering, Mechanical Engineering, and the Robotics Institute, supervised by Dr. Hsueh-Cheng Nick Wang and 4 other faculty advisors. We hope to put together the efforts from talented and dedicated students here, and develop cutting-edge intelligent systems that solve the challenges encountering subterranean environments, where the robots must deal with rough terrain, degrading sensing, and severe communication. Our members are trained from the Duckietown platform, and some are the core member in the RobotX Competition 2018, who won the 5th place and the Best Single Day Award. There are in total 23 members in our team, including 2 engineers from our industrial partners, Acer Foundation and K-Best. The members in NCTU are developing the aspects of autonomy, perception, and mobility, whereas our industrial partners provide communication solutions. We consider the participations of the DARPA SubT Challenge both for research and education efforts. We establish internship programs to involve undergraduate students. We wish the team is student-centered, owned and run, with the help of the faculty advisors. We plan to share the efforts to the communities, publish results in top robotics conferences, and later adapt our works for real-world applications such as tunnel inspection in civil engineering and nuclear decommissioning.
+          </p>
           <h3>Our Stories</h3>
+          <p>
+Our approaches are deeply inspired by our recent work in the Duckietown & AI Driving Olympics 2018-2019, and the Maritime RobotX Competition 2018. Our long-term flight, collision-safe aerial blimp robot Duckiefloat is adapted from the Duckebot in the Duckietown platform, the miniaturized testbed to develop autonomy education and research of a fleet of robots. Duckiefloat mimics the lane following in Duckietown for tunnel following, and altitude controls from our underwater robot developed in the RobotX Competition. The Anchorball launcher on the UGV Husky is adapted from the one on our WAM-V (wave adaptive modular vehicle) in RobotX. We continue developing a revised Duckietown, including multiple robots with similar setups to Duckiefloat, artifacts, and tunnel-like environments, as a testbed for DARPA SubT Challenge.
+          </p>
           <p>Team NCTU was ranked <font color=#8eb640>top 5 in the Maritime RobotX Challenge 2018 and Best Single Day Award</font>. See <a href="https://robotx-nctu.github.io/">here</a> for more informations.</p>
           <p>We co-hosted the AI Driving Olympics 2018 in NIPS. See <a href="https://www.duckietown.org/research/ai-driving-olympics">here</a> for more informations.</p>
         </div>
@@ -103,7 +108,18 @@
     <div class="overlay">
       <h2>Approach</h2>
       <hr>
-      <p>We formulate the dicover of artifacts in subterrean envinronments as a simultanously mapping and localization (SLAM) problem. We solve the SLAM in large scale with incremental smoothing and mapping (iSAM), a SLAM optimization algorithm. There are three main challenges in the formulation, 1. Overcoming LiDAR and wheel odometry <font color=#8eb640>degradations</font> on rough terrain and degrading scenes, 2. Detecting <font color=#8eb640>loop closures</font> in tunnels for SLAM, iSAM and enabling high precision localization. 3. Maintaining <font color=#8eb640>communications</font> among all vehicles and anchor landmarks in severe envinronments.</p>
+      <p>
+<h3>
+Phrase I: Toward Long-Term Autonomy using Failure-aware Resource Constrained Platform (August, 2019)
+</h3>
+Long-term operation is critical to search and rescue missions, but still challenging in either hardware or algorithmic (i.e., SLAM) aspects.  We propose an autonomous blimp robot Duckiefloat, which includes on-board RGB-D camera and computing units. Duckiefloat is collision-safe and takes advantage of the passive floating capability for low power consumptions compared to other aerial vehicles like drones. Duckiefloat is resource constrained in computation of deep learning-based artifact search, memory for map representation, and communication dropout due to the harsh, limited visibility, dust tunnel environments. We address those challenges accordingly and show the results of 1) trade-off accuracy for computational cost, 2) forgetting and remembering for mapping, and 3) a specialized communication module Super Glora (a long range, high penetration power communication technology from our industrial partner) over standard Lora. Finally, we carry out the failure-aware mechanism for recovery of SLAM factor graph.  
+<h3>
+Phrase II: Multi-Vehicle Decentrailzed Cooperative Mapping using Anchorball – An Intercommunitive Landmark Solution (Feb and August, 2020)
+</h3>
+We will further employ multiple Duckiefloats and UGVs for cooperative mapping, given the complimentary of a team of aerial and ground vehicles. We anticipate to tackle the challenges that each robot only collect partial local information, may not share common reference frame, and require metric relocalization in the previously built map. We introduce the key designs of the “Anchorball,” serving as the anchor node landmark of the factor graph formulation for multi-robot multi-session SLAM, as well as the hub of communications. Our UGV Husky will consist of a launcher to deploy the Anchorballs into the unknown tunnel. We expect that the increasing number of robots will facilitate the artifact search within the limited competition time.
+      </p>
+      <!--<p>We formulate the dicover of artifacts in subterrean envinronments as a simultanously mapping and localization (SLAM) problem. We solve the SLAM in large scale with incremental smoothing and mapping (iSAM), a SLAM optimization algorithm. There are three main challenges in the formulation, 1. Overcoming LiDAR and wheel odometry <font color=#8eb640>degradations</font> on rough terrain and degrading scenes, 2. Detecting <font color=#8eb640>loop closures</font> in tunnels for SLAM, iSAM and enabling high precision localization. 3. Maintaining <font color=#8eb640>communications</font> among all vehicles and anchor landmarks in severe envinronments.</p>
+      -->
       <iframe src="https://player.vimeo.com/video/341513181" width="640" height="369" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
       <!-- <p><a href="https://vimeo.com/341513181">SubT</a> from <a href="https://vimeo.com/user99587990">ARG NCTU</a> on <a href="https://vimeo.com">Vimeo</a>.</p> -->
     </div>
@@ -157,9 +173,9 @@
                   </div>
                   <div class="col-xs-12 col-md-6 ">
                     <h2>Mobility</h2>
-                    <h3>UAV - Space Ship</h3>
+                    <h3>UAV - Duckiefloat</h3>
                     <p>We introduced a zepllin style robots, the Space Ship, to overcome the long operation time challenge. The Space Ship has 4 motors as mecanum control and a pair of motors responsible for elevation. It's equipped with an RGB-D camera that enable self navigation through tunnel following and artifacts search without externel lighting source. 8 Space Ships in total will operate in the same time to perform fast artifacts search in unknown envinronments.</p>
-                    <h3>UGV - Husky and Seekur</h3>
+                    <h3>UGV - Husky (Jackals and Vimobots are coming soon.)</h3>
                     <p>Husky is a well-known robotics platform developed by Clearpath. Its high torque motors can conquer sever rough terrain and remain flexible in action. We added a LiDAR, multiple RGB-D cameras as its perception sensor for navigation and artifacts search in a degrading sensing scene. Seekur is an all-terrain robots developed by Generation Robots. We add a set of launcher in the robots to deploy Anchor Ball, a visual base landmark system that enable loop closures in unknown envinronments.</p>
                   </div>
                 </div>
