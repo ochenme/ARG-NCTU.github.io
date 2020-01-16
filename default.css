@@ -31,7 +31,7 @@ body {
 p,code,ul {padding-bottom: 1.2em; }
 p {	text-align: justify;}
 
-li {list-style: none;}
+/* li {list-style: disc;} */
 
 h0 {font: bold normal 1.8em Tahoma,sans-serif;}
 h1 {font: normal 1.8em Tahoma,sans-serif;}
