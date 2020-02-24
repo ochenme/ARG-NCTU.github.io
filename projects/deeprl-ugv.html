@@ -37,35 +37,18 @@
 	</div>
 
 	<div class="blank">
-		<h0></h0>
+		<h0>Learning Policies of Sim-to-Real and LiDAR-to-mmWave Input Modalities for Collision Avoidance in Subterranean Environments</h0>
 		<p></p>
 
 		<h1>Abstract</h1>
-		<p>Navigation in pedestrian environments is critical to enabling independent mobility for the blind and visually impaired (BVI) in their daily lives. White canes have been commonly used to obtain contact feedback for following walls, curbs, or man-made trails, whereas guide dogs can assist in avoiding physical contact with obstacles or other pedestrians. However, the infrastructures of tactile trails or guide dogs are expensive to maintain. Inspired by the autonomous lane follow- ing of self-driving cars, we wished to combine the capabilities of existing navigation solutions for BVI users. We proposed an autonomous, trail-following robotic guide dog that would be robust to variances of background textures, illuminations, and interclass trail variations. A deep convolutional neural network (CNN) is trained from both the virtual and real- world environments. Our work included major contributions: 1) conducting experiments to verify that the performance of our models trained in virtual worlds was comparable to that of models trained in the real world; 2) conducting user studies with 10 blind users to verify that the proposed robotic guide dog could effectively assist them in reliably following man-made trails.</p>
+        <p>
+Deep reinforcement learning (RL) have shown remarkable success on a variety of tasks to learn from mistakes. To learn collision-free policies for unmanned vehicles, deep RL has been trained with various data modalities including RGB, depth images, LiDAR point clouds without the use of classic map-localize-plan approaches.
+However, to operate in constrained passages under subterranean environments, existing methods are suffered from degraded sensing  conditions, such as smoke and other obscurants, that impairs observations from camera and LiDAR. 
+We propose sim-to-real, LiDAR-to-mmWave (millimeter wave radar) input modality for deep RL to overcome the challenges.
+We show that the trained models are generalized from simulation to real world, as well as LiDAR to mmWave transferring, despite the low spatial resolution and noisy inputs. Evaluations are carried out in underground environments, including a basement floor and large-scale testbeds in the Tunnel and Urban Circuits of the DARPA Subterranean Challenge. We provide an open dataset of real-world data for further comparisons.
+        </p>
 
-		<h1>Video</h1>
-		<p></p>
-		<div class="container" align="middle">
-			<iframe src="https://player.vimeo.com/video/257645104" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-		</div>
-
-		<h1>The Paper</h1>
-		<p>The project paper can be found <a href="../publications/ICRA18_0060_FI.pdf">here</a>.</p>
-
-        <div style='overflow-x:scroll;overflow-y:hidden;width:600px;height:250px'>
-			<h2>Bibtex</h2>
-			<pre><code>
-            @inproceedings{chuang2018deep,
-            title={Deep trail-following robotic guide dog in pedestrian environments for people who are blind and visually impaired-learning from virtual and real worlds},
-            author={Chuang, Tzu-Kuan and Lin, Ni-Ching and Chen, Jih-Shi and Hung, Chen-Hao and Huang, Yi-Wei and Tengl, Chunchih and Huang, Haikun and Yu, Lap-Fai and Giarr{\'e}, Laura and Wang, Hsueh-Cheng},
-            booktitle={2018 IEEE International Conference on Robotics and Automation (ICRA)},
-            pages={1--7},
-            year={2018},
-            organization={IEEE}
-            }
-            </code></pre>
-		</div>
-
+		<h1>Datasets</h1>
 
 
 		<div class="clearer">&nbsp;</div>
