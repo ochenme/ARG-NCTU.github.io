@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta name="description" content="description"/>
+<meta name="keywords" content="keywords"/> 
+<meta name="author" content="author"/> 
+<link rel="stylesheet" type="text/css" href="../default.css" media="screen"/>
+<title>Nick Wang at NCTU</title>
+</head>
+
+<body>
+
+<div class="outer-container">
+
+<div class="inner-container">
+
+	<div class="header">
+		
+		<div class="title">
+			<span class="sitename"><a href="../index.html">Assistive Robotics Group</a>&nbsp;&nbsp;&nbsp;<a href="index_ch.html">機器人與輔助科技實驗室</a></span>
+		</div>
+
+	</div>
+
+	<div class="path">
+
+		<a href="../index.html">Home</a> 
+		<a href="../event.html">News</a> 
+		<a href="../people.html">People</a> 
+		<a href="../robots.html">Robots</a> 
+		<a href="../research.html">Research</a> 
+		<a href="../publications.html">Publications</a>
+		<a href="../courses.html">Courses</a>
+		<a href="../materials.html">Materials</a>
+	</div>
+
+	<div class="blank">
+		<h0>基於深度學習之易變形商品一維條碼辨識與雙手臂機器人攤平策略</h0>
+		<p></p>
+
+		<h1>Abstract</h1>
+		<p>
+			在進行用於物流行業中之物品揀取系統的開發時，由於1.)商品種類數以萬計以及2.)商品包裝會不定時進行更換，目前主要發展的做法為利用條碼進行商品識別，但是現有條碼偵測方法僅能處理條碼沒有過度扭曲或遮蔽的情況。儘管大部分產品會將條碼印刷在平坦的包裝上，但仍有少部分商品由於使用之材質使得包裝易變形進而導致條碼的扭曲。在商品上的條碼扭曲時目前只能利用人力介入進行處理而沒有相對應之自動化解決方案。為了達成此任務之自動化，需面對的挑戰為:1.)無開源扭曲條碼資料集可使用，2.)以往相關研究之網路架構不一定能沿用，3.)未有利用機械手臂處理條碼之相關研究。為了處理以上挑戰，本論文自行蒐集一組易變形商品之扭曲條碼資料集，並透過自行設計之網路架構進行訓練，同時設計一攤平策略並利用雙手臂機器人進行攤平處理。本論文之主要貢獻為1.)易變形商品之扭曲條碼訓練集，2.)基於深度學習之易變形商品扭曲條碼辨識，3.)利用雙手臂機器人之條碼攤平策略，網路模型與攤平策略在後續實驗中與其他方法相比皆擁有較優良之結果。</a>.
+        </p>
+
+		<h1>Video</h1>
+		<div class="container" align="middle">
+		    <iframe width="560" height="315" src="https://www.youtube.com/embed/FGFJ-hJbH9g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <h1>Allen Ou's Thesis Dataset</h1>
+	<div id="dataset" class="text-center">
+		<div class="container">
+			<div class="section-title center">
+
+				<hr>
+				<!-- ========================CHANGE HERE======================== -->
+				<p style="color:Black;font-size: 12pt; text-align: justify;"> 
+以下為訓練、評估、測試階段所使用的資料集。
+					<br>
+					<br>
+
+					Our paper references datasets (all of them available for download):				
+				<table border=2 cellspacing="20" bordercolor=White style="color:white;line-height:20px;">
+					<tr>
+						<td width="200px" style="color:red;line-height:20px;">Name</td>
+						<td width="250px" style="color:red;line-height:20px;">Dataset(.tar)</td>
+						<td width="200px" style="color:red;line-height:20px;"># of images & masks</td>
+					</tr>
+					<tr>
+						<td width="200px" style="color:black;line-height:20px;">Train & Eval Dataset</td>
+						<td><a href="https://drive.google.com/file/d/1lyb9HXf3MqLe8Vb-aFDzUz3ebZAwJgcT/view">train_eval_data.tar.xz (0.58 GB)</a></td>
+						<td width="200px" style="color:black;line-height:20px;">8547 for tarining, 950 for evaluation, split by 9:1(training/evaluation)</td>
+					</tr>
+					<tr>
+						<td width="200px" style="color:black;line-height:20px;">Testing Dataset</td>
+						<td><a href="https://drive.google.com/file/d/1k5l7tHQv9a2PpWtd_nsw2JmhyQLtivow/view">test_data.rar.xz (0.01 GB)</a></td>
+						<td width="200px" style="color:black;line-height:20px;">100 in one_product scene, 50 in two_product scene</td>
+					</tr>
+				</table>
+				<br>
+				
+			</div>
+		</div>
+	</div>
+
+		<h1>The Code Reference</h1>
+		<p>The thesis code can be found <p style="font-size: 10pt;"> <a href="https://github.com/AndySer37/semantic_labels_sys ">Github repo</a> </p>
+
+
+
+
+
+		<div class="clearer">&nbsp;</div>
+
+	</div>
+
+	<div class="footer">
+
+		<span class="left">
+			&copy; H.C. Wang
+		</span>
+
+		<span class="right"><a href="http://templates.arcsin.se/">Website template</a> by <a href="http://arcsin.se/">Arcsin</a></span>
+
+		<div class="clearer"></div>
+
+	</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
