@@ -37,7 +37,7 @@
 
 				<div class="title">
 					<span class="sitename"><a href="../index.html">Assistive Robotics Group</a>&nbsp;&nbsp;&nbsp;<a
-							href="index_ch.html">機器人與輔助科技實驗室</a></span>
+							href="../index_ch.html">機器人與輔助科技實驗室</a></span>
 				</div>
 
 			</div>
@@ -77,6 +77,15 @@
 					data for further comparisons.
 				</p>
 
+				<div class="wrapper-center">
+					<button
+						onclick="window.open('http://github.com/huangjuite/radar-navigation')"
+						class="button button-gray">Github</button>
+					<button onclick="location.href='#datasets'" class="button button-gray">Dataset</button>
+					<button class="button button-gray">arXiv:comming soon</button>
+				</div>
+
+
 				<h1>Video</h1>
 				<p></p>
 				<div class="container" align="middle">
@@ -84,7 +93,8 @@
 						allow="autoplay; fullscreen" allowfullscreen></iframe>
 				</div>
 
-				<h1>Datasets</h1>
+
+				<h1 id="datasets">Datasets</h1>
 				<h2>
 					<ul style="margin-left: 40px">
 						<li style="list-style:circle; font-size:20px">rosbag</li>
@@ -98,7 +108,7 @@
 								here to download all rosbags.</a>
 						</p>
 
-						<li style="list-style:circle; font-size:20px">hdf5</li>
+						<cont style="list-style:circle; font-size:20px">hdf5</li>
 						<p>Data in rosbags has been transfer to numpy arrays, stored in hdf5 format and
 							organized to 5Hz framerate. Including following data:
 							<li style="list-style:circle;margin-left: 40px">LiDAR <br> 3D point cloud <br>1D range
@@ -111,10 +121,13 @@
 							User can use <a href="https://github.com/ganymede42/h5pyViewer">h5pyViewer</a> to check the
 							data.
 							<br>
-							<img src="img/hdf5-example.png" alt="Girl in a jacket" height="250">
-							<br><br>
-							<a href="https://drive.google.com/drive/u/1/folders/10W1_F36Ew2dd1L2lq8xgZyIHGZCsMBit">click
-								here to download all hdf5 data</a>
+						<div class="wrapper-center">
+							<img src="img/hdf5-example.png" alt="hdf5-example" height="300">
+						</div>
+
+						<br><br>
+						<a href="https://drive.google.com/drive/u/1/folders/10W1_F36Ew2dd1L2lq8xgZyIHGZCsMBit">click
+							here to download all hdf5 data</a>
 						</p>
 
 						<li style="list-style:circle; font-size:20px">pickle</li>
@@ -136,9 +149,12 @@
 								here to download all transition data</a>
 						</p>
 						<li style="list-style:circle; font-size:20px">All data</li>
-						<iframe style="margin-left:40px;"
-							src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQobaKmi7cr2O4abUyIKbkUFovtQmjz6AFpLUb6LX53qvBen18g5iMI6KiQR9HSEDPOaT6cchKyOi1-/pubhtml?gid=1072056062&amp;single=true&amp;widget=true&amp;headers=false"
-							width="611" height="910" frameborder=""></iframe>
+						<div class="wrapper-center">
+							<iframe
+								src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQobaKmi7cr2O4abUyIKbkUFovtQmjz6AFpLUb6LX53qvBen18g5iMI6KiQR9HSEDPOaT6cchKyOi1-/pubhtml?gid=1072056062&amp;single=true&amp;widget=true&amp;headers=false"
+								width="611" height="910" frameborder="">
+							</iframe>
+						</div>
 					</ul>
 				</h2>
 
