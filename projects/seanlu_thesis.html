@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta name="description" content="description"/>
+<meta name="keywords" content="keywords"/> 
+<meta name="author" content="author"/> 
+<link rel="stylesheet" type="text/css" href="../default.css" media="screen"/>
+<title>Nick Wang at NCTU</title>
+</head>
+
+<body>
+
+<div class="outer-container">
+
+<div class="inner-container">
+
+	<div class="header">
+		
+		<div class="title">
+			<span class="sitename"><a href="../index.html">Assistive Robotics Group</a>&nbsp;&nbsp;&nbsp;<a href="index_ch.html">機器人與輔助科技實驗室</a></span>
+		</div>
+
+	</div>
+
+	<div class="path">
+
+		<a href="../index.html">Home</a> 
+		<a href="../event.html">News</a> 
+		<a href="../people.html">People</a> 
+		<a href="../robots.html">Robots</a> 
+		<a href="../research.html">Research</a> 
+		<a href="../publications.html">Publications</a>
+		<a href="../courses.html">Courses</a>
+		<a href="../materials.html">Materials</a>
+	</div>
+
+	<div class="blank">
+		<h0>Object-agnostic Bin Picking in Cluttered Environment Using Deep Reinforcement Learning and Changeable Suction Gripper</h0>
+		<p></p>
+
+		<h1>Abstract</h1>
+		<p>
+			With the increasing E-commerce and the rising of human labor cost, there is a grand need for replacing human with robot arm for picking task in logistic. Amazon, the leading company in E-commerce, even held Amazon Picking Challenge and Amazon Robotics Challenge to gather researchers from industry and academia to solve the automatic pick-and-place problem. From the competitions, it is easy to find that suction cup and parallel-jaw gripper are two mainly end-effector in robotic manipulation nowadays, however it is hard to successfully grasp all objects using only one of them, with the diversity of object geometry, material and weight. This work mainly focus on object-agnostic bin-picking, i.e., the system doesn't have to know what it has grasped but to place it in another container until the bin is empty, we feature using changeable pneumatic gripper that includes different type of suction cups and vacuum-based parallel-jaw gripper. To select employment tool during run-time, we utilize model-free deep Q-learning that learns the mapping from reprojected point cloud sensed by a RGB-D camera, to the action-value of each tool at each pixel, and greedily choose the highest value which corresponds to the tool and the pose. The training data are collected with real robot system self-supervised by trial and error automatically. With these data, we show that multiple tools indeed promotes the picking efficient, the mapping from visual information to action also generalizes well to novel object unseen during training. </a>.
+        </p>
+
+		<h1>Video</h1>
+		<div class="container" align="middle">
+		    <iframe src="https://www.youtube.com/embed/ApnR1HZ1rqg" width="560" height="315" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+
+        <h1>Sean Lu's Thesis Dataset</h1>
+	<div id="dataset" class="text-center">
+		<div class="container">
+			<div class="section-title center">
+
+				<hr>
+				<!-- ========================CHANGE HERE======================== -->
+				<p style="color:Black;font-size: 12pt; text-align: justify;"> 
+Our dataset include the experiences collected by the robot itself. An experience is composed of:
+<ul style="color:Black;font-size: 12pt; text-align: justify;">
+					<li> State, s<sub>t</sub>, or the heightmap reprojected from the pointcloud along the direction of gravity </li>
+					Formatted as 24-bits .jpg image and 64-bits float .npy data which represent the depth information
+					<li> Action, a<sub>t</sub>, i.e., which tool and pixel is executed, for parallel-jaw, it also includes the angle for grasping </li>
+					The used tool is formatted in the index: 0 for tool III, 1 for tool II and others for tool I (gripper)
+					<br>
+					2, 3, 4 and 5 represent -90, -45, 0, 45 degree grasping respectively
+					<li> Reward, R<sub>t</sub></li>
+					The reward in this work is straightforward: +R if successful and -R otherwise. We also define `invalid` which the position can't be inferred from the predicted pixel, the agent will get reward with value -3R if it output such pixel
+					<li> State after action, s<sub>t+1</sub> </li>
+					<li> If s<sub>t+1</sub> represents terminate state?</li>
+					This is determined by the given pointcloud: if the number of planar subset over the whole point set is higher than a predefined threshold, it is considered as empty
+					</ul>
+					<br>
+					<br>
+The trained model used in Exp. 2 can be downloaded from <a href="https://drive.google.com/open?id=1J7iZewBsRjZ6M4c-atMGElpSwamannOn">here</a>.
+					
+				<table border=2 cellspacing="20" bordercolor=White style="color:Black;line-height:25px;">
+					<tr>
+						<td width="200px">Data</td>
+						<td width="200px">Content</td>
+						<td width="250px">Dataset(.tar)</td>
+					</tr>
+					<tr>
+						<td> Collected during Training</td>
+						<td> With the amount of 3066, stored in 15 directories</td>
+						<td><a href="https://drive.google.com/open?id=10sO1La2k-QexLiomBeqa2il_sUcOGVbn">experience.tar.gz (1.1 GB)</a></td>
+					</tr>
+					<tr>
+						<td> Collected during Experience 1</td>
+						<td> With the amount of 2591, collected by different model and policy</td>
+						<td><a href="https://drive.google.com/open?id=1DEcc_kAf3OkTPsXN0tVEt0ltvu35xNwn">exp1_experiences.tar.gz (890.6 MB)</td>
+					</tr>
+					<tr>
+						<td> Collected during Experience 2</td>
+						<td> With the amount of 480, collected with hybrid and novel set</td>
+						<td><a href="https://drive.google.com/open?id=1ejoZ-GCAubPWEAH_eE176XL6FsNSv3ej">exp2_experiences.tar.gz (168.7 MB)</td>
+					</tr>
+				</table>
+				<br>
+				
+			</div>
+		</div>
+	</div>
+
+		<h1>The Code Reference</h1>
+		<p>If you are intereseted in this work and want to know more about the detail, please refer to <p style="font-size: 10pt;"> <a href="https://github.com/sean85914/rl_pnp">Github repo</a> </p>
+
+
+
+
+
+		<div class="clearer">&nbsp;</div>
+
+	</div>
+
+	<div class="footer">
+
+		<span class="left">
+			&copy; H.C. Wang
+		</span>
+
+		<span class="right"><a href="http://templates.arcsin.se/">Website template</a> by <a href="http://arcsin.se/">Arcsin</a></span>
+
+		<div class="clearer"></div>
+
+	</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

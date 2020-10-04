@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta name="description" content="description"/>
+<meta name="keywords" content="keywords"/> 
+<meta name="author" content="author"/> 
+<link rel="stylesheet" type="text/css" href="../default.css" media="screen"/>
+<title>Nick Wang at NCTU</title>
+</head>
+
+<body>
+
+<div class="outer-container">
+
+<div class="inner-container">
+
+	<div class="header">
+		
+		<div class="title">
+			<span class="sitename"><a href="../index.html">Assistive Robotics Group</a>&nbsp;&nbsp;&nbsp;<a href="index_ch.html">機器人與輔助科技實驗室</a></span>
+		</div>
+
+	</div>
+
+	<div class="path">
+
+		<a href="../index.html">Home</a> 
+		<a href="../event.html">News</a> 
+		<a href="../people.html">People</a> 
+		<a href="../robots.html">Robots</a> 
+		<a href="../research.html">Research</a> 
+		<a href="../publications.html">Publications</a>
+		<a href="../courses.html">Courses</a>
+		<a href="../materials.html">Materials</a>
+	</div>
+
+	<div class="blank">
+		<h0>基於自注意力機制之深度學習模型於未見商品品牌文字辨識與商品主動操作上架</h0>
+		<p></p>
+
+		<h1>Abstract</h1>
+		<p>
+			近年來，超商業者正面臨著勞動力短缺、人力成本提高、勞工工作時數不能過長，導致實體的店面成本不勘負荷，因此許多便利商店公司紛紛投入資源在無人商店的開發。為了達成商店中自動上架與結帳系統，系統必須辨識商品的語意標籤，並且透過此資訊得知商品的姿態，才能夾取商品並將商品以整齊、品牌文字朝外的樣式擺放上架，或是讓輸送帶的商品以品牌文字面朝上的姿態掃描結帳。欲設計出自動化無人商店系統，本論文主要有以下三點挑戰：1）網路模型能辨識多樣商品的語意標籤，2）受限於環境因素的變化導致辨識正確率不高，3）商品的初始姿態不滿足夾取條件。為了解決這些問題，本論文設計一套網路架構與系統，並與過去同樣用於自動化無人商店的NCTU-PnP做比較。論文主要貢獻為：1）透過偵測文字區域與文字辨識模型進行商品品牌文字的語意分割任務， 2）改變網路架構來增強學習效率與能力，3）設計吸盤夾爪機器手臂系統來進行翻轉商品與取放商品。</a>.
+        </p>
+
+		<h1>Video</h1>
+		<div class="container" align="middle">
+		    <iframe src="https://www.youtube.com/embed/A6wuSdz8SJY" width="560" height="315" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+
+        <h1>Andy Ser's Thesis Dataset</h1>
+	<div id="dataset" class="text-center">
+		<div class="container">
+			<div class="section-title center">
+
+				<hr>
+				<!-- ========================CHANGE HERE======================== -->
+				<p style="color:Black;font-size: 12pt; text-align: justify;"> 
+以下為訓練、測試、評估階段所使用的資料集，其中訓練TextSnake與Moran時使用SynthText，由於架構所使用的格式不同，這邊我分開提供。   另外，下方也提供測試Moran時會使用論文中所提到的八種資料集（TextSnake直接用指令下載資料，故不提供，於code repo有詳細提到使用說明），以及碩論中實驗ㄧ為了驗證實驗場域的預測精準度所使用的資料集（NCTU-PnP & 解析度資料集）
+					<br>
+					<br>
+
+					Our paper references datasets (all of them available for download):				
+				<table border=2 cellspacing="20" bordercolor=White style="color:white;line-height:20px;">
+					<tr>
+						<td width="200px" style="color:red;line-height:20px;">Training Data</td>
+						<td width="200px" style="color:red;line-height:20px;">Content</td>
+						<td width="250px" style="color:red;line-height:20px;">Dataset(.tar)</td>
+					</tr>
+					<tr>
+						<td width="200px" style="color:black;line-height:20px;">SynthText Dataset</td>
+						<td width="200px" style="color:black;line-height:20px;">TextSnake Training Dataset Format</td>
+						<td><a href="https://drive.google.com/open?id=11_2MgUCz9W9bVkURzbFUy588icvT_EFp">SynthText.zip (38 GB)</a></td>
+					</tr>
+					<tr>
+						<td width="200px" style="color:black;line-height:20px;">SynthText Dataset</td>
+						<td width="200px" style="color:black;line-height:20px;">Moran Training Dataset Format for NIPS-2014</td>
+						<td><a href="https://drive.google.com/open?id=1dvVH4fCDtSyjq2QEcbpJZWwUXznv2JDH">NIPS2014.zip (10 GB)</a></td>
+					</tr>
+					<tr>
+						<td width="200px" style="color:black;line-height:20px;">SynthText Dataset</td>
+						<td width="200px" style="color:black;line-height:20px;">Moran Training Dataset Format for CVPR-2016</td>
+						<td><a href="https://drive.google.com/open?id=1B-DuZ6otIf0ffipf-EiVLdIqxMmiCTmX">CVPR2016.zip (9 GB)</a></td>
+					</tr>
+					<tr>
+						<td width="200px" style="color:red;line-height:20px;">Testing Data</td>
+						<td width="200px" style="color:red;line-height:20px;">Content</td>
+						<td width="250px" style="color:red;line-height:20px;">Dataset(.tar)</td>
+					</tr>
+					<tr>
+						<td width="200px" style="color:black;line-height:20px;">Testing Dataset</td>
+						<td width="200px" style="color:black;line-height:20px;">Moran Testing Dataset Format</td>
+						<td><a href="https://drive.google.com/open?id=1d3Uh8BtpG1CFvTzdyopsACloJBfstclO">moran_test.zip (347 MB)</a></td>
+					</tr>
+					<tr>
+						<td width="200px" style="color:red;line-height:20px;">Evaluate Data</td>
+						<td width="200px" style="color:red;line-height:20px;">Content</td>
+						<td width="250px" style="color:red;line-height:20px;">Dataset(.tar)</td>
+					</tr>
+					<tr>
+						<td width="200px" style="color:black;line-height:20px;">NCTU-PnP Evaluation Dataset</td>
+						<td width="200px" style="color:black;line-height:20px;">Contain Single-1 Duplicate-2 Multiple-2 Clutter-3 Clutter-5 Clutter-7</td>
+						<td><a href="https://drive.google.com/open?id=147CrMDS_jK5VgOvDvVJ3tm2Ib57b8QZL">text_pnp_eval.zip (204 MB)</a></td>
+					</tr>
+					<tr>
+						<td width="200px" style="color:black;line-height:20px;">Resolution Evaluation Dataset</td>
+						<td width="200px" style="color:black;line-height:20px;">Contain 640*480 & 1280*720, two different resolution data</td>
+						<td><a href="https://drive.google.com/file/d/1tTQJGahRUIZfXqDXQ7isDb-hPR7x3R5_/view?usp=sharing">resolution_eval_data.rar (11 MB)</a></td>
+					</tr>
+				</table>
+				<br>
+				
+			</div>
+		</div>
+	</div>
+
+		<h1>The Code Reference</h1>
+		<p>The thesis code can be found <p style="font-size: 10pt;"> <a href="https://github.com/AndySer37/semantic_labels_sys ">Github repo</a> </p>
+
+
+
+
+
+		<div class="clearer">&nbsp;</div>
+
+	</div>
+
+	<div class="footer">
+
+		<span class="left">
+			&copy; H.C. Wang
+		</span>
+
+		<span class="right"><a href="http://templates.arcsin.se/">Website template</a> by <a href="http://arcsin.se/">Arcsin</a></span>
+
+		<div class="clearer"></div>
+
+	</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
