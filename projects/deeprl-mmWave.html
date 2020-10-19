@@ -64,39 +64,50 @@
 				</div>
 				<br><br>
 
-				<h1>Abstract</h1>
-				<p>
-					Deep reinforcement learning (RL) have shown remarkable success on a variety of tasks to learn from
-					mistakes. To learn collision-free policies for unmanned vehicles, deep RL has been trained with
-					various data modalities including RGB, depth images, LiDAR point clouds without the use of classic
-					map-localize-plan approaches.
-					However, to operate in constrained passages under subterranean environments, existing methods are
-					suffered from degraded sensing conditions, such as smoke and other obscurants, that impairs
-					observations from camera and LiDAR.
-					We propose sim-to-real, LiDAR-to-mmWave (millimeter wave radar) input modality for deep RL to
-					overcome the challenges.
-					We show that the trained models are generalized from simulation to real world, as well as LiDAR to
-					mmWave transferring, despite the low spatial resolution and noisy inputs. Evaluations are carried
-					out in underground environments, including a basement floor and large-scale testbeds in the Tunnel
-					and Urban Circuits of the DARPA Subterranean Challenge. We provide an open dataset of real-world
-					data for further comparisons.
-				</p>
-
 				<div class="wrapper-center">
-					<button
-						onclick="window.open('http://github.com/huangjuite/radar-navigation')"
+					<button onclick="window.open('http://github.com/huangjuite/radar-navigation')"
 						class="button button-gray">Github</button>
 					<button onclick="location.href='#datasets'" class="button button-gray">Dataset</button>
 					<button class="button button-gray">arXiv:comming soon</button>
 				</div>
 
+				<h1>Abstract</h1>
+				<p>
 
-				<h1>Video</h1>
+					Deep reinforcement learning (RL) has shown remarkable success on a variety of tasks to learn from
+					mistakes. To learn collision-free policies for unmanned vehicles, deep RL has been trained with
+					various data modalities including RGB, depth images, LiDAR point clouds without the use of classic
+					map-localize-plan approaches.
+					However, existing methods suffer from degraded sensing conditions, such as smoke and other
+					obscurants, that impair observations from camera and LiDAR.
+					We propose to enable learning-based autonomous navigation with single-chip lightweight, low-cost
+					millimeter-wave (mmWave) radars. Given that the mmWave radar signals are often noisy and sparse, we
+					proposed cross-modal contrastive learning for representation (CM-CLR) by maximizing the agreements
+					between mmWave radar and LiDAR signals in training stage. We carried out real robot quantitative
+					evaluations, and compared with 1) a method with two separate networks using cross-modal generative
+					reconstruction and RL policy, and 2) a baseline RL policy without cross-modal representation. We
+					showed that the proposed end-to-end deep RL policy with contrastive learning successfully navigate
+					the robot through smoke-filled maze environments, and demonstrated superior performance than
+					generative reconstruction that sometimes produced noise artifact walls or obstacles. We also
+					demonstrated CM-CLR method on a resource-constrained LoCoBot, and all pre-trained models and
+					hardware settings are openly available for reproducibility at
+					<a
+						href='https://arg-nctu.github.io/projects/deeprl-mmWave.html'>https://arg-nctu.github.io/projects/deeprl-mmWave.html</a>.
+				</p>
+
+				<div class="wrapper-center">
+					<img src="img/teaser-mmrl.png" alt="hdf5-example" height="250">
+				</div>
+
+
+
+
+				<!-- <h1>Video</h1>
 				<p></p>
 				<div class="container" align="middle">
-					<iframe src="https://player.vimeo.com/video/396074962" width="640" height="360" frameborder="0"
+					<iframe src="https://player.vimeo.com/video/468839536" width="640" height="360" frameborder="0"
 						allow="autoplay; fullscreen" allowfullscreen></iframe>
-				</div>
+				</div> -->
 
 
 				<h1 id="datasets">Datasets</h1>
@@ -153,6 +164,13 @@
 							<a href="https://drive.google.com/drive/u/1/folders/1FMkjvJl070_LxqcNBFeBedPsZFoy0VNe">click
 								here to download all transition data</a>
 						</p>
+
+						<li style="list-style:circle; font-size:20px">demo of reconstruction</li>
+						<p>range were ploted on cartesian coordinate system</p>
+						<div class="wrapper-center">
+							<img src="img/demo.png" alt="hdf5-example" height="500">
+						</div>
+
 						<li style="list-style:circle; font-size:20px">All data</li>
 						<div class="wrapper-center">
 							<iframe
