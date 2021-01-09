@@ -107,12 +107,47 @@
 					<iframe src="https://player.vimeo.com/video/468839536" width="640" height="360" frameborder="0"
 						allow="autoplay; fullscreen" allowfullscreen></iframe>
 				</div>
+				<br><br><br>
+
+				<h1>Generative reconstruction</h1>
+				<p>range were ploted on cartesian coordinate system</p>
+				<div class="wrapper-center">
+					<img src="img/demo.png" height="400">
+				</div>
+				<br><br><br>
+
+				<h1>Contrastive learning</h1>
+
+				<div class="wrapper-center">
+					<p>Contrastive learning structure</p>
+					<img src="img/contrastive-v3.png" width="400">
+					<br><br><br>
+					<p>The network is trained for 20 episodes with
+						our dataset</p>
+					<img src="img/mm_loss.png" width="400">
+				</div>
+				<br><br><br>
+
+				<h1>Deep reinforcement learning</h1>
+
+				<div class="wrapper-center">
+					<p>Episode return reward of agent training using Recurrent Deterministic Policy Gradient.</p>
+					<img src="img/score.png" width="550">
+					<br><br>
+					<p>Performance evaluation of agents trained using different RL algorithms. We considered a safe
+						navigation without collision a trial. A trial was terminated when the robot collided walls or
+						obstacles, reached to a maximum distance of 1.2 kilometers, or manually stopped by human
+						intervention. The travelled distance was estimated by the wheel encoders provided by the
+						Clearpath Husky robots.</p>
+					<img src="img/rl_eval.png" width="300">
+				</div>
+				<br><br><br>
 
 
 				<h1 id="datasets">Datasets</h1>
 				<h2>
 					<ul style="margin-left: 40px">
-						<li style="list-style:circle; font-size:20px">rosbag</li>
+						<li style="list-style:circle; font-size:18px">rosbag</li>
 						<p>The original recorded format. All data are recorded in realtime. If user are familiar with
 							ROS. There is <a href="http://wiki.ros.org/rosbag">rosbga API</a> to extract data from bags
 							or using <a href="http://wiki.ros.org/rosbag/Commandline">commandline</a> to play data in
@@ -123,7 +158,7 @@
 								here to download all rosbags.</a>
 						</p>
 
-						<li style="list-style:circle; font-size:20px">hdf5</li>
+						<li style="list-style:circle; font-size:18px">hdf5</li>
 						<p>Data in rosbags has been transfer to numpy arrays, stored in hdf5 format and
 							organized to 5Hz framerate. Including following data:
 							<li style="list-style:circle;margin-left: 40px">LiDAR <br> 3D point cloud <br>1D range
@@ -145,7 +180,7 @@
 							here to download all hdf5 data</a>
 						</p>
 
-						<li style="list-style:circle; font-size:20px">pickle</li>
+						<li style="list-style:circle; font-size:18px">pickle</li>
 						<p>
 							Data in hdf5 dataset has been re-organized to transition style and calculated the reward
 							inorder to train RL
@@ -164,13 +199,7 @@
 								here to download all transition data</a>
 						</p>
 
-						<li style="list-style:circle; font-size:20px">demo of reconstruction</li>
-						<p>range were ploted on cartesian coordinate system</p>
-						<div class="wrapper-center">
-							<img src="img/demo.png" alt="hdf5-example" height="500">
-						</div>
-
-						<li style="list-style:circle; font-size:20px">All data</li>
+						<li style="list-style:circle; font-size:18px">All data</li>
 						<div class="wrapper-center">
 							<iframe
 								src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQobaKmi7cr2O4abUyIKbkUFovtQmjz6AFpLUb6LX53qvBen18g5iMI6KiQR9HSEDPOaT6cchKyOi1-/pubhtml?gid=1072056062&amp;single=true&amp;widget=true&amp;headers=false"
