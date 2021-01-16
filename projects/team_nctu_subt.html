@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="description" />
+	<meta name="keywords" content="keywords" />
+	<meta name="author" content="author" />
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td,
+		th {
+			border: 1px solid #dddddd;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #cdcdcd;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../default.css" media="screen" />
+	<title>Nick Wang at NCTU</title>
+</head>
+
+<body>
+
+	<div class="outer-container">
+
+		<div class="inner-container">
+
+			<div class="header">
+
+				<div class="title">
+					<span class="sitename"><a href="../index.html">Assistive Robotics Group</a>&nbsp;&nbsp;&nbsp;<a
+							href="index_ch.html">機器人與輔助科技實驗室</a></span>
+				</div>
+
+			</div>
+
+			<div class="path">
+
+				<a href="../index.html">Home</a>
+				<a href="../event.html">News</a>
+				<a href="../people.html">People</a>
+				<a href="../robots.html">Robots</a>
+				<a href="../research.html">Research</a>
+				<a href="../publications.html">Publications</a>
+				<a href="../courses.html">Courses</a>
+				<a href="../materials.html">Materials</a>
+			</div>
+
+			<div class="blank">
+				<h0>A Heterogeneous Unmanned Ground Vehicle and Blimp Robot Team for Search and Rescue using Data-driven Autonomy and Communication-aware Navigation</h0>
+				<p></p>
+
+				<h1>Abstract</h1>
+				<p>
+					This paper describes the architecture and implementation of heterogeneous unmanned ground vehicles (UGVs) and blimp robot teams used to navigate unknown terrains in subterranean environments for search and rescue missions. UGVs are equipped with numerous sensors and computations for achieving accurate perception as well as simultaneous localization and mapping, and blimps have a long flight time and collision tolerance when traversing uneven terrains. The perception and autonomy system was designed to satisfy the DARPA Subterranean Challenge requirements. We proposed the use of millimeter-wave radars for navigation through smoke by using cross-modal representations. The representation was then integrated in deep reinforcement learning. A key aspect of such data-driven autonomy using simulation for training deep neural networks is sequential decision-making for collision avoidance. The navigation system was tested in the Urban Circuit. The communication module included nodes that could be deployed through mesh Wi-Fi and XBee, as a spherical shape to be shot, dropped, or a miniracecar as a mobile node. Because of the uncertainty of non-line-of-sight, multipath propagation, and fading of the reception in various subterranean environments, analyzing the propagation and radio signal strength index (RSSI) of various modules is difficult and should be determined from field tests. Finally, we presented cloud analysis tools for perception benchmark and an integrated solution for future research.
+				</p>
+
+				<h1>Video</h1>
+				<p></p>
+				<div class="container" align="middle">
+					<iframe src="https://player.vimeo.com/video/" width="640" height="360" frameborder="0"
+						allow="autoplay; fullscreen" allowfullscreen></iframe>
+				</div>
+
+				<h1>Artifacts Search Datasets</h1>
+				<p>We provide around 6000 ground truth labels for semantic segmentation benchmark of artifacts extracted from the DARPA released rosbags. The original rosbags were collected by DARPA and can be found <a href="https://bitbucket.org/subtchallenge/subt_reference_datasets/src/master/README.md">here</a></p>
+				<p>Click on the link to download compressed images and json files.</p>
+
+				<table>
+					<tr>
+						<th>#</th>
+						<th>Route</th>
+						<th>Rosbag</th>
+						<th>Environment</th>
+						<th>Data</th>
+						<th># Images</th>
+						<th>Thumbnail</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Tunnel Experimental</td>
+						<td><a href="https://subt-data.s3.amazonaws.com/SubT_Tunnel_Ckt/ex_B_route1.bag">Link</td>
+						<td>Mine Tunnel</td>
+						<td>
+							<p><a href="">Backpack (318)</p>
+							<p><a href="">Phone (37)</p>
+							<p><a href="">Survivor (708)</p>
+						</td>
+						<td>1063</td>
+						<td><img src="images/exB1_backpack.jpg" width="200"></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Tunnel Safety Research I</td>
+						<td><a href="https://subt-data.s3.amazonaws.com/SubT_Tunnel_Ckt/sr_B_route1.bag">Link</td>
+						<td>Mine Tunnel</td>
+						<td>
+							<p><a href="">Backpack (398)</p>
+							<p><a href="">Phone (66)</p>
+							<p><a href="">Survivor (168)</p>
+						</td>
+						<td>632</td>
+						<td><img src="images/srB1_phone.jpg" width="200"></td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Tunnel Safety Research II</td>
+						<td><a href="https://subt-data.s3.amazonaws.com/SubT_Tunnel_Ckt/sr_B_route2.bag">Link</td>
+						<td>Mine Tunnel</td>
+						<td>
+							<p><a href="">Backpack (113)</p>
+							<p><a href="">Phone (168)</p>
+							<p><a href="">Survivor (648)</p>
+						</td>
+						<td>929</td>
+						<td><img src="images/srB2_survivor.jpg" width="200"></td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Urban Alpha Course I</td>
+						<td><a href="https://subt-data.s3.amazonaws.com/SubT_Urban_Ckt/a_lvl_1.bag">Link</td>
+						<td>Nuclear Power Plant</td>
+						<td>
+							<p><a href="">Backpack (26)</p>
+							<p><a href="">Phone (200)</p>
+							<p><a href="">Survivor (307)</p>
+							<p><a href="">Vent 155</p>
+						</td>
+						<td>688</td>
+						<td><img src="images/a1_phone.jpg" width="200"></td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Urban Alpha Course II</td>
+						<td><a href="https://subt-data.s3.amazonaws.com/SubT_Urban_Ckt/a_lvl_2.bag">Link</td>
+						<td>Nuclear Power Plant</td>
+						<td>
+							<p><a href="">Backpack (1405)</p>
+							<p><a href="">Survivor (248)</p>
+							<p><a href="">Vent (65)</p>
+						</td>
+						<td>1718</td>
+						<td><img src="images/a2_survivor.jpg" width="200"></td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Urban Beta Course II</td>
+						<td><a href="https://subt-data.s3.amazonaws.com/SubT_Urban_Ckt/b_lvl_2.bag">Link</td>
+						<td>Nuclear Power Plant</td>
+						<td>
+							<p><a href="">Backpack (195)</p>
+							<p><a href="">Phone (189)</p>
+							<p><a href="">Survivor (272)</p>
+							<p><a href="">Vent (271)</p>
+						</td>
+						<td>927</td>
+						<td><img src="images/b2_vent.jpg" width="200"></td>
+					</tr>
+				</table>
+
+				<div class="clearer">&nbsp;</div>
+
+			</div>
+
+			<div class="footer">
+
+				<span class="left">
+					&copy; H.C. Wang
+				</span>
+
+				<span class="right"><a href="http://templates.arcsin.se/">Website template</a> by <a
+						href="http://arcsin.se/">Arcsin</a></span>
+
+				<div class="clearer"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
