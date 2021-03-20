@@ -57,8 +57,8 @@
 			<div class="blank">
 				<div class="wrapper-center">
 					<h0 style="text-align: center">
-						Enabling Learning-based Navigation in Obscurants with Lightweight, Low-cost Millimeter Wave
-						Radar Using Cross-modal Contrastive Learning of Representations
+						Cross-Modal Contrastive Learning of Representations for Navigation using Lightweight,
+						Low-Cost Millimeter Wave Radar for Adverse Environmental Conditions
 					</h0>
 				</div>
 				<br><br>
@@ -67,29 +67,29 @@
 					<button onclick="window.open('http://github.com/huangjuite/radar-navigation')"
 						class="button button-gray">Github</button>
 					<button onclick="location.href='#datasets'" class="button button-gray">Dataset</button>
-					<button onclick="window.open('https://arxiv.org/abs/2101.03525')"
-						class="button button-gray">arXiv</button>
+					<button onclick="window.open('https://ieeexplore.ieee.org/document/9362209')"
+						class="button button-gray">Paper</button>
 				</div>
 
 				<h1>Abstract</h1>
 				<p>
-					Deep reinforcement learning (RL) has shown remarkable success on a variety of tasks to learn from
-					mistakes. To learn collision-free policies for unmanned vehicles, deep RL has been trained with
-					various data modalities including RGB, depth images, LiDAR point clouds without the use of classic
-					map-localize-plan approaches.
-					However, existing methods suffer from degraded sensing conditions, such as smoke and other
-					obscurants, that impair observations from camera and LiDAR.
-					We propose to enable learning-based autonomous navigation with single-chip lightweight, low-cost
-					millimeter-wave (mmWave) radars. Given that the mmWave radar signals are often noisy and sparse, we
-					proposed cross-modal contrastive learning for representation (CM-CLR) by maximizing the agreements
-					between mmWave radar and LiDAR signals in training stage. We carried out real robot quantitative
-					evaluations, and compared with 1) a method with two separate networks using cross-modal generative
-					reconstruction and RL policy, and 2) a baseline RL policy without cross-modal representation. We
-					showed that the proposed end-to-end deep RL policy with contrastive learning successfully navigate
-					the robot through smoke-filled maze environments, and demonstrated superior performance than
-					generative reconstruction that sometimes produced noise artifact walls or obstacles. We also
-					demonstrated CM-CLR method on a resource-constrained LoCoBot, and all pre-trained models and
-					hardware settings are openly available for reproducibility at
+					Deep reinforcement learning (RL), where the agent learns from mistakes, has been successfully
+					applied to a variety of tasks. With the aim of learning collision-free policies for unmanned
+					vehicles, deep RL has been used for training with various types of data, such as colored images,
+					depth images, and LiDAR point clouds, without the use of classic map--localize--plan approaches.
+					However, existing methods are limited by their reliance on cameras and LiDAR devices, which have
+					degraded sensing under adverse environmental conditions (e.g., smoky environments). In response, we
+					propose the use of single-chip millimeter-wave (mmWave) radar, which is lightweight and inexpensive,
+					for learning-based autonomous navigation. However, because mmWave radar signals are often noisy and
+					sparse, we propose a cross-modal contrastive learning for representation (CM-CLR) method that
+					maximizes the agreement between mmWave radar data and LiDAR data in the training stage. We evaluated
+					our method in real-world robot compared with 1) a method with two separate networks using
+					cross-modal generative reconstruction and an RL policy and 2) a baseline RL policy without
+					cross-modal representation. Our proposed end-to-end deep RL policy with contrastive learning
+					successfully navigated the robot through smoke-filled maze environments and achieved better
+					performance compared with generative reconstruction methods, in which noisy artifact walls or
+					obstacles were produced. All pretrained models and hardware settings are open access for reproducing
+					this study and can be obtained at
 					<a
 						href='https://arg-nctu.github.io/projects/deeprl-mmWave.html'>https://arg-nctu.github.io/projects/deeprl-mmWave.html</a>.
 				</p>
