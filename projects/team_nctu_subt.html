@@ -55,12 +55,28 @@
 			</div>
 
 			<div class="blank">
-				<h0>A Heterogeneous Unmanned Ground Vehicle and Blimp Robot Team for Search and Rescue using Data-driven Autonomy and Communication-aware Navigation</h0>
+				<h0>A Heterogeneous Unmanned Ground Vehicle and Blimp Robot Team for Search and Rescue using Data-driven
+					Autonomy and Communication-aware Navigation</h0>
 				<p></p>
 
 				<h1>Abstract</h1>
 				<p>
-					This paper describes the architecture and implementation of heterogeneous unmanned ground vehicles (UGVs) and blimp robot teams used to navigate unknown terrains in subterranean environments for search and rescue missions. UGVs are equipped with numerous sensors and computations for achieving accurate perception as well as simultaneous localization and mapping, and blimps have a long flight time and collision tolerance when traversing uneven terrains. The perception and autonomy system was designed to satisfy the DARPA Subterranean Challenge requirements. We proposed the use of millimeter-wave radars for navigation through smoke by using cross-modal representations. The representation was then integrated in deep reinforcement learning. A key aspect of such data-driven autonomy using simulation for training deep neural networks is sequential decision-making for collision avoidance. The navigation system was tested in the Urban Circuit. The communication module included nodes that could be deployed through mesh Wi-Fi and XBee, as a spherical shape to be shot, dropped, or a miniracecar as a mobile node. Because of the uncertainty of non-line-of-sight, multipath propagation, and fading of the reception in various subterranean environments, analyzing the propagation and radio signal strength index (RSSI) of various modules is difficult and should be determined from field tests. Finally, we presented cloud analysis tools for perception benchmark and an integrated solution for future research.
+					This paper describes the architecture and implementation of heterogeneous unmanned ground vehicles
+					(UGVs) and blimp robot teams used to navigate unknown terrains in subterranean environments for
+					search and rescue missions. UGVs are equipped with numerous sensors and computations for achieving
+					accurate perception as well as simultaneous localization and mapping, and blimps have a long flight
+					time and collision tolerance when traversing uneven terrains. The perception and autonomy system was
+					designed to satisfy the DARPA Subterranean Challenge requirements. We proposed the use of
+					millimeter-wave radars for navigation through smoke by using cross-modal representations. The
+					representation was then integrated in deep reinforcement learning. A key aspect of such data-driven
+					autonomy using simulation for training deep neural networks is sequential decision-making for
+					collision avoidance. The navigation system was tested in the Urban Circuit. The communication module
+					included nodes that could be deployed through mesh Wi-Fi and XBee, as a spherical shape to be shot,
+					dropped, or a miniracecar as a mobile node. Because of the uncertainty of non-line-of-sight,
+					multipath propagation, and fading of the reception in various subterranean environments, analyzing
+					the propagation and radio signal strength index (RSSI) of various modules is difficult and should be
+					determined from field tests. Finally, we presented cloud analysis tools for perception benchmark and
+					an integrated solution for future research.
 				</p>
 
 				<h1>Video</h1>
@@ -70,8 +86,56 @@
 						allow="autoplay; fullscreen" allowfullscreen></iframe>
 				</div>
 
+				<h1>Overall System Performance</h1>
+				<p>The competition scoring metric was that a valid artifact report earns the team one point, if the
+					artifact type was correct and the reported location was less than or equal to five meters (Euclidean
+					distance) from the ground truth location, as shown in Figure 16. Since any artifact report out of
+					the
+					error range did not earn any points, the localization and mapping accuracy was critical to the
+					score.
+					We quantitatively evaluated the localization and mapping accuracy during the competition runs of the
+					Alpha course in the Urban Circuit.
+				</p>
+				<br><br><br><br>
+				<div class="wrapper-center">
+					<img src="images/slam_localization_gt_v2.png" alt="hdf5-example" height="500">
+					<p>Figure 16: The overall system performed in the Satsop Nuclear Power Plant in Elma, Washington,
+						USA, from DARPA Subterranean Challenge Urban Circuit Alpha Run. (a) Ground truth map with robot
+						trajectory. The UGV autonomously traversed 277.53 m (green line) for 23 minutes using the
+						proposed learning-based navigation. The artifacts and their 5-meter range for scoring were shown
+						in yellow dots. (b) and (c) were the artifacts correctly detected from our robot. In the end the
+						UGV got stuck at a ledge (red dot in (a)), also shown in (d). The robot trajectory was plotted
+						by matching onboard LiDAR point cloud and the ground truth map provided by DARPA (white points)
+						using the General Iterative Closet Point (ICP) algorithms for quantitative evaluations.
+					</p>
+				</div>
+
+				<br><br><br><br>
+
+				<div class="wrapper-center">
+					<img src="images/odom_evaluate.png" alt="hdf5-example" height="80">
+					<p>Table 10: Mean (µ) and standard deviation (σ) of odometry errors estimated by LeGO-LOAM before
+						and after rapid jumps (R.J.), and by recovery.
+					</p>
+				</div>
+
+				<br><br><br><br>
+
+				<div class="wrapper-center">
+					<img src="images/map_eval.png" alt="hdf5-example" height="300">
+					<p>Figure 17: Comparison of the ground truth map (white) and the estimated maps (colored) generated
+						by LeGO-LOAM algorithm. (a) Before rapid jump. (b) After rapid jumps. (c) Recovered map by
+						confidence tests and recovery.
+					</p>
+				</div>
+				
+				<br><br><br><br>
+
 				<h1>Artifacts Search Datasets</h1>
-				<p>We provide around 6000 ground truth labels for semantic segmentation benchmark of artifacts extracted from the DARPA released rosbags. The original rosbags were collected by DARPA and can be found <a href="https://bitbucket.org/subtchallenge/subt_reference_datasets/src/master/README.md">here</a></p>
+				<p>We provide around 6000 ground truth labels for semantic segmentation benchmark of artifacts extracted
+					from the DARPA released rosbags. The original rosbags were collected by DARPA and can be found <a
+						href="https://bitbucket.org/subtchallenge/subt_reference_datasets/src/master/README.md">here</a>
+				</p>
 				<p>Click on the link to download compressed images and json files.</p>
 
 				<table>
