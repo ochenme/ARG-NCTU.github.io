@@ -230,6 +230,52 @@
 					</tr>
 				</table>
 
+				<h1> Supplementary Materials</h1>
+				<p>
+					Communications must be maintained at all times among heterogeneous robots, anchor nodes, and humansupervisors. 
+					Without a clear understanding of radio propagation characteristics  in  SubT  environments,
+					there is no way to determine the optimal deployment strategy, and particularly in locations with a complexgeometric structure. 
+					we collected radio propagation data from XBee and UWB modules in various underground environments,  
+					including a long  artificial tunnel, Shimen tunnel, a natural sea cave, BH cave.
+					RSSI of XBee and UWB along the trajectory are recorded below. 
+					The color segments and label in the bottom of the figures are correspond to the colored segments of trajectory in the maps.
+							
+				</p>
+
+				<br><br><br><br>
+				<div class="wrapper-center">
+					<img src="images/tunnel_trajectory_uwb_v1.png" alt="hdf5-example" height="350">
+					<img src="images/tunnel_trajectory_xbee_v1.png" alt="hdf5-example" height="350">
+					<p>RSSI of XBee and UWB along the trajectory in Shimen tunnel. 
+						The color segments and label at the bottom of figures are correspond to the colored segments in the map of Shimen Reservoir. 
+						When the robot at S3, S4, and S5, the locations of nodes were at NLOS of the robot.   
+						This caused to weak link. As shown in block A, B and, C, the robot disconnected to almost all the nodes and was out of the meshes. 
+						Hence, we advice the node should be deployed at all the intersections, not only to maintain the quality of link, but to save the number of the nodes. 
+						According to this experiments, the average communication coverage of UWB and XBee at LOS are 55 and 106 m respectively. 
+						This would be a trick for the strategy of deployment for this kind of narrow tunnel. 
+						To be noticed that there were some UWB data with wrong distance information (L2: node \#7 and \#8; S2: node \#4 and \#5; S5: node \#1). 
+						The reason may be that huge number of the node in the narrow space caused multiple-path propagation. 
+						(The UWB signal of node \#2 was missed in the testing.)
+					</p>
+				</div>
+
+				<br><br><br><br>
+				<div class="wrapper-center">
+					<img src="images/cave_trajectory_uwb_v1.png" alt="hdf5-example" height="350">
+					<img src="images/cave_trajectory_xbee_v1.png" alt="hdf5-example" height="350">
+					<p>RSSI of XBee and UWB along the trajectory in BH cave. The UWB signals are hard to transmit at NLOS. 
+						The UWB signals gave wrong distance data only once (at the end of L1: node \#3). 
+						The reason might be that wider space decrease the probability of multi-path propagation. 
+						The coverage of UWB was 32 m (L4: node \#6). Due to the small scale of the environment, 
+						the communication coverage of the XBee modules covered almost all BH cave.)
+					</p>
+				</div>
+				
+				
+					
+
+				
+
 				<div class="clearer">&nbsp;</div>
 
 			</div>
