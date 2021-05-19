@@ -142,6 +142,7 @@ in IEEE Robotics and Automation Letters, vol. 6, no. 2, pp. 3333-3340, April 202
 <a href="https://ieeexplore.ieee.org/document/9362209" target="_blank">Link</a>
 </p>
 Deep reinforcement learning (RL), where the agent learns from mistakes, has been successfully applied to a variety of tasks. With the aim of learning collision-free policies for unmanned vehicles, deep RL has been used for training with various types of data, such as colored images, depth images, and LiDAR point clouds, without the use of classic map--localize--plan approaches. However, existing methods are limited by their reliance on cameras and LiDAR devices, which have degraded sensing under adverse environmental conditions (e.g., smoky environments). In response, we propose the use of single-chip millimeter-wave (mmWave) radar, which is lightweight and inexpensive, for learning-based autonomous navigation. However, because mmWave radar signals are often noisy and sparse, we propose a cross-modal contrastive learning for representation (CM-CLR) method that maximizes the agreement between mmWave radar data and LiDAR data in the training stage. We evaluated our method in real-world robot compared with 1) a method with two separate networks using cross-modal generative reconstruction and an RL policy and 2) a baseline RL policy without cross-modal representation. Our proposed end-to-end deep RL policy with contrastive learning successfully navigated the robot through smoke-filled maze environments and achieved better performance compared with generative reconstruction methods, in which noisy artifact walls or obstacles were produced. All pretrained models and hardware settings are open access for reproducing this study and can be obtained at <a href="https://arg-nctu.github.io/projects/deeprl-mmWave.html" target="_blank">https://arg-nctu.github.io/projects/deeprl-mmWave.html</a>.
+<br>
 <iframe src="https://player.vimeo.com/video/468839536" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <p>
@@ -149,7 +150,6 @@ Lu, C.-L., Huang, C.-I, Huang, J.-T., Hsu, C.-C., Chang, P.-K., Ewe, Z., Huang, 
 </p>
 This paper describes the architecture and implementation of a heterogeneous team comprising unmanned ground vehicles and blimp robots capable of navigating unknown subterranean environments for search and rescue missions. The ground vehicles are equipped with a range of sensors for accurate perception, localization, and mapping. The blimps feature a long flight duration and collision tolerance when traversing uneven terrain. The design of the system was meant to satisfy the requirements of the DARPA Subterranean Challenge in terms of perception capability and autonomy. To facilitate navigation through smoke-filled spaces, we employed novel millimeter wave radar to enable cross-modal representations for integration via deep reinforcement learning. The autonomy of the proposed scheme was augmented using simulations to train deep neural networks, thereby allowing the system to perform sequential decision-making for collision avoidance and navigation toward a specific goal. The navigation system was evaluated in the DARPA SubT Urban Circuit, and quantitative localization results and recovery strategy from failures was discussed.
 The proposed communication system comprises mesh WiFi with XBee and UWB communication modules as well as spherical nodes that can be shot out like a cannonball and miniature cars deployed as mobile nodes. The propagation and radio signal strength index of various modules were evaluated using data collected during field tests in order to overcome the uncertainties of subterranean environments, including non-line-of-sight propagation, multipath propagation, and fading reception. We also discuss the lessons learned during this project and reflect on future plans.
-      </p>
       <!--<p>We formulate the dicover of artifacts in subterrean envinronments as a simultanously mapping and localization (SLAM) problem. We solve the SLAM in large scale with incremental smoothing and mapping (iSAM), a SLAM optimization algorithm. There are three main challenges in the formulation, 1. Overcoming LiDAR and wheel odometry <font color=#8eb640>degradations</font> on rough terrain and degrading scenes, 2. Detecting <font color=#8eb640>loop closures</font> in tunnels for SLAM, iSAM and enabling high precision localization. 3. Maintaining <font color=#8eb640>communications</font> among all vehicles and anchor landmarks in severe envinronments.</p>
       <iframe src="https://player.vimeo.com/video/343947641" width="640" height="369" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
       <p><a href="https://vimeo.com/341513181">SubT</a> from <a href="https://vimeo.com/user99587990">ARG NCTU</a> on <a href="https://vimeo.com">Vimeo</a>.</p> -->
@@ -273,68 +273,6 @@ The proposed communication system comprises mesh WiFi with XBee and UWB communic
 </div>
 
 
-<!-- Advisors Section -->
-<div id="advisor" class="text-center">
-  <div class="overlay">
-    <div class="container">
-      <div class="col-md-10 col-md-offset-1 section-title">
-        <h2>Advisors</h2>
-        <hr>
-      </div>
-
-      <div id="row">
-        <div class="col-md-4 col-sm-6 team" >
-            <div class="thumbnail"><!-- style="background-color: #005;" -->
-              <div class="team-img"><img src="img/team/nick_wang.jpg" alt="..."></div>
-              <div class="caption">
-                <h3>Prof. Hsueh-Cheng 'Nick' Wang</h3>
-                <p>Department of Electrical and Computer Engineering, NCTU</p>
-              </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 team">
-            <div class="thumbnail">
-              <div class="team-img"><img src="img/team/jenn_hwan.jpg" alt="..."></div>
-              <div class="caption">
-                <h3>Prof. Jenn-Hwan Tarng</h3>
-                <p>Department of Communication Engineering, NCTU</p>
-              </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 team">
-            <div class="thumbnail">
-              <div class="team-img"><img src="img/team/kai_ten.jpg" alt="..."></div>
-              <div class="caption">
-                <h3>Prof. Kai-Ten Feng</h3>
-                <p>Department of Communication Engineering, NCTU</p>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 team">
-          <div class="thumbnail">
-            <div class="team-img"><img src="img/team/chia_hung.jpg" alt="..."></div>
-            <div class="caption">
-              <h3>Prof. Chia-Hung Tsai</h3>
-              <p>Department of Mechanical Engineering, NCTU</p>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-4 col-sm-6 team">
-          <div class="thumbnail">
-            <div class="team-img"><img src="img/team/fu_hsiang.jpg" alt="..."></div>
-            <div class="caption">
-              <h3>Prof. Fu-Hsiang Ko</h3>
-              <p>Department of Material Science and Engineering, NCTU</p>
-            </div>
-          </div>
-      </div>
-    </div>
-
-    </div>
-  </div>
-</div>
-
 
 <!-- Team Section -->
 <div id="team" class="text-center">
@@ -457,38 +395,32 @@ The proposed communication system comprises mesh WiFi with XBee and UWB communic
       <div id="row">
         <div class="col-md-3 col-sm-6 team">
           <div class="caption">
-            <h3>SHENG CHIEH CHUANG</h3>
-            <p>SubT Intern Student</p>
+            <h3>Po-Lin "Paul" Li</h3>
+            <p>Blimp Robot</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 team">
           <div class="caption">
-            <h3>YU WEI CHEN</h3>
-            <p>SubT Intern Student</p>
+            <h3>Zu Lin "James" Ewe</h3>
+            <p>Communication</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 team">
           <div class="caption">
-            <h3>TING YU LAN</h3>
-            <p>SubT Intern Student</p>
+            <h3>Wolf Chen</h3>
+            <p>UAV System Hardware</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 team">
           <div class="caption">
-            <h3>CHIEN TING CHEN</h3>
-            <p>SubT Intern Student</p>
+            <h3>Vincent Chen</h3>
+            <p>UGV Hardware</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 team">
           <div class="caption">
-            <h3>CHIN WEI WU</h3>
-            <p>SubT Intern Student</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 team">
-          <div class="caption">
-            <h3>TZE TING YANG</h3>
-            <p>SubT Intern Student</p>
+            <h3>S. C. "Benson" Lee</h3>
+            <p>Communication/Blimp Robot</p>
           </div>
         </div>
       </div>
@@ -506,86 +438,26 @@ The proposed communication system comprises mesh WiFi with XBee and UWB communic
       <div id="row">
         <div class="col-md-3 col-sm-6 team">
           <div class="caption">
-            <h3>SHENG CHIEH CHUANG</h3>
-            <p>SubT Intern Student</p>
+            <h3>Daniel Huang</h3>
+            <p>Blimp Robot, Team Co-Lead</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 team">
           <div class="caption">
-            <h3>YU WEI CHEN</h3>
-            <p>SubT Intern Student</p>
+            <h3>Andy Ser</h3>
+            <p>Perception Lead</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 team">
           <div class="caption">
-            <h3>TING YU LAN</h3>
-            <p>SubT Intern Student</p>
+            <h3>David Chen</h3>
+            <p>UGV Lead</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 team">
           <div class="caption">
-            <h3>CHIEN TING CHEN</h3>
-            <p>SubT Intern Student</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 team">
-          <div class="caption">
-            <h3>CHIN WEI WU</h3>
-            <p>SubT Intern Student</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 team">
-          <div class="caption">
-            <h3>TZE TING YANG</h3>
-            <p>SubT Intern Student</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="team" class="text-center">
-  <div class="overlay">
-    <div class="container">
-      <div class="col-md-10 col-md-offset-1 section-title">
-        <h2>Intern Students</h2>
-        <hr>
-      </div>
-      <div id="row">
-        <div class="col-md-3 col-sm-6 team">
-          <div class="caption">
-            <h3>SHENG CHIEH CHUANG</h3>
-            <p>SubT Intern Student</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 team">
-          <div class="caption">
-            <h3>YU WEI CHEN</h3>
-            <p>SubT Intern Student</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 team">
-          <div class="caption">
-            <h3>TING YU LAN</h3>
-            <p>SubT Intern Student</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 team">
-          <div class="caption">
-            <h3>CHIEN TING CHEN</h3>
-            <p>SubT Intern Student</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 team">
-          <div class="caption">
-            <h3>CHIN WEI WU</h3>
-            <p>SubT Intern Student</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 team">
-          <div class="caption">
-            <h3>TZE TING YANG</h3>
-            <p>SubT Intern Student</p>
+            <h3>Sean Lu</h3>
+            <p>Localization and Mapping</p>
           </div>
         </div>
       </div>
@@ -609,7 +481,7 @@ The proposed communication system comprises mesh WiFi with XBee and UWB communic
         </div>
         <div class="col-md-3 col-sm-6 team">
           <div class="caption">
-            <h3>Tony Shiao</h3>
+            <h3>Tony Hsiao</h3>
             <p>SubT Team Member</p>
           </div>
         </div>
@@ -633,30 +505,6 @@ The proposed communication system comprises mesh WiFi with XBee and UWB communic
           </div>
 		  <div class="col-md-3 col-sm-6 team">
             <div class="caption">
-              <h3>Daniel Huang</h3>
-              <p>Tunnel Circuit UAV Lead</p>
-            </div>
-          </div>
-		  <div class="col-md-3 col-sm-6 team">
-            <div class="caption">
-              <h3>Andy Ser</h3>
-              <p>Tunnel Circuit Perception Lead</p>
-            </div>
-          </div>
-		  <div class="col-md-3 col-sm-6 team">
-            <div class="caption">
-              <h3>David Chen</h3>
-              <p>Tunnel Circuit UGV Lead</p>
-            </div>
-          </div>
-		  <div class="col-md-3 col-sm-6 team">
-            <div class="caption">
-              <h3>Sean Lu</h3>
-              <p>Tunnel Circuit Team Member</p>
-            </div>
-          </div>
-		  <div class="col-md-3 col-sm-6 team">
-            <div class="caption">
               <h3>Lily Hsu</h3>
               <p>Tunnel Circuit Media Head</p>
             </div>
@@ -674,7 +522,105 @@ The proposed communication system comprises mesh WiFi with XBee and UWB communic
             </div>
           </div>
 		</div>
+        <div class="col-md-3 col-sm-6 team">
+          <div class="caption">
+            <h3>SHENG CHIEH CHUANG</h3>
+            <p>SubT Intern Student</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 team">
+          <div class="caption">
+            <h3>YU WEI CHEN</h3>
+            <p>SubT Intern Student</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 team">
+          <div class="caption">
+            <h3>TING YU LAN</h3>
+            <p>SubT Intern Student</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 team">
+          <div class="caption">
+            <h3>CHIEN TING CHEN</h3>
+            <p>SubT Intern Student</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 team">
+          <div class="caption">
+            <h3>CHIN WEI WU</h3>
+            <p>SubT Intern Student</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 team">
+          <div class="caption">
+            <h3>TZE TING YANG</h3>
+            <p>SubT Intern Student</p>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Advisors Section -->
+<div id="advisor" class="text-center">
+  <div class="overlay">
+    <div class="container">
+      <div class="col-md-10 col-md-offset-1 section-title">
+        <h2>Advisors</h2>
+        <hr>
+      </div>
+
+      <div id="row">
+        <div class="col-md-4 col-sm-6 team" >
+            <div class="thumbnail"><!-- style="background-color: #005;" -->
+              <div class="team-img"><img src="img/team/nick_wang.jpg" alt="..."></div>
+              <div class="caption">
+                <h3>Prof. Hsueh-Cheng 'Nick' Wang</h3>
+                <p>Department of Electrical and Computer Engineering, NCTU</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 team">
+            <div class="thumbnail">
+              <div class="team-img"><img src="img/team/jenn_hwan.jpg" alt="..."></div>
+              <div class="caption">
+                <h3>Prof. Jenn-Hwan Tarng</h3>
+                <p>Department of Communication Engineering, NCTU</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 team">
+            <div class="thumbnail">
+              <div class="team-img"><img src="img/team/kai_ten.jpg" alt="..."></div>
+              <div class="caption">
+                <h3>Prof. Kai-Ten Feng</h3>
+                <p>Department of Communication Engineering, NCTU</p>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 team">
+          <div class="thumbnail">
+            <div class="team-img"><img src="img/team/chia_hung.jpg" alt="..."></div>
+            <div class="caption">
+              <h3>Prof. Chia-Hung Tsai</h3>
+              <p>Department of Mechanical Engineering, NCTU</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 col-sm-6 team">
+          <div class="thumbnail">
+            <div class="team-img"><img src="img/team/fu_hsiang.jpg" alt="..."></div>
+            <div class="caption">
+              <h3>Prof. Fu-Hsiang Ko</h3>
+              <p>Department of Material Science and Engineering, NCTU</p>
+            </div>
+          </div>
+      </div>
+    </div>
+
     </div>
   </div>
 </div>
