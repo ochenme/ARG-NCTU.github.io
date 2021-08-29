@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="description" />
+	<meta name="keywords" content="keywords" />
+	<meta name="author" content="author" />
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td,
+		th {
+			border: 1px solid #dddddd;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #cdcdcd;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../default.css" media="screen" />
+	<title>Nick Wang at NCTU</title>
+</head>
+
+<body>
+
+	<div class="outer-container">
+
+		<div class="inner-container">
+
+			<div class="header">
+
+				<div class="title">
+					<span class="sitename"><a href="../index.html">Assistive Robotics Group</a>&nbsp;&nbsp;&nbsp;<a
+							href="../index_ch.html">機器人與輔助科技實驗室</a></span>
+				</div>
+
+			</div>
+
+			<div class="path">
+
+				<a href="../index.html">Home</a>
+				<a href="../event.html">News</a>
+				<a href="../people.html">People</a>
+				<a href="../robots.html">Robots</a>
+				<a href="../research.html">Research</a>
+				<a href="../publications.html">Publications</a>
+				<a href="../courses.html">Courses</a>
+				<a href="../materials.html">Materials</a>
+			</div>
+
+			<div class="blank">
+				<div class="wrapper-center">
+					<h0 style="text-align: center">
+						Human-to-Robot Handover via Socially-Aware End-to-End Grasping using Deep Reinforcement Learning and Human Demonstrations
+					</h0>
+				</div>
+				<br><br>
+
+				<div class="wrapper-center">
+					<button onclick="window.open('http://github.com/Alex1114/socially-aware-handover')"
+						class="button button-gray">Github</button>
+					<button onclick="location.href='#datasets'" class="button button-gray">Dataset</button>
+					<button onclick="window.open('https://drive.google.com/drive/u/3/folders/1ylBJXGe7eM66R4D1h8D3BeKrQqKx7sqR')"
+						class="button button-gray">Weight</button>
+					<button onclick="window.open('')"
+						class="button button-gray">Paper</button>
+				</div>
+
+				<h1>Abstract</h1>
+				<p>
+					Human-to-robot handover is a key capability of service robot and human robot interaction. 
+					Recent works take advantages of existing hand and object segmentation and pose estimation algorithms to generate grasps. 
+					On the other hand, end-to-end grasping directly from sensor data without object models has tremendous progress in logistic tasks, but has not been used for human-to-robot handover. 
+					However, both categories of approaches aim at grasping without potential harms, but neither considering what grasps and their trajectories may be intrusive to human users.
+					We present our socially-aware end-to-end grasping for human-to-robot handover. We first leverage existing end-to-end grasping as network backbone, and then finetune for non-invasive grasps and trajectories using sample efficient deep reinforcement learning.
+					Comprehensive evaluations are carried out against various recent baselines using multi-stage hand and object prediction and subsequent planning. 
+					We show that the proposed approach was more robust to partial occlusions, and execute smooth trajectories close to human demonstrations. 
+					A dataset of end-to-end grasping and trajectories for human-to-robot handover and all pretrained models are open access for reproducing this study and can be obtained at  
+					<a
+						href='https://arg-nctu.github.io/projects/socially-aware-handover.html'>https://arg-nctu.github.io/projects/socially-aware-handover.html</a>.
+				</p>
+
+				<div class="wrapper-center">
+					<img src="img/teaser_socially-aware.PNG" alt="teaser" height="250">
+				</div>
+
+
+
+
+				<h1>Video</h1>
+				<p></p>
+				<div class="container" align="middle">
+					<iframe src="" width="640" height="360" frameborder="0"
+						allow="autoplay; fullscreen" allowfullscreen></iframe>
+				</div>
+				<br><br><br>
+
+				<h1>End-to-end fine-tuning</h1>
+				<p>The success rate of using the end-to-end model in the handover context.</p>
+				<div class="wrapper-center">
+					<img src="img/medical-end-to-end_fine-tuning.jpg" height="400">
+				</div>
+				<br><br><br>
+
+				<h1>Approach</h1>
+				<p>An overview of HERoS framework. We uses ResNet-101 as the main network architecture of HERoS. 
+				   Given RGB-D images rotated 8 times as input, the system predicts 8 pixel-wise affordance maps. 
+				   Then select the the largest area of affordance maps as the rotation angle of the gripper (orientation). 
+				   Finally, project the affordance to the original RGB image combined with the depth information to obtain the pose of the grasp. 
+				   The difference between the functional grasping block and the socially aware block is whether human habits are taken into consideration, and the model learns human grasping preferences through reinforcement learning.</p>
+				<div class="wrapper-center">
+					<img src="img/medical_approach_2.PNG" height="250">
+				</div>
+				<br><br><br>
+
+				<h1>Socially aware</h1>
+				<div class="wrapper-center">
+					<p>Socially aware system architecture diagram.When the image is received, it will control the manipulator to two different perspectives for prediction, 
+					   select the perspective with a larger Q-value to perform the grasping, and get the reward through the human label after the grasping is completed, 
+					   so that the agent can learn human preference.</p>
+					<img src="img/medical-socially_aware.PNG" width="650">
+					<br><br><br>
+					<p>There are Type I and Type II preferences for picking objects. 
+					   Type I is the picking in the middle of objects, and Type II is picking the top of objects, using different perspectives to predict objects, 
+					   and finally selecting the grasping perspective preferred by humans. The figure is the preferences definition in the experiment.</p>
+					<img src="img/medical-socially_experiment.PNG" width="400">
+				</div>
+				<br><br><br>
+
+
+				<h1 id="datasets">Datasets</h1>
+
+				<h2>Handover Dataset</h2>
+				<p>(1) water cup, (2) small medicine cup, (3) medicine bottle, (4) medicine box, (5) SPAM, (6) banana, (7) lemon, (8) strawberry, (9) peach, (10) pear, (11) plum, (12) mustard, (13) sugar. Fruit objects were plastic.</p>
+				<div class="wrapper-center">
+					<img src="img/medical-dataset-1.png" height="400">
+				</div>
+				<br><br><br>
+
+				<h2>Handover Dataset</h2>
+				<p>The first row (a) contains example RGB image data captured from the Intel RealSense D435 camera. 
+				   The second row (b) contains example human-annotated grasp zone labels. Green is the area where the object can be grasped by the manipulator. 
+				   The last row (c) contains a visualization of RGB image and label. 
+				   The label is made up of very dense lines, usually starts at a distance of 2 centimeters from the hand and ends at 2 centimeters before the end of the objects.</p>
+				<div class="wrapper-center">
+					<img src="img/medical-dataset-2.PNG" height="400">
+				</div>
+				<br><br><br>
+
+				<a
+					href="https://drive.google.com/drive/u/3/folders/1MvhW_dXBY-yzZxmUAApb_ICtkzRiZcGm">click
+					here to download dataset.</a>
+
+
+
+				<!-- <h2>
+					<ul style="margin-left: 40px">
+						<li style="list-style:circle; font-size:18px">rosbag</li>
+						<p>The original recorded format. All data are recorded in realtime. If user are familiar with
+							ROS. There is <a href="http://wiki.ros.org/rosbag">rosbga API</a> to extract data from bags
+							or using <a href="http://wiki.ros.org/rosbag/Commandline">commandline</a> to play data in
+							realtime. <a href="http://wiki.ros.org/rviz">Rviz</a> can help the visualization.
+							<br><br>
+							<a
+								href="https://drive.google.com/drive/folders/1KSccVqYDShI_Acfk8F4k_N76aVVPdN4o?usp=sharing">click
+								here to download all rosbags.</a>
+						</p>
+
+						<li style="list-style:circle; font-size:18px">hdf5</li>
+						<p>Data in rosbags has been transfer to numpy arrays, stored in hdf5 format and
+							organized to 5Hz framerate. Including following data:
+							<li style="list-style:circle;margin-left: 40px">LiDAR <br> 3D point cloud <br>1D range
+							</li>
+							<li style="list-style:circle;margin-left: 40px">mmWave radar <br> 3D point cloud <br>1D
+								range</li>
+							<li style="list-style:circle;margin-left: 40px">human demonstration action</li>
+							<li style="list-style:circle;margin-left: 40px">wheel oddmetry</li>
+							<br>
+							User can use <a href="https://github.com/ganymede42/h5pyViewer">h5pyViewer</a> to check the
+							data.
+							<br>
+						<div class="wrapper-center">
+							<img src="img/hdf5-example.png" alt="hdf5-example" height="300">
+						</div>
+
+						<br><br>
+						<a href="https://drive.google.com/drive/u/1/folders/10W1_F36Ew2dd1L2lq8xgZyIHGZCsMBit">click
+							here to download all hdf5 data</a>
+						</p>
+
+						<li style="list-style:circle; font-size:18px">pickle</li>
+						<p>
+							Data in hdf5 dataset has been re-organized to transition style and calculated the reward
+							inorder to train RL
+							algorithm. Every pkl file contain 512 frame of transition data. Each transition contains the
+							following data.
+							<li style="list-style:circle;margin-left: 40px">mm_scan</li>
+							<li style="list-style:circle;margin-left: 40px">laser_scan</li>
+							<li style="list-style:circle;margin-left: 40px">pos_diff</li>
+							<li style="list-style:circle;margin-left: 40px">action</li>
+							<li style="list-style:circle;margin-left: 40px">reward</li>
+							<li style="list-style:circle;margin-left: 40px">next_mm_scan</li>
+							<li style="list-style:circle;margin-left: 40px">next_laser_scan</li>
+							<li style="list-style:circle;margin-left: 40px">next_pos_diff</li>
+							<br><br>
+							<a href="https://drive.google.com/drive/u/1/folders/1FMkjvJl070_LxqcNBFeBedPsZFoy0VNe">click
+								here to download all transition data</a>
+						</p>
+
+						<li style="list-style:circle; font-size:18px">All data</li>
+						<div class="wrapper-center">
+							<iframe
+								src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQobaKmi7cr2O4abUyIKbkUFovtQmjz6AFpLUb6LX53qvBen18g5iMI6KiQR9HSEDPOaT6cchKyOi1-/pubhtml?gid=1072056062&amp;single=true&amp;widget=true&amp;headers=false"
+								width="611" height="910" frameborder="">
+							</iframe>
+						</div>
+					</ul>
+				</h2> -->
+
+
+
+				<div class="clearer">&nbsp;</div>
+
+			</div>
+
+			<div class="footer">
+
+				<span class="left">
+					&copy; H.C. Wang
+				</span>
+
+				<!-- <span class="right"><a href="http://templates.arcsin.se/">Website template</a> by <a
+						href="http://arcsin.se/">Arcsin</a></span> -->
+
+				<div class="clearer"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
