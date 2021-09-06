@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="description" />
+	<meta name="keywords" content="keywords" />
+	<meta name="author" content="author" />
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td,
+		th {
+			border: 1px solid #dddddd;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #cdcdcd;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../default.css" media="screen" />
+	<title>Nick Wang at NCTU</title>
+</head>
+
+<body>
+
+	<div class="outer-container">
+
+		<div class="inner-container">
+
+			<div class="header">
+
+				<div class="title">
+					<span class="sitename"><a href="../index.html">Assistive Robotics Group</a>&nbsp;&nbsp;&nbsp;<a
+							href="../index_ch.html">機器人與輔助科技實驗室</a></span>
+				</div>
+
+			</div>
+
+			<div class="path">
+
+				<a href="../index.html">Home</a>
+				<a href="../event.html">News</a>
+				<a href="../people.html">People</a>
+				<a href="../robots.html">Robots</a>
+				<a href="../research.html">Research</a>
+				<a href="../publications.html">Publications</a>
+				<a href="../courses.html">Courses</a>
+				<a href="../materials.html">Materials</a>
+			</div>
+
+			<div class="blank">
+				<div class="wrapper-center">
+					<h0 style="text-align: center">
+						Sample Efficient Reinforcement Learning with Curriculum Learningfor Environment Generalization and Multi-Robot Transfer ofGoal Navigation
+					</h0>
+				</div>
+				<br><br>
+
+				<div class="wrapper-center">
+					<button class="button button-gray">Github</button>
+					<button class="button button-gray">Dataset</button>
+					<button class="button button-gray">Paper</button>
+				</div>
+
+				<h1>Abstract</h1>
+				<p>
+					Deep reinforcement learning (RL) has been success-fully  applied  to  a  variety  of  tasks,  including  learning  collision-free navigation policies. However, the sample efficient explorationchallenges and generalization issues prevent deep RL algorithmsto  quickly  choosing  a  policy  that  allows  an  agent  to  discoverhigh-reward regions of the state space. Recent methods are stilllimited  by  learning  every  task  from  scratch.  Learning  fromdemonstrations of human inputs or expert policies have been usedto tackle the challenges, but it is still an open question whether alearnt navigation policy could be generalized to another environ-ment or transferred to another type of vehicles. In response, wepropose a simple approach of curriculum learning to finetune themodel  trained  from  an  auxiliary  environment  within  a  certaincomputation  budgets.  We  showed  that  1)  the  finetuned  policiesperform  better  in  various  environments,  compared  to  the  onetrained  from  scratch.  The  environments  represent  challengingscenarios,  such  as  passing  narrow  gate,  avoiding  circling,  oruneven  terrains.  2)  the  pretrained  policy  could  be  adapted  toa  variety  of  robots,  representing  different  size  and  dynamics.  Areal robot experiment was carried out and demonstrated that thefinetuned policies could work in real world scenarios. All modelsare  open  access  for  reproducing this  study and  can  be obtained at
+					<a href='https://arg-nctu.github.io/projects/drl-transfer.html'>https://arg-nctu.github.io/projects/drl-transfer.html</a>.
+				</p>
+
+				<div class="wrapper-center">
+					<img src="img/teaser-drl-transfer.jpg" alt="hdf5-example" height="250">
+				</div>
+
+
+
+
+				<!-- <h1>Video</h1>
+				<p></p>
+				<div class="container" align="middle">
+					<iframe src="https://player.vimeo.com/video/468839536" width="640" height="360" frameborder="0"
+						allow="autoplay; fullscreen" allowfullscreen></iframe>
+				</div>
+				<br><br><br>
+
+				<h1>Generative reconstruction</h1>
+				<p>range were ploted on cartesian coordinate system</p>
+				<div class="wrapper-center">
+					<img src="img/demo.png" height="400">
+				</div>
+				<br><br><br>
+
+				<h1>Contrastive learning</h1>
+
+				<div class="wrapper-center">
+					<p>Contrastive learning structure</p>
+					<img src="img/contrastive-v3.png" width="400">
+					<br><br><br>
+					<p>The network is trained for 20 episodes with
+						our dataset</p>
+					<img src="img/mm_loss.png" width="400">
+				</div>
+				<br><br><br>
+
+				<h1>Deep reinforcement learning</h1>
+
+				<div class="wrapper-center">
+					<p>model structure</p>
+					<img src="img/model.jpeg" width="550">
+					<br><br><br>
+					<p>Episode return reward with standard deviation of agent training using RDPG and DDPG.</p>
+					<img src="img/reward.png" width="550">
+					<br><br><br>
+					<p>Performance evaluation of agents trained using different RL algorithms. We considered a safe
+						navigation without collision a trial. A trial was terminated when the robot collided walls or
+						obstacles, reached to a maximum distance of 1.2 kilometers, or manually stopped by human
+						intervention. The travelled distance was estimated by the wheel encoders provided by the
+						Clearpath Husky robots.</p>
+					<img src="img/rl_eval.png" width="400">
+				</div>
+				<br><br><br>
+
+
+				<h1 id="datasets">Datasets</h1>
+				<h2>
+					<ul style="margin-left: 40px">
+						<li style="list-style:circle; font-size:18px">rosbag</li>
+						<p>The original recorded format. All data are recorded in realtime. If user are familiar with
+							ROS. There is <a href="http://wiki.ros.org/rosbag">rosbga API</a> to extract data from bags
+							or using <a href="http://wiki.ros.org/rosbag/Commandline">commandline</a> to play data in
+							realtime. <a href="http://wiki.ros.org/rviz">Rviz</a> can help the visualization.
+							<br><br>
+							<a
+								href="https://drive.google.com/drive/folders/1KSccVqYDShI_Acfk8F4k_N76aVVPdN4o?usp=sharing">click
+								here to download all rosbags.</a>
+						</p>
+
+						<li style="list-style:circle; font-size:18px">hdf5</li>
+						<p>Data in rosbags has been transfer to numpy arrays, stored in hdf5 format and
+							organized to 5Hz framerate. Including following data:
+							<li style="list-style:circle;margin-left: 40px">LiDAR <br> 3D point cloud <br>1D range
+							</li>
+							<li style="list-style:circle;margin-left: 40px">mmWave radar <br> 3D point cloud <br>1D
+								range</li>
+							<li style="list-style:circle;margin-left: 40px">human demonstration action</li>
+							<li style="list-style:circle;margin-left: 40px">wheel oddmetry</li>
+							<br>
+							User can use <a href="https://github.com/ganymede42/h5pyViewer">h5pyViewer</a> to check the
+							data.
+							<br>
+						<div class="wrapper-center">
+							<img src="img/hdf5-example.png" alt="hdf5-example" height="300">
+						</div>
+
+						<br><br>
+						<a href="https://drive.google.com/drive/u/1/folders/10W1_F36Ew2dd1L2lq8xgZyIHGZCsMBit">click
+							here to download all hdf5 data</a>
+						</p>
+
+						<li style="list-style:circle; font-size:18px">pickle</li>
+						<p>
+							Data in hdf5 dataset has been re-organized to transition style and calculated the reward
+							inorder to train RL
+							algorithm. Every pkl file contain 512 frame of transition data. Each transition contains the
+							following data.
+							<li style="list-style:circle;margin-left: 40px">mm_scan</li>
+							<li style="list-style:circle;margin-left: 40px">laser_scan</li>
+							<li style="list-style:circle;margin-left: 40px">pos_diff</li>
+							<li style="list-style:circle;margin-left: 40px">action</li>
+							<li style="list-style:circle;margin-left: 40px">reward</li>
+							<li style="list-style:circle;margin-left: 40px">next_mm_scan</li>
+							<li style="list-style:circle;margin-left: 40px">next_laser_scan</li>
+							<li style="list-style:circle;margin-left: 40px">next_pos_diff</li>
+							<br><br>
+							<a href="https://drive.google.com/drive/u/1/folders/1FMkjvJl070_LxqcNBFeBedPsZFoy0VNe">click
+								here to download all transition data</a>
+						</p>
+
+						<li style="list-style:circle; font-size:18px">All data</li>
+						<div class="wrapper-center">
+							<iframe
+								src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQobaKmi7cr2O4abUyIKbkUFovtQmjz6AFpLUb6LX53qvBen18g5iMI6KiQR9HSEDPOaT6cchKyOi1-/pubhtml?gid=1072056062&amp;single=true&amp;widget=true&amp;headers=false"
+								width="611" height="910" frameborder="">
+							</iframe>
+						</div>
+					</ul>
+				</h2> -->
+
+
+
+				<div class="clearer">&nbsp;</div>
+
+			</div>
+
+			<div class="footer">
+
+				<span class="left">
+					&copy; H.C. Wang
+				</span>
+
+				<!-- <span class="right"><a href="http://templates.arcsin.se/">Website template</a> by <a
+						href="http://arcsin.se/">Arcsin</a></span> -->
+
+				<div class="clearer"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
