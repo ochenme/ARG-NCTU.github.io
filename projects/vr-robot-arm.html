@@ -63,138 +63,81 @@
 				<br><br>
 
 				<div class="wrapper-center">
-					<button class="button button-gray">Github</button>
-					<button class="button button-gray">Dataset</button>
+					<button onclick="window.open('https://github.com/ARG-NCTU/GMU_NCTU_Unity_ROS')"
+					 class="button button-gray">Github</button>
+
 					<button class="button button-gray">Paper</button>
 				</div>
 
 				<h1>Abstract</h1>
 				<p>
-					We present Work-from-Home Virtual Reality (WFH-VR), an easy-to-deploy, virtual reality-based teleoperation system for controlling a robot arm. Our system is constructed using a consumer-grade virtual reality device (an Oculus Quest 2) and a low-cost robot arm (a LoCoBot), so it can be easily replicated and set up.
+					We present Work-from-Home Virtual Reality (WFH-VR), an easy-to-deploy, virtual reality-based teleoperation system for controlling a robot arm. 
+					Our system is constructed using a consumer-grade virtual reality device (an Oculus Quest 2) and a low-cost robot arm (a LoCoBot), 
+					so it can be easily replicated and set up.
 					<a href='https://arg-nctu.github.io/projects/vr-robot-arm.html'>https://arg-nctu.github.io/projects/vr-robot-arm.html</a>.
 				</p>
 
 				<div class="wrapper-center">
-					<img src="img/vr-robot-arm.jpg" alt="hdf5-example" height="250">
+					<img src="img/vr-teaser.JPG" alt="motivation" height="250">
 				</div>
-
-
-
 
 				<!-- <h1>Video</h1>
 				<p></p>
 				<div class="container" align="middle">
-					<iframe src="https://player.vimeo.com/video/468839536" width="640" height="360" frameborder="0"
+					<iframe src="https://drive.google.com/file/d/1t1PvIOQLo_maBjhi2n2PPxkjkESZvGhb/view" width="640" height="360" frameborder="0"
 						allow="autoplay; fullscreen" allowfullscreen></iframe>
 				</div>
-				<br><br><br>
+				<br><br><br> -->
 
-				<h1>Generative reconstruction</h1>
-				<p>range were ploted on cartesian coordinate system</p>
+				<h1>System Overview</h1>
+				<p>
+					The system consists of two major operations flows: control the robot arm and synchronize the virtual objects in virtual reality with real-world objects. 
+					The Unity PUN2 is responsible for the communication.
+
+					In the virtual interface, the objects are replicates (by 3D reconstruction or CAD modeling) of the real-world objects at the physical workplace. 
+					To synchronize the virtual objects with the real-world objects, pose estimation is continuously performed by capturing RGB images with the camera attached to the base of the real robot using Deep Object Pose Estimation (DOPE). 
+					DOPE estimates the pose parameters (positions and orientations) of the real-world objects for updating the virtual objects.
+					Also, the interface includes a video streamed from the workplace to the virtual reality scene via PUN2.
+					To control the real robot arm and gripper, the user will guide a virtual robot's arm identical to the arm at the physical workplace, having the same joints and dimensions. 
+					Based on the virtual end effector's position, our system computes the joints states of the virtual robot arm, which, upon confirmation by the user, are published to the physical workplace's Rosbridge server to update the orientations of the real robot arm.
+
+				</p>
 				<div class="wrapper-center">
-					<img src="img/demo.png" height="400">
+					<img src="img/vr-system.JPG" height="280">
 				</div>
 				<br><br><br>
 
-				<h1>Contrastive learning</h1>
-
-				<div class="wrapper-center">
-					<p>Contrastive learning structure</p>
-					<img src="img/contrastive-v3.png" width="400">
-					<br><br><br>
-					<p>The network is trained for 20 episodes with
-						our dataset</p>
-					<img src="img/mm_loss.png" width="400">
-				</div>
+				<h1>VR Robot Teleoperation across the Globe</h1>
+				<p>
+					We tested the proposed VR teleoperation platform between two universities across the globe. 
+					The VR side was set up at George Mason University in Virginia, USA. 
+					The real robot side was set up at National Yang Ming Chiao Tung University in Taiwan.
+					The user in USA put on a VR headset and controlled a LoCoBot robot arm in Taiwan.
+					<a	href="https://drive.google.com/file/d/1OxT_C6yNPuYxRM3L7TCHr1k2Qo9sju1w/view">click here to watch the demo.</a>
+				</p>
 				<br><br><br>
 
-				<h1>Deep reinforcement learning</h1>
+				<h1>EXPERIMENTS: Set a Dining Table</h1>
+				<p>
+					The experiment tasks are inspired by the multi-year IROS Robotic Grasping and Manipulation Competition - Service Robot Track. 
+					The objects we used in the experiments are also inspired by the YCB objects and common objects on a dining table. 
+					Due to the hardware payload and gripper limitations, we chose to scale down the objects by modeling CAD models followed by 3D printing. 
+					Such modifications also considered easy replication of our work using LoCoBot hardware. 
+					All CAD models will be publicly available 
+					<a	href="https://drive.google.com/drive/u/1/folders/1hcBicPxxMe2unmXEQiVnBEpCg8TF1eYC">here.</a>
+				</p>
 
+				<p>
+					Each task we evaluate the performance by counting the scores.
+					We recruited 10 novice users to use our VR teleoperation system for the 5 tasks feasible for our hardware setup.
+					The result scores are 62pts , 87pts , 91.5 pts, 85 pts and 83 pts for each tasks.
+				</p>
 				<div class="wrapper-center">
-					<p>model structure</p>
-					<img src="img/model.jpeg" width="550">
-					<br><br><br>
-					<p>Episode return reward with standard deviation of agent training using RDPG and DDPG.</p>
-					<img src="img/reward.png" width="550">
-					<br><br><br>
-					<p>Performance evaluation of agents trained using different RL algorithms. We considered a safe
-						navigation without collision a trial. A trial was terminated when the robot collided walls or
-						obstacles, reached to a maximum distance of 1.2 kilometers, or manually stopped by human
-						intervention. The travelled distance was estimated by the wheel encoders provided by the
-						Clearpath Husky robots.</p>
-					<img src="img/rl_eval.png" width="400">
+					<img src="img/vr-tasks.JPG" height="250">
 				</div>
 				<br><br><br>
+				
 
-
-				<h1 id="datasets">Datasets</h1>
-				<h2>
-					<ul style="margin-left: 40px">
-						<li style="list-style:circle; font-size:18px">rosbag</li>
-						<p>The original recorded format. All data are recorded in realtime. If user are familiar with
-							ROS. There is <a href="http://wiki.ros.org/rosbag">rosbga API</a> to extract data from bags
-							or using <a href="http://wiki.ros.org/rosbag/Commandline">commandline</a> to play data in
-							realtime. <a href="http://wiki.ros.org/rviz">Rviz</a> can help the visualization.
-							<br><br>
-							<a
-								href="https://drive.google.com/drive/folders/1KSccVqYDShI_Acfk8F4k_N76aVVPdN4o?usp=sharing">click
-								here to download all rosbags.</a>
-						</p>
-
-						<li style="list-style:circle; font-size:18px">hdf5</li>
-						<p>Data in rosbags has been transfer to numpy arrays, stored in hdf5 format and
-							organized to 5Hz framerate. Including following data:
-							<li style="list-style:circle;margin-left: 40px">LiDAR <br> 3D point cloud <br>1D range
-							</li>
-							<li style="list-style:circle;margin-left: 40px">mmWave radar <br> 3D point cloud <br>1D
-								range</li>
-							<li style="list-style:circle;margin-left: 40px">human demonstration action</li>
-							<li style="list-style:circle;margin-left: 40px">wheel oddmetry</li>
-							<br>
-							User can use <a href="https://github.com/ganymede42/h5pyViewer">h5pyViewer</a> to check the
-							data.
-							<br>
-						<div class="wrapper-center">
-							<img src="img/hdf5-example.png" alt="hdf5-example" height="300">
-						</div>
-
-						<br><br>
-						<a href="https://drive.google.com/drive/u/1/folders/10W1_F36Ew2dd1L2lq8xgZyIHGZCsMBit">click
-							here to download all hdf5 data</a>
-						</p>
-
-						<li style="list-style:circle; font-size:18px">pickle</li>
-						<p>
-							Data in hdf5 dataset has been re-organized to transition style and calculated the reward
-							inorder to train RL
-							algorithm. Every pkl file contain 512 frame of transition data. Each transition contains the
-							following data.
-							<li style="list-style:circle;margin-left: 40px">mm_scan</li>
-							<li style="list-style:circle;margin-left: 40px">laser_scan</li>
-							<li style="list-style:circle;margin-left: 40px">pos_diff</li>
-							<li style="list-style:circle;margin-left: 40px">action</li>
-							<li style="list-style:circle;margin-left: 40px">reward</li>
-							<li style="list-style:circle;margin-left: 40px">next_mm_scan</li>
-							<li style="list-style:circle;margin-left: 40px">next_laser_scan</li>
-							<li style="list-style:circle;margin-left: 40px">next_pos_diff</li>
-							<br><br>
-							<a href="https://drive.google.com/drive/u/1/folders/1FMkjvJl070_LxqcNBFeBedPsZFoy0VNe">click
-								here to download all transition data</a>
-						</p>
-
-						<li style="list-style:circle; font-size:18px">All data</li>
-						<div class="wrapper-center">
-							<iframe
-								src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQobaKmi7cr2O4abUyIKbkUFovtQmjz6AFpLUb6LX53qvBen18g5iMI6KiQR9HSEDPOaT6cchKyOi1-/pubhtml?gid=1072056062&amp;single=true&amp;widget=true&amp;headers=false"
-								width="611" height="910" frameborder="">
-							</iframe>
-						</div>
-					</ul>
-				</h2> -->
-
-
-
-				<div class="clearer">&nbsp;</div>
 
 			</div>
 
