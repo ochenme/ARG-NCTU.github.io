@@ -63,71 +63,90 @@
 				<br><br>
 
 				<div class="wrapper-center">
-					<button class="button button-gray">Github</button>
-					<button class="button button-gray">Dataset</button>
-					<button class="button button-gray">Paper</button>
+					<button onclick="window.open('https://github.com/ARG-NCTU/real_to_sim_env')"
+						class="button button-gray">Github</button>
+					<button class="button button-gray">Model</button>
+					<!-- <button class="button button-gray">Paper</button> -->
 				</div>
 
 				<h1>Abstract</h1>
 				<p>
-					Deep reinforcement learning (RL) has been success-fully  applied  to  a  variety  of  tasks,  including  learning  collision-free navigation policies. However, the sample efficient explorationchallenges and generalization issues prevent deep RL algorithmsto  quickly  choosing  a  policy  that  allows  an  agent  to  discoverhigh-reward regions of the state space. Recent methods are stilllimited  by  learning  every  task  from  scratch.  Learning  fromdemonstrations of human inputs or expert policies have been usedto tackle the challenges, but it is still an open question whether alearnt navigation policy could be generalized to another environ-ment or transferred to another type of vehicles. In response, wepropose a simple approach of curriculum learning to finetune themodel  trained  from  an  auxiliary  environment  within  a  certaincomputation  budgets.  We  showed  that  1)  the  finetuned  policiesperform  better  in  various  environments,  compared  to  the  onetrained  from  scratch.  The  environments  represent  challengingscenarios,  such  as  passing  narrow  gate,  avoiding  circling,  oruneven  terrains.  2)  the  pretrained  policy  could  be  adapted  toa  variety  of  robots,  representing  different  size  and  dynamics.  Areal robot experiment was carried out and demonstrated that thefinetuned policies could work in real world scenarios. All modelsare  open  access  for  reproducing this  study and  can  be obtained at
+					Robot navigation is typically carried out by avoid-
+					ing obstacles and planing drivable paths towards a desired
+					goal. However, existing navigation-only methods are limited to
+					perceive without interacting with movable obstacles. Interactive
+					navigation with mobile manipulators has been recently addressed
+					using deep reinforcement learning (RL). However, existing RL
+					approaches still are limited to simulation results. The challenges
+					of interactive navigation in real robot and environments were
+					still rather unexplored. Inspired by the DARPA Subterranean
+					(SubT) Challenge we tackle the situations while semi-dynamic
+					but movable obstacles block the way. In this paper 1) we design
+					a full mobile manipulation system PokingBot for search and
+					rescue missions with a DRL-based local planner of interactive
+					navigation. 2) We argue that by leveraging curriculum learning
+					settings of both avoid and interact with obstacles, our agent learns
+					to efficiently select a policy conducive to discovering high-reward
+					sequential continuous actions. 3) Comprehensive large-scale sim-
+					ulation in the SubT Urban Circuit Nuclear Power Plant and
+					a proof-of-concept real-world corridor experiments are carried
+					out against a state-of-the-art planner. All of the DRL models and
+					simulated environments are open access for reproducible results
+					at
 					<a href='https://arg-nctu.github.io/projects/drl-transfer.html'>https://arg-nctu.github.io/projects/drl-transfer.html</a>.
 				</p>
 
 				<div class="wrapper-center">
-					<img src="img/teaser-drl-transfer.jpg" alt="hdf5-example" height="250">
+					<img src="img/teaser-pokingbot.png" alt="hdf5-example" height="250">
 				</div>
 
 
 
 
-				<!-- <h1>Video</h1>
+				<h1>Video</h1>
 				<p></p>
 				<div class="container" align="middle">
-					<iframe src="https://player.vimeo.com/video/468839536" width="640" height="360" frameborder="0"
+					<iframe src="" width="640" height="360" frameborder="0"
 						allow="autoplay; fullscreen" allowfullscreen></iframe>
 				</div>
 				<br><br><br>
 
-				<h1>Generative reconstruction</h1>
-				<p>range were ploted on cartesian coordinate system</p>
+				<h1>System architecture</h1>
+				<!-- <p>range were ploted on cartesian coordinate system</p> -->
 				<div class="wrapper-center">
-					<img src="img/demo.png" height="400">
+					<img src="img/system_overview -pokingbot.png" width="600">
 				</div>
 				<br><br><br>
 
-				<h1>Contrastive learning</h1>
+				<h1>Curriculum reinforcement learning</h1>
 
 				<div class="wrapper-center">
-					<p>Contrastive learning structure</p>
-					<img src="img/contrastive-v3.png" width="400">
+					<p>Network architectures of D4PG</p>
+					<img src="img/D4PG_network-pokingbot.png" width="600">
 					<br><br><br>
-					<p>The network is trained for 20 episodes with
-						our dataset</p>
-					<img src="img/mm_loss.png" width="400">
+					<p>A comparison of the learning curves using different
+							training methods. The red dash line represents the switch from
+							stage one to stage two</p>
+					<img src="img/curriculum_stage.png" width="600">
 				</div>
 				<br><br><br>
 
-				<h1>Deep reinforcement learning</h1>
+				<h1>Evaluation</h1>
 
 				<div class="wrapper-center">
-					<p>model structure</p>
-					<img src="img/model.jpeg" width="550">
+					<p>Navigation in Virtual DARPA Subterranean Challenge Urban Circuit Alpha Run</p>
+					<!-- <img src="img/model.jpeg" width="550">
 					<br><br><br>
 					<p>Episode return reward with standard deviation of agent training using RDPG and DDPG.</p>
 					<img src="img/reward.png" width="550">
-					<br><br><br>
-					<p>Performance evaluation of agents trained using different RL algorithms. We considered a safe
-						navigation without collision a trial. A trial was terminated when the robot collided walls or
-						obstacles, reached to a maximum distance of 1.2 kilometers, or manually stopped by human
-						intervention. The travelled distance was estimated by the wheel encoders provided by the
-						Clearpath Husky robots.</p>
-					<img src="img/rl_eval.png" width="400">
+					<br><br><br> -->
+					<p>Trajectories of the proposed policy and a state-of-the-art planner (TARE) in the virtual SubT Urban Circuit nuclear power plant. We found that the learned interactive navigation policies could operate robustly in a large-scale, unseen environment.</p>
+					<img src="img/urban_exp3.png" width="600">
 				</div>
 				<br><br><br>
 
 
-				<h1 id="datasets">Datasets</h1>
+				<!-- <h1 id="datasets">Datasets</h1>
 				<h2>
 					<ul style="margin-left: 40px">
 						<li style="list-style:circle; font-size:18px">rosbag</li>
