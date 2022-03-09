@@ -57,24 +57,22 @@
 			<div class="blank">
 				<div class="wrapper-center">
 					<h0 style="text-align: center">
-						PokingBot: Enabling Real-world Interactive Navigation via Curriculum Reinforcement Learning for Search and Rescue Missions
+						Sample Efficient Reinforcement Learning with Curriculum Learningfor Environment Generalization and Multi-Robot Transfer ofGoal Navigation
 					</h0>
 				</div>
 				<br><br>
 
 				<div class="wrapper-center">
-					<button onclick="window.open('https://github.com/ARG-NCTU/pokingbot')"
-						class="button button-gray">Github</button>
-					<button onclick="window.open('https://drive.google.com/drive/folders/1ZND9f0_t7W-6U3cFv8tmFs50dQQBadG8')"
-						class="button button-gray">Pretrained weight</button>
 					<button onclick="window.open('https://github.com/ARG-NCTU/real_to_sim_env')"
-						class="button button-gray">Environment</button>
+						class="button button-gray">Github</button>
+					<button class="button button-gray">Model</button>
+					<!-- <button class="button button-gray">Paper</button> -->
 				</div>
 
 				<h1>Abstract</h1>
 				<p>
-					Robot navigation is typically carried out by avoiding obstacles
-					and planing drivable paths towards a desired
+					Robot navigation is typically carried out by avoid-
+					ing obstacles and planing drivable paths towards a desired
 					goal. However, existing navigation-only methods are limited to
 					perceive without interacting with movable obstacles. Interactive
 					navigation with mobile manipulators has been recently addressed
@@ -89,7 +87,8 @@
 					navigation. 2) We argue that by leveraging curriculum learning
 					settings of both avoid and interact with obstacles, our agent learns
 					to efficiently select a policy conducive to discovering high-reward
-					sequential continuous actions. 3) Comprehensive large-scale simulation in the SubT Urban Circuit Nuclear Power Plant and
+					sequential continuous actions. 3) Comprehensive large-scale sim-
+					ulation in the SubT Urban Circuit Nuclear Power Plant and
 					a proof-of-concept real-world corridor experiments are carried
 					out against a state-of-the-art planner. All of the DRL models and
 					simulated environments are open access for reproducible results
@@ -98,7 +97,7 @@
 				</p>
 
 				<div class="wrapper-center">
-					<img src="img/teaser-pokingbot.png" alt="hdf5-example" width="600">
+					<img src="img/teaser-pokingbot.png" alt="hdf5-example" height="250">
 				</div>
 
 
@@ -107,16 +106,15 @@
 				<h1>Video</h1>
 				<p></p>
 				<div class="container" align="middle">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/VYfNqkBzHa0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<!-- <iframe src="" width="640" height="360" frameborder="0"
-						allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+					<iframe src="" width="640" height="360" frameborder="0"
+						allow="autoplay; fullscreen" allowfullscreen></iframe>
 				</div>
 				<br><br><br>
 
 				<h1>System architecture</h1>
 				<!-- <p>range were ploted on cartesian coordinate system</p> -->
 				<div class="wrapper-center">
-					<img src="img/system_overviewpokingbot.png" width="600">
+					<img src="img/system_overview -pokingbot.png" width="600">
 				</div>
 				<br><br><br>
 
@@ -161,7 +159,6 @@
 								href="https://drive.google.com/drive/folders/1KSccVqYDShI_Acfk8F4k_N76aVVPdN4o?usp=sharing">click
 								here to download all rosbags.</a>
 						</p>
-
 						<li style="list-style:circle; font-size:18px">hdf5</li>
 						<p>Data in rosbags has been transfer to numpy arrays, stored in hdf5 format and
 							organized to 5Hz framerate. Including following data:
@@ -178,12 +175,10 @@
 						<div class="wrapper-center">
 							<img src="img/hdf5-example.png" alt="hdf5-example" height="300">
 						</div>
-
 						<br><br>
 						<a href="https://drive.google.com/drive/u/1/folders/10W1_F36Ew2dd1L2lq8xgZyIHGZCsMBit">click
 							here to download all hdf5 data</a>
 						</p>
-
 						<li style="list-style:circle; font-size:18px">pickle</li>
 						<p>
 							Data in hdf5 dataset has been re-organized to transition style and calculated the reward
@@ -202,7 +197,6 @@
 							<a href="https://drive.google.com/drive/u/1/folders/1FMkjvJl070_LxqcNBFeBedPsZFoy0VNe">click
 								here to download all transition data</a>
 						</p>
-
 						<li style="list-style:circle; font-size:18px">All data</li>
 						<div class="wrapper-center">
 							<iframe
