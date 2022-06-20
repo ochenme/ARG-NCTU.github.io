@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="description" />
+	<meta name="keywords" content="keywords" />
+	<meta name="author" content="author" />
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td,
+		th {
+			border: 1px solid #dddddd;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #cdcdcd;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../default.css" media="screen" />
+	<title>Nick Wang at NCTU</title>
+</head>
+
+<body>
+
+	<div class="outer-container">
+
+		<div class="inner-container">
+
+			<div class="header">
+
+				<div class="title">
+					<span class="sitename"><a href="../index.html">Assistive Robotics Group</a>&nbsp;&nbsp;&nbsp;<a
+							href="../index_ch.html">機器人與輔助科技實驗室</a></span>
+				</div>
+
+			</div>
+
+			<div class="path">
+
+				<a href="../index.html">Home</a>
+				<a href="../event.html">News</a>
+				<a href="../people.html">People</a>
+				<a href="../robots.html">Robots</a>
+				<a href="../research.html">Research</a>
+				<a href="../publications.html">Publications</a>
+				<a href="../courses.html">Courses</a>
+				<a href="../materials.html">Materials</a>
+			</div>
+
+			<div class="blank">
+				<div class="wrapper-center">
+					<h0 style="text-align: center">
+						Human-to-Robot Handover via Socially-Aware End-to-End Grasping using Deep Reinforcement Learning and Human Demonstrations
+					</h0>
+				</div>
+				<br><br>
+
+				<div class="wrapper-center">
+					<button onclick="window.open('https://github.com/ARG-NCTU/mm-medical')"
+						class="button button-gray">Github</button>
+					<button onclick="location.href='#datasets'" class="button button-gray">Dataset</button>
+					<button onclick="window.open('https://drive.google.com/drive/u/3/folders/1ylBJXGe7eM66R4D1h8D3BeKrQqKx7sqR')"
+						class="button button-gray">Pre-trained Weight</button>
+					<button onclick="window.open('')"
+						class="button button-gray">Paper</button>
+				</div>
+
+				<h1>Abstract</h1>
+				<p>
+					Human-to-robot handover is a key capability of service robot and human robot interaction. 
+					Recent works take advantages of existing hand and object segmentation and pose estimation algorithms to generate grasps. 
+					On the other hand, end-to-end grasping directly from sensor data without object models has tremendous progress in logistic tasks, but has not been used for human-to-robot handover. 
+					However, both categories of approaches aim at grasping without potential harms, but neither considering what grasps and their trajectories may be intrusive to human users.
+					We present our socially-aware end-to-end grasping for human-to-robot handover. We first leverage existing end-to-end grasping as network backbone, and then finetune for non-invasive grasps and trajectories using sample efficient deep reinforcement learning.
+					Comprehensive evaluations are carried out against various recent baselines using multi-stage hand and object prediction and subsequent planning. 
+					We show that the proposed approach was more robust to partial occlusions, and execute smooth trajectories close to human demonstrations. 
+					A dataset of end-to-end grasping and trajectories for human-to-robot handover and all pretrained models are open access for reproducing this study and can be obtained at  
+					<a
+						href='https://arg-nctu.github.io/projects/socially-aware-handover.html'>https://arg-nctu.github.io/projects/socially-aware-handover.html</a>.
+				</p>
+
+				<div class="wrapper-center">
+					<img src="img/medical_teaser.PNG" alt="teaser" height="400">
+				</div>
+
+
+
+
+				<h1>Video</h1>
+				<p></p>
+				<div class="container" align="middle">
+					<iframe src="https://player.vimeo.com/video/600946633?h=bb3fc46395" width="640" height="360" frameborder="0"
+						allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<br><br><br>
+
+				<h1>End-to-end fine-tuning</h1>
+				<p>Success rate of end-to-end model in handovers. Objects were first grasped in a box. 
+					Due to the consistent background and the lack of human hands, the success rate was 77.5%. 
+					Next, the object was held in a human hand and handover was performed; the success rate was reduced to 16.25%. 
+					After depth processing, the success rate increased to 53.75%. In addition to depth processing, we tried improving only the annotation method; the success rate increased to 67.5%. Finally, we propose an approach combining processing depth and the annotation method; the success rate increased to 93.75%.</p>
+				<div class="wrapper-center">
+					<img src="img/medical-end-to-end_fine-tuning.jpg" height="400">
+				</div>
+				<br><br><br>
+
+				<h1>Approach</h1>
+				<p>An overview of HERoS framework. We uses ResNet-101 as the main network architecture of HERoS. 
+				   Given RGB-D images rotated 8 times as input, the system predicts 8 pixel-wise affordance maps. 
+				   Then select the the largest area of affordance maps as the rotation angle of the gripper (orientation). 
+				   Finally, project the affordance to the original RGB image combined with the depth information to obtain the pose of the grasp. 
+				   The difference between the functional grasping block and the socially aware block is whether human habits are taken into consideration, and the model learns human grasping preferences through reinforcement learning.</p>
+				<div class="wrapper-center">
+					<img src="img/medical_approach_2.PNG" height="250">
+				</div>
+				<br><br><br>
+
+				<h1>Grasp Choice</h1>
+				<div class="wrapper-center">
+					<p>Grasp choice system architecture diagram. When the image is received, it will control the manipulator from two different perspectives for prediction, selecting the perspective with a larger Q-value to perform the grasping, and receives the reward through the human label after the grasping is completed, so that the agent can learn human preferences.</p>
+					<img src="img/medical-socially_aware.PNG" width="650">
+					<br><br><br>
+					<p>There are Grasp Type  I and Grasp Type II preferences for picking objects. Grasp Type I is picking the middle of objects, and Grasp Type II is picking the top of objects, using different perspectives to predict objects, and finally selecting the grasping perspective preferred by humans.</p>
+					<img src="img/medical-socially_experiment.PNG" width="400">
+				</div>
+				<br><br><br>
+
+
+				<h1 id="datasets">Datasets</h1>
+
+				<h2>Handover Dataset</h2>
+				<p>(1) water cup, (2) small medicine cup, (3) medicine bottle, (4) medicine box, (5) SPAM, (6) banana, (7) lemon, (8) strawberry, (9) peach, (10) pear, (11) plum, (12) mustard, (13) sugar. Fruit objects were plastic.</p>
+				<div class="wrapper-center">
+					<img src="img/medical-dataset-1.png" height="400">
+				</div>
+				<br><br><br>
+
+				<p>Comparison table of three datasets of HERoS. HERoS-Af: subset for predicting affordance; HERoS-Ch: subset for learning grasp choice; HERoS-Tr: subset for studying trajectories of human demonstrations.</p>
+				<div class="wrapper-center">
+					<img src="img/handover-dataset.png" height="130">
+				</div>
+				<br><br><br>
+
+				<h2>HERoS-Affordance-Prediction</h2>
+				<a
+				href="https://drive.google.com/file/d/13vRFPhruy37sk3Tzo4Z6dyw--TFWSIuH/view?usp=sharing">click here to download HERoS-Af dataset.</a>
+
+				<h2>HERoS-Grasp-Choice</h2>
+				<a
+				href="https://drive.google.com/file/d/11msoIZqSIgLuL9sEvXzXVHcpn5zOBrN9/view?usp=sharing">click here to download HERoS-Ch dataset.</a>
+
+				<h2>HERoS-Trajectories</h2>
+				<a
+				href="https://drive.google.com/file/d/19wq5iy8EB3XBzr0wJyQG-C4-LRB0Lrzc/view?usp=sharing">click here to download HERoS-Tr dataset.</a>
+
+				<h2>Dataset Description</h2>
+				<a
+				href="https://docs.google.com/document/d/1EBUff3kaGFE9QXFRdUeilCbgAC3Sc67t/edit?usp=sharing&ouid=114003070294845923127&rtpof=true&sd=true">click here to download dataset description.</a>
+
+
+
+
+
+
+
+
+				<div class="clearer">&nbsp;</div>
+
+			</div>
+
+			<div class="footer">
+
+				<span class="left">
+					&copy; H.C. Wang
+				</span>
+
+				<!-- <span class="right"><a href="http://templates.arcsin.se/">Website template</a> by <a
+						href="http://arcsin.se/">Arcsin</a></span> -->
+
+				<div class="clearer"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
