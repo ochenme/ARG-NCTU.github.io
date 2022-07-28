@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="description" />
+	<meta name="keywords" content="keywords" />
+	<meta name="author" content="author" />
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td,
+		th {
+			border: 1px solid #dddddd;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #cdcdcd;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../default.css" media="screen" />
+	<title>Nick Wang at NCTU</title>
+</head>
+
+<body>
+
+	<div class="outer-container">
+
+		<div class="inner-container">
+
+			<div class="header">
+
+				<div class="title">
+					<span class="sitename"><a href="../index.html">Assistive Robotics Group</a>&nbsp;&nbsp;&nbsp;<a
+							href="../index_ch.html">機器人與輔助科技實驗室</a></span>
+				</div>
+
+			</div>
+
+			<div class="path">
+
+				<a href="../index.html">Home</a>
+				<a href="../event.html">News</a>
+				<a href="../people.html">People</a>
+				<a href="../robots.html">Robots</a>
+				<a href="../research.html">Research</a>
+				<a href="../publications.html">Publications</a>
+				<a href="../courses.html">Courses</a>
+				<a href="../materials.html">Materials</a>
+			</div>
+
+			<div class="blank">
+				<div class="wrapper-center">
+					<h0 style="text-align: center">
+					Curriculum Reinforcement Learning for Robot Navigation among Movable Obstacles
+					</h0>
+				</div>
+				<br><br>
+
+				<div class="wrapper-center">
+					<button onclick="window.open('https://github.com/ARG-NCTU/pokingbot')"
+						class="button button-gray">Github</button>
+					<button onclick="window.open('https://drive.google.com/drive/folders/1ZND9f0_t7W-6U3cFv8tmFs50dQQBadG8')"
+						class="button button-gray">Pretrained Weights</button>
+					<button onclick="window.open('https://github.com/ARG-NCTU/real_to_sim_env')"
+						class="button button-gray">Environments</button>
+				</div>
+
+				<h1>Abstract</h1>
+				<p>
+					Robot navigation is typically carried out by avoiding obstacles
+					and planing drivable paths towards a desired
+					goal. However, existing navigation-only methods are limited to
+					perceive without interacting with movable obstacles. Interactive
+					navigation with mobile manipulators has been recently addressed
+					using deep reinforcement learning (RL). However, existing RL
+					approaches still are limited to simulation results. The challenges
+					of interactive navigation in real robot and environments were
+					still rather unexplored. Inspired by the DARPA Subterranean
+					(SubT) Challenge we tackle the situations while semi-dynamic
+					but movable obstacles block the way. In this paper 1) we design
+					a full mobile manipulation system PokingBot for search and
+					rescue missions with a DRL-based local planner of interactive
+					navigation. 2) We argue that by leveraging curriculum learning
+					settings of both avoid and interact with obstacles, our agent learns
+					to efficiently select a policy conducive to discovering high-reward
+					sequential continuous actions. 3) Comprehensive large-scale simulation in the SubT Urban Circuit Nuclear Power Plant and
+					a proof-of-concept real-world corridor experiments are carried
+					out against a state-of-the-art planner. All of the DRL models and
+					simulated environments are open access for reproducible results
+					at
+					<a href='https://arg-nctu.github.io/projects/drl-transfer.html'>https://arg-nctu.github.io/projects/drl-transfer.html</a>.
+				</p>
+
+				<div class="wrapper-center">
+					<img src="img/teaser-pokingbot.png" alt="hdf5-example" width="600">
+				</div>
+
+
+
+
+				<h1>Video</h1>
+				<p></p>
+				<div class="container" align="middle">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/PJhaLIA5T2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<br><br><br>
+
+				<h1>System architecture</h1>
+				<!-- <p>range were ploted on cartesian coordinate system</p> -->
+				<div class="wrapper-center">
+					<img src="img/system_overviewpokingbot.png" width="600">
+				</div>
+				<br><br><br>
+
+				<h1>Curriculum reinforcement learning</h1>
+
+				<div class="wrapper-center">
+					<p>Network architectures of D4PG</p>
+					<img src="img/D4PG_network-pokingbot.png" width="600">
+					<br><br><br>
+					<p>A comparison of the learning curves using different
+							training methods. The red dash line represents the switch from
+							stage one to stage two</p>
+					<img src="img/curriculum_stage.png" width="600">
+				</div>
+				<br><br><br>
+
+				<h1>Evaluation</h1>
+
+				<div class="wrapper-center">
+					<p>Navigation in Virtual DARPA Subterranean Challenge Urban Circuit Alpha Run</p>
+					<!-- <img src="img/model.jpeg" width="550">
+					<br><br><br>
+					<p>Episode return reward with standard deviation of agent training using RDPG and DDPG.</p>
+					<img src="img/reward.png" width="550">
+					<br><br><br> -->
+					<p>Trajectories of the proposed policy and a state-of-the-art planner (TARE) in the virtual SubT Urban Circuit nuclear power plant. We found that the learned interactive navigation policies could operate robustly in a large-scale, unseen environment.</p>
+					<img src="img/urban_exp3.png" width="600">
+				</div>
+				<br><br><br>
+
+
+				<!-- <h1 id="datasets">Datasets</h1>
+				<h2>
+					<ul style="margin-left: 40px">
+						<li style="list-style:circle; font-size:18px">rosbag</li>
+						<p>The original recorded format. All data are recorded in realtime. If user are familiar with
+							ROS. There is <a href="http://wiki.ros.org/rosbag">rosbga API</a> to extract data from bags
+							or using <a href="http://wiki.ros.org/rosbag/Commandline">commandline</a> to play data in
+							realtime. <a href="http://wiki.ros.org/rviz">Rviz</a> can help the visualization.
+							<br><br>
+							<a
+								href="https://drive.google.com/drive/folders/1KSccVqYDShI_Acfk8F4k_N76aVVPdN4o?usp=sharing">click
+								here to download all rosbags.</a>
+						</p>
+
+						<li style="list-style:circle; font-size:18px">hdf5</li>
+						<p>Data in rosbags has been transfer to numpy arrays, stored in hdf5 format and
+							organized to 5Hz framerate. Including following data:
+							<li style="list-style:circle;margin-left: 40px">LiDAR <br> 3D point cloud <br>1D range
+							</li>
+							<li style="list-style:circle;margin-left: 40px">mmWave radar <br> 3D point cloud <br>1D
+								range</li>
+							<li style="list-style:circle;margin-left: 40px">human demonstration action</li>
+							<li style="list-style:circle;margin-left: 40px">wheel oddmetry</li>
+							<br>
+							User can use <a href="https://github.com/ganymede42/h5pyViewer">h5pyViewer</a> to check the
+							data.
+							<br>
+						<div class="wrapper-center">
+							<img src="img/hdf5-example.png" alt="hdf5-example" height="300">
+						</div>
+
+						<br><br>
+						<a href="https://drive.google.com/drive/u/1/folders/10W1_F36Ew2dd1L2lq8xgZyIHGZCsMBit">click
+							here to download all hdf5 data</a>
+						</p>
+
+						<li style="list-style:circle; font-size:18px">pickle</li>
+						<p>
+							Data in hdf5 dataset has been re-organized to transition style and calculated the reward
+							inorder to train RL
+							algorithm. Every pkl file contain 512 frame of transition data. Each transition contains the
+							following data.
+							<li style="list-style:circle;margin-left: 40px">mm_scan</li>
+							<li style="list-style:circle;margin-left: 40px">laser_scan</li>
+							<li style="list-style:circle;margin-left: 40px">pos_diff</li>
+							<li style="list-style:circle;margin-left: 40px">action</li>
+							<li style="list-style:circle;margin-left: 40px">reward</li>
+							<li style="list-style:circle;margin-left: 40px">next_mm_scan</li>
+							<li style="list-style:circle;margin-left: 40px">next_laser_scan</li>
+							<li style="list-style:circle;margin-left: 40px">next_pos_diff</li>
+							<br><br>
+							<a href="https://drive.google.com/drive/u/1/folders/1FMkjvJl070_LxqcNBFeBedPsZFoy0VNe">click
+								here to download all transition data</a>
+						</p>
+
+						<li style="list-style:circle; font-size:18px">All data</li>
+						<div class="wrapper-center">
+							<iframe
+								src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQobaKmi7cr2O4abUyIKbkUFovtQmjz6AFpLUb6LX53qvBen18g5iMI6KiQR9HSEDPOaT6cchKyOi1-/pubhtml?gid=1072056062&amp;single=true&amp;widget=true&amp;headers=false"
+								width="611" height="910" frameborder="">
+							</iframe>
+						</div>
+					</ul>
+				</h2> -->
+
+
+
+				<div class="clearer">&nbsp;</div>
+
+			</div>
+
+			<div class="footer">
+
+				<span class="left">
+					&copy; H.C. Wang
+				</span>
+
+				<!-- <span class="right"><a href="http://templates.arcsin.se/">Website template</a> by <a
+						href="http://arcsin.se/">Arcsin</a></span> -->
+
+				<div class="clearer"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
