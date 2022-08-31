@@ -71,33 +71,29 @@
 				
 				<div class="fullcontent">
 					<div class="teaser">
-						<img src="projects/img/teaser-pokingbot.png" width="210" border="0">
+						<img src="projects/img/teaser-pokingbot-new.png" width="210" border="0">
 					</div>
 					<div class="proj">
-						<h1>PokingBot: Enabling Real-world Interactive Navigation via Curriculum Reinforcement Learning for Search and Rescue Missions
+						<h1>Curriculum Reinforcement Learning from Avoiding Obstacles to Navigating among Movable Obstacles in Diverse Environments
 						</h1>
 						<p>
-							Robot navigation is typically carried out by avoiding obstacles
-							and planing drivable paths towards a desired
-							goal. However, existing navigation-only methods are limited to
-							perceive without interacting with movable obstacles. Interactive
-							navigation with mobile manipulators has been recently addressed
-							using deep reinforcement learning (RL). However, existing RL
-							approaches still are limited to simulation results. The challenges
-							of interactive navigation in real robot and environments were
-							still rather unexplored. Inspired by the DARPA Subterranean
-							(SubT) Challenge we tackle the situations while semi-dynamic
-							but movable obstacles block the way. In this paper 1) we design
-							a full mobile manipulation system PokingBot for search and
-							rescue missions with a DRL-based local planner of interactive
-							navigation. 2) We argue that by leveraging curriculum learning
-							settings of both avoid and interact with obstacles, our agent learns
-							to efficiently select a policy conducive to discovering high-reward
-							sequential continuous actions. 3) Comprehensive large-scale simulation in the SubT Urban Circuit Nuclear Power Plant and
-							a proof-of-concept real-world corridor experiments are carried
-							out against a state-of-the-art planner.
+							Curriculum learning has proven highly effective to speed of convergence with improved performance 
+							in a variety of applications. However, curriculum generation requires the ranking of sub-tasks in 
+							order of difficulty, which may depend on application domains. Deep reinforcement learning (RL)-based 
+							navigation typically involves collision avoidance and the planning of drivable paths towards a desired goal. 
+							Existing methods based solely on navigation are unable to deal with blocked pathways, thereby navigation among 
+							movable obstacles (NAMO) involves more complex controls in continuous action space.
+							Researchers dealing with robot navigation problems have yet to devise effective methods to rank samples 
+							from easy to hard or devise a suitable pacing function in diverse unseen environments. 
+							In the current study, we ranked the navigation difficulty metrics of various large-scale representative 
+							environments and trained DRL policies from scratch within a certain computation budgets. 
+							We found that low difficulty environments received high rewards, in particular in a relatively open tunnel-like 
+							environment that only required wall following. To facilitate more complex policies in NAMO task, we leveraged curriculum learning 
+							built upon pre-trained policies, and developed pace functions appropriate to the difficulty of the environment. 
+							The proposed scheme proved highly effective to train a local planner capable of clearing the path of movable obstacles. 
+							Comprehensive evaluations were assessed in experiments conducted in simulated and real environments . 
 						</p>
-						<a href="projects/drl-transfer.html" target="_blank">Project Link</a>
+						<a href="projects/curl-navi.html" target="_blank">Project Link</a>
 						</p>
 					</div>
 				</div>
@@ -109,7 +105,7 @@
 					<div class="proj">
 						<h1>WFH-VR: Teleoperating a Robot Arm to set a Dining Table across the Globe via Virtual Reality</h1>
 						<p>
-							his paper presents an easy-to-deploy, virtual reality-based teleoperation system for controlling a robot arm. 
+							This paper presents an easy-to-deploy, virtual reality-based teleoperation system for controlling a robot arm. 
 							The proposed system is based on a consumer-grade virtual reality device (Oculus Quest 2) with a low-cost robot arm (a LoCoBot) to allow easy replication and set up. 
 							The proposed Work-from-Home Virtual Reality (WFH-VR) system allows the user to feel an intimate connection with the real remote robot arm. 
 							Virtual representations of the robot and objects to be manipulated in the real-world are presented in VR by streaming data pertaining to orientation and poses.
