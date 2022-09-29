@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="description" />
+	<meta name="keywords" content="keywords" />
+	<meta name="author" content="author" />
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td,
+		th {
+			border: 1px solid #dddddd;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #cdcdcd;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../default.css" media="screen" />
+	<title>Nick Wang at NCTU</title>
+</head>
+
+<body>
+
+	<div class="outer-container">
+
+		<div class="inner-container">
+
+			<div class="header">
+
+				<div class="title">
+					<span class="sitename"><a href="../index.html">Assistive Robotics Group</a>&nbsp;&nbsp;&nbsp;<a
+							href="../index_ch.html">機器人與輔助科技實驗室</a></span>
+				</div>
+
+			</div>
+
+			<div class="path">
+
+				<a href="../index.html">Home</a>
+				<a href="../event.html">News</a>
+				<a href="../people.html">People</a>
+				<a href="../robots.html">Robots</a>
+				<a href="../research.html">Research</a>
+				<a href="../publications.html">Publications</a>
+				<a href="../courses.html">Courses</a>
+				<a href="../materials.html">Materials</a>
+			</div>
+
+			<div class="blank">
+				<div class="wrapper-center">
+					<h0 style="text-align: center">
+					Teleoperating a Heterogeneous Robot Team via Virtual Reality	
+					</h0>
+					<h2>
+						Lai Sum Yim<sup>1</sup>, Quang TN Vo<sup>2</sup>, Ching-I Huang<sup>1</sup>, Chi-Ruei Wang<sup>1</sup>,
+					</h2>
+					<h2 >
+						Wren McQueary<sup>2</sup>, Hsueh-Cheng Wang<sup>1</sup>, Haikun Huang$<sup>2</sup>, and Lap-Fai Yu<sup>2</sup>
+					</h2>
+					
+					<h4>________________________________________________</h4>
+					<h4>
+						L.S. Yim and Q.T. Vo contributed equally to this work.
+					</h4>
+					<h4>
+						<sup>1</sup>Department of Electrical and Computer Engineering, National Yang Ming Chiao Tung University, Taiwan.
+					</h4>
+					<h4>
+						<sup>2</sup>Department of Computer Science, George Mason University, USA.
+					</h4>
+					
+
+				</div>
+				<br><br>
+
+				<div class="wrapper-center">
+					<!-- <button onclick="window.open('https://github.com/ARG-NCTU/GMU_NCTU_Unity_ROS.git')"
+						class="button button-gray">Github</button> -->
+						<button onclick="window.open('../publications/IROS22_1892_FI_WFH.pdf')"
+						class="button button-gray">Paper</button>
+					
+				</div>
+
+				<h1>Abstract</h1>
+				<p>
+					This paper presents an easy-to-deploy, virtual reality-based teleoperation system for controlling a robot arm. 
+					The proposed system is based on a consumer-grade virtual reality device (Oculus Quest 2) with a low-cost robot arm (a LoCoBot) to allow easy replication and set up. 
+					The proposed Work-from-Home Virtual Reality (WFH-VR) system allows the user to feel an intimate connection with the real remote robot arm. 
+					Virtual representations of the robot and objects to be manipulated in the real-world are presented in VR by streaming data pertaining to orientation and poses.
+					The user studies suggest that 1) the proposed telerobotic system is effective under conditions both with and without network latency, whereas a method that simply streams video does not. 
+					This design enables the system implemented at an arbitrary distance from the actual work site. 2) The proposed system allows novices to perform manipulation tasks requiring higher dexterity than traditional keyboard controls can support, such as setting tableware.
+					<a href='https://arg-nctu.github.io/projects/vr-robot-arm.html'>https://arg-nctu.github.io/projects/vr-robot-arm.html</a>.
+				</p>
+
+				<div class="wrapper-center">
+					<img src="img/vr-teaser.JPG" alt="motivation" height="250">
+				</div>
+
+				<h1>Video</h1>
+				<p></p>
+				<div class="container" align="middle">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/GH9GIbxgesY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<br>
+
+				<h1>System Overview</h1>
+				<p>
+					The proposed system comprises two operations: controlling the robot arm and synchronizing virtual objects with real-world objects. 
+					We employed Unity PUN2 for all communication tasks over the internet and an Oculus Quest 2 VR headset to visualize the virtual environment while manipulating the robot arm. Within the virtual environment, real-world objects are replicated via 3D reconstruction or CAD modeling. 
+					The actual robot arm and gripper are controlled by guiding an identical virtual robot arm (i.e., an arm with the same joint configuration and dimensions as the real arm). 
+					These movements are synchronized for both the VR user (client) and the physical robot's environment (host) in the virtual scene. The interface also provides a video signal streamed from the workplace via Unity PUN2.
+
+				</p>
+				<div class="wrapper-center">
+					<img src="img/vr-system.png" height="280" >
+				</div>
+				<br>
+
+				<h1>VR Robot Teleoperation across the Globe</h1>
+				<p>
+					We tested the proposed VR teleoperation platform between two universities across the globe. 
+					The VR side was set up at George Mason University in Virginia, USA. 
+					The real robot side was set up at National Yang Ming Chiao Tung University in Taiwan.
+					The user in USA put on a VR headset and controlled a LoCoBot robot arm in Taiwan.
+				</p>
+				<br>
+
+				<h1>Conclusion</h1>
+				<h2>1. Presents a <font color="red"> <strong> advanced approach </strong> </font> to the VR teleoperation of a robot arm. </h2>
+				<h2>2. Proposed system allows even <font color="red"> <strong>52 novices</strong> </font> to perform tasks of high dexterity </h2>
+				<h2>3. Carry out 3 Human-robot-interaction Experiments</h2>
+				<h2>More details you can find in the paper.</h2>
+				<br><br><br>
+
+				<!-- <h1>Experiments: Human-robot-interaction Experiments</h1>
+				<p>
+					The effectiveness of the proposed system in remote teleoperation tasks was evaluated by conducting a user study involving three experiments. 
+					All of the participants (ages 20-40) lacked any prior experience with our platform. 
+					Experiment 1 focused on the visualization methods used in the proposed system, including video (in the form of a 2D monitor interface) and the virtual counterpart (rendered via pose estimation)
+					Experiment 2 focused on evaluating how well our proposed system allows even novices to perform tasks of high dexterity. In accordance with the Robotic Grasping and Manipulation Competition at IROS 2021,<a	href="https://rpal.cse.usf.edu/competition_iros2021/">(here).</a>
+					we employed 5 tasks involving setting a table.
+					The final experiment focused on mapping the skills developed in one task to another task. 
+					The setups of the experiments are shown in below. In addition, the results of a 7-point Likert scale were used for subjective analysis, 
+					and the number of failures to complete a task was used as an objective index of difficulty
+				</p>
+
+				<p>
+					The objects we used in the experiments are also inspired by the YCB objects and common objects on a dining table. 
+					Due to the hardware payload and gripper limitations, we chose to scale down the objects by modeling CAD models followed by 3D printing. 
+					Such modifications also considered easy replication of our work using LoCoBot hardware. 
+					All CAD models will be publicly available 
+					<a	href="https://drive.google.com/drive/folders/1tO0LU_mGJboa_GazXHwV1vWtR1XiTKeT?usp=sharing">here.</a>
+				</p>
+
+				<div class="wrapper-center">
+					<img src="img/vr-tasks.PNG" height="200" >
+				</div>
+				
+				<p>
+					The objects we used in the experiments are also inspired by the YCB objects and common objects on a dining table. 
+					Due to the hardware payload and gripper limitations, we chose to scale down the objects by modeling CAD models followed by 3D printing. 
+					Such modifications also considered easy replication of our work using LoCoBot hardware. 
+					All CAD models will be publicly available 
+					<a	href="https://drive.google.com/drive/u/1/folders/1hcBicPxxMe2unmXEQiVnBEpCg8TF1eYC">here.</a>
+				</p> -->
+
+<!-- Results 111111111111111111111111111111111111111111111111111111111111111111 -->
+				<!-- <h2><strong>Results 1: Methods of Visualization
+					<div class="wrapper-center">
+						<img src="img/vr-result-exp1.PNG" height="280" >
+					</div>
+				</strong></h2>		
+				<p>
+					We recruited <font color="red"> <strong>12 participants </strong> </font> who were novices in the use of VR systems to compare the various approaches to visualization, 
+					(i.e., with 5 or fewer hours of experience). We also decreased the frame rate (originally 14 fps from the camera feed and 1.4 fps for the virtual counterparts) to 1 fps (for all methods) in order to simulate the frame loss one would expect to encounter when using a poor network connection.
+					Note that under a lower frame rate, the average time top completion was slightly longer(5s) than under a normal frame rate. 
+					The trajectories were drawn by a reference point (gripper\_link relative to the base\_link of the LoCoBot) from the initial position until the first moment of contact against the yellow box
+					As for the virtual counterpart from the lateral camera, it allowed the expert user to complete the task directly and quickly. 
+					This can be attributed to the fact that DOPE was able to generate virtual counterparts of partially occluded objects.  
+					Method (c), virtual counterpart, was user-friendly and promising for both novices and expert users.
+				
+				</p> -->
+<!-- Results 22222222222222222222222222222222222222222222222222222222222222222 -->
+				<!-- <h2><strong>Results 2: VR vs. Keyboard Controls and Task Performance Benchmark by User Groups
+					<div class="wrapper-center">
+						<img src="img/vr-result-exp2.PNG" height="250" >
+					</div>
+				</strong></h2>
+				<p>
+					We recruited <font color="red"> <strong>28 novices </strong> </font>to use our VR teleoperation system for the 5 tasks feasible for our hardware setup. 
+					All participants were first-time users. After some instruction, the participants wore the VR head mount and used the hand controller to interact with the objects. 
+					They were not instructed to grasp the objects in a specific way, and therefore all possible motion primitives, such as pushing, grasping, and placing, were allowed.
+					Overall, both VR-VS and KM methods were able to complete all tasks. However, the execution time for VR-VS was shorter than that by KM. 
+					We find that our proposed system allows even novices to perform tasks of high dexterity.
+				</p> -->
+<!-- Results 33333333333333333333333333333333333333333333333333333333333333333 -->
+				<!-- <h2><strong>Results 3: Practice Makes Perfect
+					<div class="wrapper-center">
+						<img src="img/vr-result-exp3-1.PNG" height="200" >
+						<img src="img/vr-result-exp3-2.PNG" height="180" >
+					</div>
+				</strong></h2>				
+				<p>
+					We grouped <font color="red"><strong>12 novices </strong> </font>into  GroupA (with practice) and GroupB (without practice). 
+					Task 6, taken as the exam, was executed 4 times for each participant. 
+					 The main difference was that GroupA did the practice before every exam. During the practice, 
+					 GroupA operated the gripper to (1) approach a yellow box (the same box as in Task 1) 3 times, but not pick it up, for 3 minutes, and (2) draw the trajectory in the air with the box in hand for 1 minute. 
+					 On the other hand, Group B simply rested for 4 minutes. From the result, 
+					it took a predictable time to make a novice have an expected performance. Furthermore, performing similar motion primitives was helpful for dexterous manipulation
+				</p> -->
+
+				<!-- <h1>
+					Reference
+				</h1>
+
+				<h2> Questionnaire Template</h2>
+				<ul>
+					<li><a	href="https://docs.google.com/document/d/10fkGaKXE2qnzBe-rezZb95jwG53PGeSS/edit?usp=sharing&ouid=105637238675469038377&rtpof=true&sd=true">Experiment 1 Questionnaire (Chinese)</a></li>
+					<li><a	href="https://docs.google.com/document/d/1WSAGkpgl-ZnukwnduzrDEYLLtYvlR_3ykwdO0EIlvzA/edit?usp=sharing">Experiment 3 Questionnaire (English)</a></li>
+				</ul>
+				<h2> Experiment Result</h2>
+				<ul>
+					<li><a	href="https://docs.google.com/spreadsheets/d/1Qguh6aXFGtm7-Zw2IWKxtg_KXJ9r_wKWMqGLStuFy4I/edit?usp=sharing">Experiment 1 Objective & Subjective result</a></li>
+					<li><a href="https://drive.google.com/file/d/1qjfKcn9-CG9aMOfPOGZqKdqLiX14HdiS/view?usp=sharing>">Experiment 1 Questionnaire raw result</a></li>
+					<li><a	href="https://docs.google.com/spreadsheets/d/1gOhKAN0ewU523ENvymFtpINuxACRAG4fr0NMRsctQqg/edit?usp=sharing">Experiment 2 Objective result.</a></li>
+					<li><a	href="https://docs.google.com/spreadsheets/d/1QF2hE4Pd8_Lsceb7_iwpkkjCkbJMk-QVB9arCtXD_wo/edit?usp=sharing">Experiment 3 Objective & Subjective result.</a></li>
+				</ul> -->
+				
+				<h1>Bibtex</h1>
+				
+
+				<div 
+					style="background-color:rgb(212, 212, 212);
+					color:rgb(0, 0, 0); 
+					padding:15px;
+					width: 680px;
+					border: 1px solid rgb(0, 0, 0);;
+					margin: 30px;">
+					<p>
+					@article {WFH-VR , <br>
+						author = {Lai Sum Yim, Quang TN Vo, Ching-I Huang, Chi-Ruei Wang, Wren McQueary, Hsueh-Cheng Wang, Haikun Huang and Lap-Fai Yu}, <br>
+						title = {WFH-VR: Teleoperating a Robot Arm to set a Dining Table across the Globe via Virtual Reality}, <br>
+						journal = {2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, <br>
+						year = {2022}, <br>
+						}
+					</p>
+				  </div> 
+				<h1>Acknowledgments</h1>
+
+				<p>
+					The research was supported by Taiwan's National Science and Technology Council (grants 111-NU-E-A49-001-NU, 110-2221-E-A49-124, and 111R10093Y-2). 
+					This work was funded in part by Qualcomm through the Taiwan University Research Collaboration Project. 
+					This work was supported by an NSF CAREER award (award\#: 1942531) and an NSF FTW-HTF-R grant (award\#: 2128867).
+				</p>
+
+
+				<div class="wrapper-center">
+					<img src="img/vr-final.PNG" height="150" >
+				</div>
+
+
+				<br><br><br>
+
+
+			</div>
+
+			<div class="footer">
+
+				<span class="left">
+					&copy; H.C. Wang
+				</span>
+
+				<!-- <span class="right"><a href="http://templates.arcsin.se/">Website template</a> by <a
+						href="http://arcsin.se/">Arcsin</a></span> -->
+
+				<div class="clearer"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
