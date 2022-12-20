@@ -77,18 +77,18 @@
 
 				<h1>Abstract</h1>
 				<p>
-					Human-to-robot (H2R) handover is a key capability of service robots, but few of recent works have addressed the challenge at the diverse and unknown objects.  
-					Although end-to-end grasping directly has made tremendous progress at agnostic object in logistic tasks, most grasping algorithms are limited to top-down movements.
-					Due to the variable preference on holding and delivering by the operators, it has not been mapped to H2R. 
-					We present an approach for end-to-end reactive 6DoF grasp choice by inferring dense pixel-wise probability maps of the affordances with multiple views. 
-					Besides of closed-loop real-time motion planning, our system not only hand over the object with suitable grasping angles, but also allows the robot arm to grasp the object via the narrowest side of the objects. 
-					Hence, our system can adapt to user' preference and a wider range of object categories with the same gripper. 
-					In addition, our approach can also apply to federated learning framework to keep our personal data private. 
-					We compare our results of evaluation to 3 state-of-the-art approaches and verify ours on 4 novel benchmark sets of the objects. 
-					Furthermore, we demonstrate the effectiveness through 2 user study with 12 participants respectively. 
-					The dataset for training and all pretrained models are available at  
+					Human-robot handover is a key capability of service robots, such as those performing routine logistical tasks
+					for healthcare workers. The handover problem is generally addressed by respectively detecting the hand and object prior
+					to implementing a grasping planner. Recent algorithms have achieved tremendous advances in object-agnostic end-to-end
+					planar grasping with up to six degrees of freedom (DoF); however, compiling the requisite datasets is infeasible in many
+					situations and the use of camera feeds would be considered invasive in other situations. In this study, we proposed Fed-
+					HANet, trained with the framework of federated learning, to achieve a privacy-preserving end-to-end control system for 6-
+					DoF visual grasping of unseen objects. In experiments involving novel objects, the federated learning framework permitted a
+					high degree of selectivity at local picking stations with accuracy close to that of systems based on centralized training. The
+					practicality of Fed-HANet in robotic systems was assessed in a user study involving 15 participants. The dataset for
+					training and all pretrained models are available at 
 					<a
-						href='https://arg-nctu.github.io/projects/socially-aware-handover.html'>https://arg-nctu.github.io/projects/socially-aware-handover.html</a>.
+						href='https://arg-nctu.github.io/projects/fed-hanet.html. '>https://arg-nctu.github.io/projects/fed-hanet.html</a>.
 				</p>
 
 				<div class="wrapper-center">
