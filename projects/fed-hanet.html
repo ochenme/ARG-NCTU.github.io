@@ -104,15 +104,14 @@
 				<h1>Abstract</h1>
 				<p>
 					Human-robot handover is a key capability of service robots, such as those performing routine logistical tasks
-					for healthcare workers. The handover problem is generally addressed by respectively detecting the hand and object prior
-					to implementing a grasping planner. Recent algorithms have achieved tremendous advances in object-agnostic end-to-end
+					for healthcare workers. Recent visual grasping algorithms have achieved tremendous advances in object-agnostic end-to-end
 					planar grasping with up to six degrees of freedom (DoF); however, compiling the requisite datasets is infeasible in many
-					situations and the use of camera feeds would be considered invasive in other situations. In this study, we proposed Fed-
-					HANet, trained with the framework of federated learning, to achieve a privacy-preserving end-to-end control system for 6-
-					DoF visual grasping of unseen objects. In experiments involving novel objects, the federated learning framework permitted a
-					high degree of selectivity at local picking stations with accuracy close to that of systems based on centralized training. The
-					practicality of Fed-HANet in robotic systems was assessed in a user study involving 15 participants. The dataset for
-					training and all pretrained models are available at 
+					situations and the use of camera feeds would be considered invasive in other situations. In this study, we proposed Fed-HANet,
+					trained with the framework of federated learning, to achieve a privacy-preserving end-to-end control system for 6-DoF visual
+					grasping of unseen objects. The federated learning approach showed accuracy close to that of centralized, non-privacy-
+					preserving systems or other baseline methods using fine-tuning. Our proposed model was compared to several existing methods,
+					and an ablation study was performed using depth-only inputs. The practicality of Fed-HANet in robotic systems was assessed
+					in a user study involving 12 participants. The dataset for training and all pretrained models are available at 
 					<a
 						href='https://arg-nctu.github.io/projects/fed-hanet.html. '>https://arg-nctu.github.io/projects/fed-hanet.html</a>.
 				</p>
