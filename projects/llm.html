@@ -57,33 +57,115 @@
 			<div class="blank">
 				<div class="wrapper-center">
 					<h0 style="text-align: center">
-						An High-level Task Planner using LLM-Generated Behavior Tree for Aerial Navigation and Manipulation
+						BT-Prompt: Hierarchical Behavior Tree Generation for High-level Task Planning using Large Language Models
 					</h0>
 					<h2>
-						Ming-Fong Hsieh, Kuan-Ting Yu, Hsueh-Cheng Wang
+						Ming-Fong Hsieh<sup>1</sup>, Wei-Li Liu<sup>1</sup>, Sun-Fu Chou<sup>1</sup>, Chang-Jin Wu<sup>1</sup>, Yu-Ting Ko<sup>1</sup>,
+						Kuan-Ting Yu<sup>2</sup>, Hsueh-Cheng Wang<sup>*,1</sup>
 					</h2>
+					<h4>_________________________________________________________________</h4>
+
+					<h4>
+						<sup>1</sup>National Yang Ming Chiao Tung University (NYCU), Hsinchu, Taiwan.
+					</h4>
+					<h4>
+						<sup>2</sup>XYZ Robotics
+					</h4>
+
 				<br><br>
 				</div>
 
 				<h1>Abstract</h1>
 				<p>
-					This research delves into the domain of prompt engineering and its empirical application in Large Language
-					Models (LLMs) for complex hierarchical task planning. The study systematically investigates prompt designs in LLMs, with a specific
-					focus on their effectiveness in designing high-level agents. The integration of a simulation tool that combines Gazebo VRX with 
-					ChatGPT functionality is also presented, creating a novel VRX-ChatGPT simulation environment to explore ChatGPT’s potential
-					in enabling maritime robotics scenarios, particularly in the realm of USV/UAV navigation. Additionally, the research offers practical
-					examples of positive and negative prompting strategies in the context of aerial manipulation, showcased through the innovative
-					PromptCraft platform for the robotics community. The findings shed light on the empirical aspects of prompt engineering and
-					provide valuable insights for leveraging LLMs in task planning, execution, and designing autonomous agents across various robotic
-					applications.
+					Recent advances of Large Language Models (LLMs) significantly impacted various robotic applications and task
+					planning. However, a predominant focus on sequential processes has limited their potential for high-level, complex plans. This
+					research delves into the systematic investigations of prompt engineering for LLM-generated behavior trees (BTs). In Experi-
+					ment 1, we carefully designed BT-Prompt, which demonstrate the effectiveness of LLM-generated BTs over other formats within
+					few-shot scenarios. Experiment 2 underscores the significance of hierarchy, highlighting that mid-level subtrees play a pivotal
+					role in successfully executing complex tasks across various LLM backbones and temperature settings. Notably, among
+					the suboptimal BTs, it is noteworthy that LLMs attempted to autonomously generate mid-level subtrees without human
+					guidance. These autonomously generated mid-level subtrees then become a central element in Experiment 3, where we confront
+					the challenges presented by more complex tasks encountered in a robotics competition. In this context, it became evident that the
+					pre-existing hand-coded mid-level subtrees were insufficient, whereas integrating the LLM-generated mid-level subtrees into existing
+					functions resulting in enhanced task execution for these intricate challenges. Finally,this research collected illustrative examples
+					of positive and negative prompting strategies of LLM-generated BTs, with demonstrations of successful executions in virtual and
+					real environments
 				</p>
 								
 				<div class="wrapper-center">
 					<img src="img/llm-teaser.png" alt="teaser" height="350">
 				</div>
+				<br><br>
+				<h1>Appendix A : Two main failure types </h1>
 
-				
+				<p> <b>Type 1 - The inclusion of unnecessary subtrees or a lack of
+					necessary subtrees can result in task failure.</b><br>
+					Adding unnecessary subtrees or lacking essential
+					subtrees results in task failure. When LLM generates the
+					”inspection” task, it incorporates the subtree related to the
+					red-boxed area into the task plan. However, as this subtree is
+					designed for ”tracking object,” it requires a target object to
+					fulfill the task’s completion requirement. Since the ”inspection”
+					task does not involve detecting objects, the behavior tree may
+					halt at this stage due to the absence of a target object, causing
+					it to be unable to progress further.</p>
 
+					<div class="wrapper-center">
+					<img src="img/method_failure_1.png" alt="teaser" height="400"></div>
+
+				<p><b>Type 2 - Misinterpretation of the logic expressed through
+					example tasks can result in task failure.</b><br>
+					Misinterpretation of the logic expressed through example
+					tasks. When LLM generates the ”object navigation” task, it
+					misinterprets the logic expression symbols within the red-
+					boxed area (from fallback to sequence). Due to this incorrect
+					interpretation of the logic expression symbols, the behavior
+					tree is unable to transition to the tracking state even when it
+					detects the target object.</p>
+					
+					<div class="wrapper-center">
+					<img src="img/method_failure_2.png" alt="teaser" height="380"></div>
+				<br>
+				<h1>Appendix B : Tasks description for 2022 RobotX Challenge</h1>
+				<p><b>Detect and Dock (Dock.): </b> <br>
+					In this task, there's a floating platform with three bays, each having a different color (red, green, or blue). 
+					The AMS detects the color and docks in the bay with the matching color.
+				<p><b>Scan the code (Scan.): </b> <br>	
+					In this task, there's a three-sided light tower on a floating platform that displays a sequence of RGB lights. 
+					The AMS observes the colors and their order and use this sequence for other tasks in later rounds.
+				<p><b>Find and Fling(Shoot.): </b> <br>
+					In this task, there's a floating platform with three panels, each having a colored square and two holes. 
+					The AMS detects a designated color and shoots racquetballs through the panel's holes. 
+					Each team gets four racquetballs for this.
+				<p><b>Entrance and Exit Gates(Gate.): </b> <br>
+					In this task, the AMS needs to go through gates marked by colored buoys and underwater beacons. 
+					The AMS must detect the underwater beacon signals between these gates and enter through them before moving 
+					on to other tasks. The task's complexity increases in each round and includes elements from other tasks.
+					The beacons have different frequencies and activate one at a time during the task.There are three gates:
+					<br>&nbsp &nbsp Gate 1 has a red and a white buoy.
+					<br>&nbsp &nbsp Gate 2 has two white buoys.
+					<br>&nbsp &nbsp Gate 3 has a white and a green buoy.
+
+				<p><b>Wildlife Encounter (Wildlife.): </b> <br>
+					Task involves three floating platforms that look like Australian marine animals: 
+					a platypus, turtle, and crocodile. 
+					The AMS detects and reacts to them using  Hyperspectral Imaging (HSI) camera . 
+					Teams can use a UAV for help. After detection, the AMS circles the platypus clockwise, 
+					the turtle counterclockwise, and the crocodile twice in any direction.
+				<p><b>UAV Search and Report(Search.): </b> <br>
+					In this land-based UAV task mimicking a search and rescue operation, 
+					the UAV starts from one point, searches a marked field with orange markers, finds two objects there, 
+					and lands at another designated point. Teams can use any search pattern within the field boundaries. 
+					They report the objects they locate and their exact positions.
+				<p><b>Follow the Path (Follow.): </b> <br>
+					This task requires the Autonomous Maritime System (AMS) to follow a designated path of white buoys, 
+					pass through six pairs of red and green buoys, and exit through another set of white buoys. 
+					The AMS must steer clear of randomly placed obstacles, symbolized by round black buoys. 
+					Teams have the option to employ a UAV for assistance in completing this task.
+				<p><b>UAV Replenishment(Deliver.): </b> <br>
+					This task involves using a UAV. The UAV takes off from a USV, finds a floating helipad, picks up a small colored tin, 
+					delivers the tin to a circular target area on another floating helipad, and then returns to the USV.
+					
 			<div class="footer">
 
 				<span class="left">
