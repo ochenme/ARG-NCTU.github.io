@@ -77,19 +77,21 @@
 
 				<h1>Abstract</h1>
 				<p>
-					Recent advances of Large Language Models (LLMs) significantly impacted various robotic applications and task
-					planning. However, a predominant focus on sequential processes has limited their potential for high-level, complex plans. This
-					research delves into the systematic investigations of prompt engineering for LLM-generated behavior trees (BTs). In Experi-
-					ment 1, we carefully designed BT-Prompt, which demonstrate the effectiveness of LLM-generated BTs over other formats within
-					few-shot scenarios. Experiment 2 underscores the significance of hierarchy, highlighting that mid-level subtrees play a pivotal
-					role in successfully executing complex tasks across various LLM backbones and temperature settings. Notably, among
-					the suboptimal BTs, it is noteworthy that LLMs attempted to autonomously generate mid-level subtrees without human
-					guidance. These autonomously generated mid-level subtrees then become a central element in Experiment 3, where we confront
-					the challenges presented by more complex tasks encountered in a robotics competition. In this context, it became evident that the
-					pre-existing hand-coded mid-level subtrees were insufficient, whereas integrating the LLM-generated mid-level subtrees into existing
-					functions resulting in enhanced task execution for these intricate challenges. Finally,this research collected illustrative examples
-					of positive and negative prompting strategies of LLM-generated BTs, with demonstrations of successful executions in virtual and
-					real environments
+					Recent advancement of Large Language Models (LLMs) have made it possible for LLMs to be incorporated in the development of 
+					high-level task planners alongside human user. Prior works of LLMs emphaises on the generation of  sequential plans, thereby closing 
+					the doors to execution of more complex applications. This research delves into how prompting engineering affect the generation of 
+					Behavior Trees (BTs) using LLMs. In order to enhance the understanding of LLMs for few-shot example tasks and improve the success rate 
+					of generated tasks. First, we introduced BT-Prompt in Experiment 1, a specially designed example task format which allows LLMs to 
+					maximize their few-shot learning performance. The results obtained in Experiment 1 illustrate the effectiveness of LLM-generated BTs 
+					compared to other formats in few-shot scenarios. Second, we aim to demonstrate our method's ability to design a hierarchy structure in 
+					Experiment 2, in additionally this would highlights the pivotal role of mid-level subtrees in successfully executed complex tasks across 
+					various LLM backbones and temperature settings. As intended by the research setup, for sub-optimal BTs, LLMs were used in attempts to 
+					autonomously generate mid-level subtrees without human guidance. The result of these autonomously generated mid-level subtrees then 
+					become a central element in Experiment 3, where we applied our methods to an series of challenging task defined by a robotics competition. 
+					In this context, it became evident that the pre-existing hand-coded mid-level subtrees were insufficient, where as integrating the 
+					LLM-generated mid-level subtrees into existing functions resulting in enhanced task execution for these intricate challenges. 
+					Finally, this research collected illustrative examples of positive and negative prompting strategies of LLM-generated BTs, with 
+					demonstrations of successful executions in virtual and real environments.
 				</p>
 
 				<h1>Video</h1>
