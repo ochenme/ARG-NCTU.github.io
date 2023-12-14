@@ -57,22 +57,25 @@
 			<div class="blank">
 				<div class="wrapper-center">
 					<h0 style="text-align: center">
-					Teleoperating a Heterogeneous Robot Team via Virtual Reality	
+					An Evaluation Framework of Human-Robot Teaming for Navigation among Movable Obstacles via Virtual Reality-based Interactions	
 					</h0>
 					<h2>
 						Ching-I Huang<sup>1</sup>,  Sun-Fu Chou<sup>1</sup>, Li-Wei Liou<sup>1</sup>, Nathan Alan Moy<sup>2</sup>,
 					</h2>
 					<h2 >
-						Chi-Ruei Wang<sup>1</sup>, Hsueh-Cheng Wang<sup>1</sup>, Charles Ahn<sup>2</sup>, and Lap-Fai Yu<sup>2</sup>
+						Chi-Ruei Wang<sup>1</sup>, Hsueh-Cheng Wang<sup>1</sup>, Charles Ahn<sup>2</sup>, Chun-Ting Huangand<sup>3</sup>, Lap-Fai Yu<sup>2</sup>
 					</h2>
 					
 					<h4>________________________________________________</h4>
 
 					<h4>
-						<sup>1</sup>Department of Electrical and Computer Engineering, National Yang Ming Chiao Tung University, Taiwan.
+						<sup>1</sup>Institute of Electrical and Computer Engineering, National Yang Ming Chiao Tung University, Taiwan.
 					</h4>
 					<h4>
 						<sup>2</sup>Department of Computer Science, George Mason University, USA.
+					</h4>
+					<h4>
+						<sup>3</sup>Qualcomm Inc., USA
 					</h4>
 					
 
@@ -86,19 +89,30 @@
 
 				<h1>Abstract</h1>
 				<p>
-					Robots have become essential for hazardous and challenging tasks or those beyond human capabilities. 
-					However, the DARPA Subterranean Challenge highlighted that some complex situations still require human input, 
-					despite implementation of various autonomous techniques. Additionally, the development and management of 
-					heterogeneous multi-robot teams require effective user interfaces to support human interactions. 
-					In this paper, we propose an integrated framework that enables users to operate a heterogeneous robot team 
-					using commercially available virtual reality (VR) interfaces at a base station. 
-					By integrating 3D environment reconstruction and real-world sensor data into the VR interface, 
-					users gain a comprehensive real-time understanding of the spatial context from the robot's perspective. 
-					We further delved into the application's simulation utility, streamlining its mechanics for faster user adaptation to SAR missions. 
-					A comprehensive user study with 53 participants attested to the versatility and efficacy of our framework in facilitating human interactions. 
-					Our findings emphatically underscore a preference for: (1) immersive real-time reconstructions within textured meshes over basic real-time reconstructions, 
-					(2) multi-user remote control in situations devoid of autonomous capabilities, 
-					and (3) superior autonomy for navigation and obstacle negotiation in complex NAMO tasks, as contrasted with traditional goal point navigation techniques. 
+					Robots are essential for tasks that are hazardous
+					or beyond human capabilities. However, the results of the
+					Defense Advanced Research Projects Agency (DARPA) Sub-
+					terranean (SubT) Challenge revealed that despite various tech-
+					niques for robot autonomy, human input is still required in
+					some complex situations. Moreover, heterogeneous multirobot
+					teams are often necessary. To manage these teams, effective user
+					interfaces to support humans are required. Accordingly, we
+					present a framework that enables intuitive oversight of a robot
+					team through immersive virtual reality (VR) visualizations. The
+					framework simplifies the management of complex navigation
+					among movable obstacles (NAMO) tasks, such as search-and-
+					rescue tasks. Specifically, the framework integrates a simulation
+					of the environment with robot sensor data in VR to facilitate
+					operator navigation, enhance robot positioning, and greatly
+					improve operator situational awareness. The framework can
+					also boost mission efficiency by seamlessly incorporating au-
+					tonomous navigation algorithms, including NAMO algorithms,
+					to reduce detours and operator workload. The framework is
+					effective for operating in both simulated and real scenarios and
+					is thus ideal for training or evaluating autonomous navigation
+					algorithms. To validate the framework, we conducted user
+					studies (N = 53) on the basis of the DARPA SubT Challenge’s
+					search-and-rescue missions 
 				</p>
 
 				<div class="wrapper-center">
@@ -128,15 +142,113 @@
 
 				<h1>Heterogeneous Robot Team</h1>
 				<p>
-					In this study, two robots were employed: the left with a 360-camera,
-					and the right equipped with three depth cameras — two covering a 3m ×
-					2m forward area, and the third spanning the robot arm’s full 0.7m stroke
-					— along with a LiDAR for ICP-based positioning.
+					Two robots were used for testing. Jackal (left) with a 360° camera
+					and Husky (right) with an arm (UR5) and three depth cameras. Two of these
+					cameras covered a 3 m × 2 m forward area, and the third spanned the
+					arm’s full 0.7-m stroke. Husky also had a LiDAR for ICP positioning.
 				</p>
 				<div class="wrapper-center">
 					<img src="img/vr-navi-robots-arm.png" height="280" >
 				</div>
+				<a href="https://clearpathrobotics.com/jackal-small-unmanned-ground-vehicle/">Jackal,  Clearpath Robotics, Inc., Canada </a>
 				<br>
+				<a href="https://clearpathrobotics.com/husky-unmanned-ground-vehicle-robot/">Husky,  Clearpath Robotics, Inc., Canada </a>
+				<br>
+				<a href="https://www.universal-robots.com/products/ur5-robot/">UR5,  Universal Robots A/S, Inc, Denmark </a>
+				<br>
+				<br>
+				<p>
+				The Adaptivity of Different Robot
+				</p>
+				<div class="container" align="middle">
+					<iframe src="https://player.vimeo.com/video/893656641?h=f41349f858" width="640" height="372" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+					<p><a href="https://www.trossenrobotics.com/locobot-pyrobot-ros-rover.aspx">LoCoBot WX20, Trossen Robotics, Inc., Illinois, U.S. </a> </p>
+				</div>
+				<br>
+
+				<h1>Appendix A</h1>
+				<p>
+					The 3D model of the environment is captured using a Matterport camera, featuring a tripod-mounted camera rig equipped with three color and three depth cameras strategically oriented
+					—slightly up, horizontal, and slightly down. During each panorama capture, the camera rig rotates around the direction of gravity, stopping at six distinct orientations. 
+					At each stop, the camera captures an HDR photo from each of the three RGB cameras, while the three depth cameras continuously acquire data throughout the rotation. 
+					The collected depth data is then integrated to synthesize a 1280x1024 depth image aligned with each color image. 
+					For each panorama, the result is 18 RGB-D images with nearly coincident centers of projection at the height of a human observer. 
+					In this study, a single operator recorded our 3D mesh model in approximately one and a half hours. 
+					Note that the Trojan Nuclear Power Plant reconstruction is provided by DARPA, and auditorium is a sample model from Matterort Inc.
+				</p>
+				<div class="wrapper-center">
+					<img src="img/3Dreconstruction.png" height="230" >
+					<p>
+					<a  href="https://my.matterport.com/show/?m=eh1MbMR14xC&fbclid=IwAR15Umv7rn71GtL7RtWWDtIvi62DzgvAQKUABNL-I1Wf1u1p_ut-DckbcBU"> auditorium (conference center in Munich, Germany) from Matterort Inc.</a>
+					<br>
+					<a  href="https://my.matterport.com/show/?m=Y5R149J3Efn"> Campus Building at NYCU in Taiwan </a>
+					<br>
+					<a  href="http://gofile.me/773h8/U5Gr0iENO"> Free to download Campus Building at NYCU in Taiwan </a>
+					<a  href="http://gofile.me/773h8/IT92nJaIC"> Free to download all models and related Gazabo world </a>
+					<br>
+					<br>
+					<a href="https://support.matterport.com/s/article/Matterport-Pro2-3D-Camera-Specifications?language=en_US&categfilter=Matterport_Pro2&parentCategoryLabel=Matterport_Pro_Cameras">
+					Matterport Pro2 3D Camera, Matterport, Inc., California, U.S. </a> </p>
+				</div>
+				<br>
+
+				<h1>Appendix B</h1>
+				<p>
+					
+
+				</p>
+				<p> Exp A (N = 29, 15 sim; 14 real):</p>
+				<div class="wrapper-center">
+					<img src="img/vr_navigation_ExpA.png" height="550" >
+				</div>
+				<br>
+				<br>
+				<p> Exp B (N = 12):</p>
+				<div class="wrapper-center">
+					<img src="img/vr_navigation_ExpB.png" height="400" >
+				</div>
+				<p> p_value < 0.05 corresponds to a confidence interval of 95%. 
+				    <br>
+					p_value < 0.01 corresponds to a confidence interval of 99%. 
+				</p>
+				<br>
+				<br>
+				<p> Exp C (N = 12):</p>
+				<div class="wrapper-center">
+					<img src="img/vr_navigation_ExpC.png" height="1100" >
+				</div>
+				<p> p_value < 0.05 corresponds to a confidence interval of 95%. 
+				    <br>
+					p_value < 0.01 corresponds to a confidence interval of 99%. 
+				</p>
+				<br>
+
+
+				<h1>Appendix C</h1>
+				<p>
+					Tutorial: how to build up the environment for teleoperation .
+					<br>
+					<a  href="https://github.com/ARG-NCTU/oop-proj-unity-ros/tree/master"> ROS</a>
+					<br>
+					<a  href="https://github.com/ARG-NCTU/oop-proj-unity?fbclid=IwAR2kkBxrc9BbTJNpASYLHRGR-uvg9Mlw90COTCPu2QLaVx4-wo33IgKAy9Q"> Unity</a>
+					<br>
+				</p>
+
+				<br>
+
+				<h1>Appendix D</h1>
+				<p>
+					Repo for reconstruction of point clouds by  RGB and D images in Unity platform.
+					<br>
+					<a  href="https://github.com/ARG-NCTU/unity-PointCloudStreaming"> Point-cloud streaming (PCS)</a>
+					<br>
+					<div class="wrapper-center">
+					<img src="img/pcs.png" height="280" >
+				</div>
+				</p>
+
+				<br>
+
 
 				<h1>Conclusion</h1>
 				<h2>1. An Integrated Framework for Human-Robot Collaboration Leveraging Rich Spatial Information in a VR Interface, with a Prime Focus on Drastically Reducing User Workload. </h2>
