@@ -141,11 +141,11 @@
 				<p><b>Scan the code (Scan.): </b> <br>	
 					In this task, there's a three-sided light tower on a floating platform that displays a sequence of RGB lights. 
 					The AMS observes the colors and their order and use this sequence for other tasks in later rounds.
-				<p><b>Find and Fling(Shoot.): </b> <br>
+				<p><b>Find and Fling (Shoot.): </b> <br>
 					In this task, there's a floating platform with three panels, each having a colored square and two holes. 
 					The AMS detects a designated color and shoots racquetballs through the panel's holes. 
 					Each team gets four racquetballs for this.
-				<p><b>Entrance and Exit Gates(Gate.): </b> <br>
+				<p><b>Entrance and Exit Gates (Gate.): </b> <br>
 					In this task, the AMS needs to go through gates marked by colored buoys and underwater beacons. 
 					The AMS must detect the underwater beacon signals between these gates and enter through them before moving 
 					on to other tasks. The task's complexity increases in each round and includes elements from other tasks.
@@ -177,7 +177,7 @@
 				<h1>Appendix C: BT-Prompt Generation for 3 Tasks</h1>
 				The input prompt, pseudo-code formatted BT, and translated symbolic BT in Experiment 1 of GPT-3 generation are shown in below links:<br>
 				There are 2 steps to translate the pseudo-code formatted BT to symbolic BT:</p>
-				<p><strong>Post-processing:</strong> Split the pseudo-code formatted BT into raw symbolic tree with subtree titles.<br>
+				<p><strong>Post-processing:</strong> Split the pseudo-code formatted BT into raw symbolic tree with symbolic tree logic.<br>
 					&nbsp &nbsp1.Parse the pseudo-code formatted BT into tree logic.<br>
 					&nbsp &nbsp &nbsp &nbsp a.Extract procedures (start of the tree) from the response and group the phases by layer.<br>
 					&nbsp &nbsp &nbsp &nbsp	b.Classify phases based on their hierarchical relationship and conditions (success or failure).<br>
@@ -189,16 +189,31 @@
 				<p><strong>Subtree assembly:</strong> After post-processing, we can obtain the raw symbolic tree, which is not the final executable symbolic tree with conditions and actions. Therefore, we apply subtree assembly to replace the subtree titles with the subtrees containing conditions and actions.<br>
 					&nbsp &nbsp 1.Traverse the whole tree and classify tree logic and subtree titles.<br>
 					&nbsp &nbsp 2.Replace subtree titles with the subtrees containing conditions and actions.<br>
+					&nbsp &nbsp (e.g. object_in_view is a subtree with only condition node, explore_foward is a subtree with an action node and a codition node. )<br>
 					&nbsp &nbsp 3.Output the final executable symbolic BT.<br>
 	
 				<div class="wrapper-center">
-				<img src="img/LLM-BT_parser_symbolic_tree.png" height="280" ></div>
+				<img src="img/LLM-BT_parser_symbolic_tree-V2.png" height="280" ></div>
 				<p>3 tasks of GPT3 BT generation:</p>
 				<a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/visual_servoing/visual_servoing_using_text-davinci-003.md">Visual Servoing</a>
 				<br><a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/inspection/inspection_using_text-davinci-003.md">Inspection</a>
 				<br><a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blame/main/examples/behavior_tree/aerial_robotics/object_navigation/object_navigation_using_text-davinci-003.md">Object Navigation</a>
+				<br>
 
-					
+				<h1>Appendix D: BT Parallel Action Mechanism with ROS</h1>
+				<p>Parallel action in existing Pythonic code generation presents significant challenges due to the need for the LLM planner to generate multi-threading to handle concurrent actions. 
+					To address this, we have developed a method that combines Behavior Trees (BT) with the Robot Operating System (ROS) to facilitate parallel actions more efficiently.
+				<p>As illustrated in the upper part of the figure, the BT manages the logic of visual servoing, while the lower part shows the corresponding ROS node diagram. In this setup, 
+					the condition nodes in the BT correspond to ROS topics (indicated by green circles), and the action nodes are managed by independent ROS nodes (denoted by red squares).
+				<p>Specifically, in the domain of visual servoing, the controls for x, y, and z axes are implemented as three separate ROS nodes. 
+					These nodes operate in different processes facilitated by the ROS infrastructure. Consequently, the parallel logic in the BT (symbolized by the parallel operator '||') can activate these action nodes simultaneously, enabling synchronized linear control along the x, y, and z axes for visual servoing.
+				<p>This approach demonstrates that parallel actions can be effectively executed using our BT-prompt within the ROS framework, showcasing the potential for enhanced multi-threading in robotics applications.
+				
+				<div class="wrapper-center">
+				<img src="img/LLM-BT_parallel_action.png" height="400" ></div>
+	
+
+				
 			<div class="footer">
 
 				<span class="left">
