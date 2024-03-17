@@ -101,39 +101,49 @@
 				</div>
 
 				<div class="wrapper-center">
-					<img src="img/llm-teaser.png" alt="teaser" height="350">
+					<img src="img/LLM-BT_teaser_v4.png" alt="teaser" height="350">
 				</div>
 				<br><br>
-				<h1>Appendix A : Two main failure types</h1>
 
-				<p> <b>Type 1 - The inclusion of unnecessary subtrees or a lack of
-					necessary subtrees can result in task failure.</b><br>
-					Adding unnecessary subtrees or lacking essential
-					subtrees results in task failure. When LLM generates the
-					”inspection” task, it incorporates the subtree related to the
-					red-boxed area into the task plan. However, as this subtree is
-					designed for ”tracking object,” it requires a target object to
-					fulfill the task’s completion requirement. Since the ”inspection”
-					task does not involve detecting objects, the behavior tree may
-					halt at this stage due to the absence of a target object, causing
-					it to be unable to progress further.</p>
+				<h1>Appendix A: Executable BTs Threading and Multiprocessing Mechanisms with ROS</h1>
 
-					<div class="wrapper-center">
-					<img src="img/method_failure_1.png" alt="teaser" height="400"></div>
+				<p>Parallel action in existing Pythonic code generation presents significant challenges due to the need for the LLM planner to generate multi-threading to handle concurrent actions. 
+					To address this, we have developed a method that combines Behavior Trees (BT) with the Robot Operating System (ROS) to facilitate parallel actions more efficiently.
+				<p>As illustrated in the upper part of the figure, the BT manages the logic of visual servoing, while the lower part shows the corresponding ROS node diagram. In this setup, 
+					the condition nodes in the BT correspond to ROS topics (indicated by green circles), and the action nodes are managed by independent ROS nodes (denoted by red squares).
+				<p>Specifically, in the domain of visual servoing, the controls for x, y, and z axes are implemented as three separate ROS nodes. 
+					These nodes operate in different processes facilitated by the ROS infrastructure. Consequently, the parallel logic in the BT (symbolized by the parallel operator '||') can activate these action nodes simultaneously, enabling synchronized linear control along the x, y, and z axes for visual servoing.
+				<p>This approach demonstrates that parallel actions can be effectively executed using our BT-prompt within the ROS framework, showcasing the potential for enhanced multi-threading in robotics applications.
+				
+				<div class="wrapper-center">
+				<img src="img/LLM-BT_parallel_action.png" height="400" ></div>
 
-				<p><b>Type 2 - Misinterpretation of the logic expressed through
-					example tasks can result in task failure.</b><br>
-					Misinterpretation of the logic expressed through example
-					tasks. When LLM generates the ”object navigation” task, it
-					misinterprets the logic expression symbols within the red-
-					boxed area (from fallback to sequence). Due to this incorrect
-					interpretation of the logic expression symbols, the behavior
-					tree is unable to transition to the tracking state even when it
-					detects the target object.</p>
-					
-					<div class="wrapper-center">
-					<img src="img/method_failure_2.png" alt="teaser" height="380"></div>
-				<br>
+				<!-- <h1>Appendix B: BT-Prompt Generation for 3 Tasks</h1>
+				The input prompt, pseudo-code formatted BT, and translated symbolic BT in Experiment 1 of GPT-3 generation are shown in below links:<br>
+				There are 2 steps to translate the pseudo-code formatted BT to symbolic BT:</p>
+				<p><strong>Post-processing:</strong> Split the pseudo-code formatted BT into raw symbolic tree with symbolic tree logic.<br>
+					&nbsp &nbsp1.Parse the pseudo-code formatted BT into tree logic.<br>
+					&nbsp &nbsp &nbsp &nbsp a.Extract procedures (start of the tree) from the response and group the phases by layer.<br>
+					&nbsp &nbsp &nbsp &nbsp	b.Classify phases based on their hierarchical relationship and conditions (success or failure).<br>
+					&nbsp &nbsp2.Create a tree structure based on the parsed data.<br>
+					&nbsp &nbsp &nbsp &nbsp	a.Assign types to nodes (sequence, selector, parallel) based on the results of 1b.<br>
+					&nbsp &nbsp &nbsp &nbsp	b.Connect nodes to form the tree.<br>
+					&nbsp &nbsp3.Output raw symbolic tree with subtree titles.<br>
+				
+				<p><strong>Subtree assembly:</strong> After post-processing, we can obtain the raw symbolic tree, which is not the final executable symbolic tree with conditions and actions. Therefore, we apply subtree assembly to replace the subtree titles with the subtrees containing conditions and actions.<br>
+					&nbsp &nbsp 1.Traverse the whole tree and classify tree logic and subtree titles.<br>
+					&nbsp &nbsp 2.Replace subtree titles with the subtrees containing conditions and actions.<br>
+					&nbsp &nbsp (e.g. object_in_view is a subtree with only condition node, explore_foward is a subtree with an action node and a codition node. )<br>
+					&nbsp &nbsp 3.Output the final executable symbolic BT.<br>
+	
+				<div class="wrapper-center">
+				<img src="img/LLM-BT_parser_symbolic_tree-V2.png" height="280" ></div>
+				<p>3 tasks of GPT3 BT generation:</p>
+				<a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/visual_servoing/visual_servoing_using_text-davinci-003.md">Visual Servoing</a>
+				<br><a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/inspection/inspection_using_text-davinci-003.md">Inspection</a>
+				<br><a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blame/main/examples/behavior_tree/aerial_robotics/object_navigation/object_navigation_using_text-davinci-003.md">Object Navigation</a>
+				<br> -->
+
 				<h1>Appendix B : New Tasks in Experiment 3 (RobotX Challenge 2022)</h1>
 				<p><b>Detect and Dock (Dock.): </b> <br>
 					In this task, there's a floating platform with three bays, each having a different color (red, green, or blue). 
@@ -173,44 +183,58 @@
 				<p><b>UAV Replenishment (Deliver.): </b> <br>
 					This task involves using a UAV. The UAV takes off from a USV, finds a floating helipad, picks up a small colored tin, 
 					delivers the tin to a circular target area on another floating helipad, and then returns to the USV.
-				
-				<h1>Appendix C: BT-Prompt Generation for 3 Tasks</h1>
-				The input prompt, pseudo-code formatted BT, and translated symbolic BT in Experiment 1 of GPT-3 generation are shown in below links:<br>
-				There are 2 steps to translate the pseudo-code formatted BT to symbolic BT:</p>
-				<p><strong>Post-processing:</strong> Split the pseudo-code formatted BT into raw symbolic tree with symbolic tree logic.<br>
-					&nbsp &nbsp1.Parse the pseudo-code formatted BT into tree logic.<br>
-					&nbsp &nbsp &nbsp &nbsp a.Extract procedures (start of the tree) from the response and group the phases by layer.<br>
-					&nbsp &nbsp &nbsp &nbsp	b.Classify phases based on their hierarchical relationship and conditions (success or failure).<br>
-					&nbsp &nbsp2.Create a tree structure based on the parsed data.<br>
-					&nbsp &nbsp &nbsp &nbsp	a.Assign types to nodes (sequence, selector, parallel) based on the results of 1b.<br>
-					&nbsp &nbsp &nbsp &nbsp	b.Connect nodes to form the tree.<br>
-					&nbsp &nbsp3.Output raw symbolic tree with subtree titles.<br>
-				
-				<p><strong>Subtree assembly:</strong> After post-processing, we can obtain the raw symbolic tree, which is not the final executable symbolic tree with conditions and actions. Therefore, we apply subtree assembly to replace the subtree titles with the subtrees containing conditions and actions.<br>
-					&nbsp &nbsp 1.Traverse the whole tree and classify tree logic and subtree titles.<br>
-					&nbsp &nbsp 2.Replace subtree titles with the subtrees containing conditions and actions.<br>
-					&nbsp &nbsp (e.g. object_in_view is a subtree with only condition node, explore_foward is a subtree with an action node and a codition node. )<br>
-					&nbsp &nbsp 3.Output the final executable symbolic BT.<br>
-	
-				<div class="wrapper-center">
-				<img src="img/LLM-BT_parser_symbolic_tree-V2.png" height="280" ></div>
-				<p>3 tasks of GPT3 BT generation:</p>
-				<a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/visual_servoing/visual_servoing_using_text-davinci-003.md">Visual Servoing</a>
-				<br><a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/inspection/inspection_using_text-davinci-003.md">Inspection</a>
-				<br><a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blame/main/examples/behavior_tree/aerial_robotics/object_navigation/object_navigation_using_text-davinci-003.md">Object Navigation</a>
-				<br>
 
-				<h1>Appendix D: BT Parallel Action Mechanism with ROS</h1>
-				<p>Parallel action in existing Pythonic code generation presents significant challenges due to the need for the LLM planner to generate multi-threading to handle concurrent actions. 
-					To address this, we have developed a method that combines Behavior Trees (BT) with the Robot Operating System (ROS) to facilitate parallel actions more efficiently.
-				<p>As illustrated in the upper part of the figure, the BT manages the logic of visual servoing, while the lower part shows the corresponding ROS node diagram. In this setup, 
-					the condition nodes in the BT correspond to ROS topics (indicated by green circles), and the action nodes are managed by independent ROS nodes (denoted by red squares).
-				<p>Specifically, in the domain of visual servoing, the controls for x, y, and z axes are implemented as three separate ROS nodes. 
-					These nodes operate in different processes facilitated by the ROS infrastructure. Consequently, the parallel logic in the BT (symbolized by the parallel operator '||') can activate these action nodes simultaneously, enabling synchronized linear control along the x, y, and z axes for visual servoing.
-				<p>This approach demonstrates that parallel actions can be effectively executed using our BT-prompt within the ROS framework, showcasing the potential for enhanced multi-threading in robotics applications.
-				
-				<div class="wrapper-center">
-				<img src="img/LLM-BT_parallel_action.png" height="400" ></div>
+				<h1>Appendix C : Two main failure types</h1>
+
+				<p> <b>Type 1 - The inclusion of unnecessary subtrees or a lack of
+					necessary subtrees can result in task failure.</b><br>
+					Adding unnecessary subtrees or lacking essential
+					subtrees results in task failure. When LLM generates the
+					”inspection” task, it incorporates the subtree related to the
+					red-boxed area into the task plan. However, as this subtree is
+					designed for ”tracking object,” it requires a target object to
+					fulfill the task’s completion requirement. Since the ”inspection”
+					task does not involve detecting objects, the behavior tree may
+					halt at this stage due to the absence of a target object, causing
+					it to be unable to progress further.</p>
+
+					<div class="wrapper-center">
+					<img src="img/method_failure_1.png" alt="teaser" height="400"></div>
+
+				<p><b>Type 2 - Misinterpretation of the logic expressed through
+					example tasks can result in task failure.</b><br>
+					Misinterpretation of the logic expressed through example
+					tasks. When LLM generates the ”object navigation” task, it
+					misinterprets the logic expression symbols within the red-
+					boxed area (from fallback to sequence). Due to this incorrect
+					interpretation of the logic expression symbols, the behavior
+					tree is unable to transition to the tracking state even when it
+					detects the target object.</p>
+					
+					<div class="wrapper-center">
+					<img src="img/method_failure_2.png" alt="teaser" height="380"></div>
+				<br>
+			
+
+				<h1>Appendix D : Detail Figures of BT-levels subtree, Task, and Real-World Experiment</h1>
+				<p><b>1. Low-level, Mid-level, and Final tree example</b><br>
+					In this figure, you can see a list of low-level and mid-level subtrees, as well as their combination into final BTs.<br>
+                    Top-Left: Low-level subtrees are primarily associated with basic position control, rotation control, and perception. <br>
+					Top-Right: Mid-level subtrees comprise multiple low-level subtrees that are either hand-coded (hc) or LLM-generated (llm).<br>
+                    We showcase an example of the final BT with (bottom-left) or without (bottom-right) hand-coded mid-level subtrees. <br>
+					Bottom-right: Without providing M<sup>hc</sup>, LLM generates the functionally equivalent M<sup>llm</sup> to complete the task.<br>
+					<div class="wrapper-center">
+					<img src="img/LLM-BT_level_and_examples_v4.png" alt="teaser" height="400"></div>
+				<p><b>2. Visual Servoing task for UAV in simulated environment</b><br>
+					This figure shows the visual servoing task in the execution pipeline in simulation environment.<br> 
+					UAV in a simulated environment executing visual servoing based on results generated from the LLM. 
+					The LLM must correctly combine multiple position controllers and perception-related subtrees to achieve the goal of continuously tracking the moving red ball through visual observations.<br>
+					<div class="wrapper-center">
+						<img src="img/LLM-BT_execution_visual_servoing.png" alt="teaser" height="400"></div>
+				<p><b>3. Inspection trajectory with Low-level only and Low and Mid-level subtree in realworld experiment</b><br>
+					This figure shows two different inspection trajecory in real-world with different existing function setup (L and L + M<sup>hc</sup>)<br>
+					<div class="wrapper-center">
+						<img src="img/LLM-BT_real_world_trajectory.png" alt="teaser" height="250"></div>
 	
 
 				
