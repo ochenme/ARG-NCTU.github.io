@@ -60,7 +60,7 @@
 						BT-Prompt: Hierarchical Behavior Tree Generation for High-level Task Planning using Large Language Models
 					</h0>
 					<h2>
-						Ming-Fong Hsieh<sup>1</sup>, Wei-Li Liu<sup>1</sup>, Sun-Fu Chou<sup>1</sup>, Chang-Jin Wu<sup>1</sup>, Yu-Ting Ko<sup>1</sup>,
+						Ming-Fong Hsieh<sup>1</sup>, Wei-Li Liou<sup>1</sup>, Sun-Fu Chou<sup>1</sup>, Chang-Jin Wu<sup>1</sup>, Yu-Ting Ko<sup>1</sup>,
 						Kuan-Ting Yu<sup>2</sup>, Hsueh-Cheng Wang<sup>*,1</sup>
 					</h2>
 					<h4>_________________________________________________________________</h4>
@@ -105,7 +105,7 @@
 				</div>
 				<br><br>
 
-				<h1>Appendix A: Executable BTs Threading and Multiprocessing Mechanisms with ROS</h1>
+				<h1>Appendix A : Executable BTs Threading and Multiprocessing Mechanisms with ROS</h1>
 
 				<p>Parallel action in existing Pythonic code generation presents significant challenges due to the need for the LLM planner to generate multi-threading to handle concurrent actions. 
 					To address this, we have developed a method that combines Behavior Trees (BT) with the Robot Operating System (ROS) to facilitate parallel actions more efficiently.
@@ -117,34 +117,45 @@
 				
 				<div class="wrapper-center">
 				<img src="img/LLM-BT_parallel_action.png" height="400" ></div>
+				<br>
 
-				<!-- <h1>Appendix B: BT-Prompt Generation for 3 Tasks</h1>
-				The input prompt, pseudo-code formatted BT, and translated symbolic BT in Experiment 1 of GPT-3 generation are shown in below links:<br>
-				There are 2 steps to translate the pseudo-code formatted BT to symbolic BT:</p>
-				<p><strong>Post-processing:</strong> Split the pseudo-code formatted BT into raw symbolic tree with symbolic tree logic.<br>
-					&nbsp &nbsp1.Parse the pseudo-code formatted BT into tree logic.<br>
-					&nbsp &nbsp &nbsp &nbsp a.Extract procedures (start of the tree) from the response and group the phases by layer.<br>
-					&nbsp &nbsp &nbsp &nbsp	b.Classify phases based on their hierarchical relationship and conditions (success or failure).<br>
-					&nbsp &nbsp2.Create a tree structure based on the parsed data.<br>
-					&nbsp &nbsp &nbsp &nbsp	a.Assign types to nodes (sequence, selector, parallel) based on the results of 1b.<br>
-					&nbsp &nbsp &nbsp &nbsp	b.Connect nodes to form the tree.<br>
-					&nbsp &nbsp3.Output raw symbolic tree with subtree titles.<br>
+				<h1>Appendix B : BT-Prompt Generation and translation mechanism with example for 3 Tasks</h1>
+
+				<!-- BTs nodes Parsing Section -->
+				<h2>Two steps of translating pseudo-code z into executable BT script y</h2>
+				<section>
+					<h3>BTs nodes Parsing</h3>
+					<p>This initial phase involves deconstructing the pseudo-code into a raw symbolic tree, identifying the distinct subtrees. <br>
+						The steps include:</p>
+					<ul>
+					<li style="margin-left: 20px;"><strong>Parsing the Pseudo-Code Formatted BT into Tree Logic:</strong> This involves extracting the starting procedures of the tree from the provided responses and organizing the phases according to their layer.</li>
+					<li style="margin-left: 20px;"><strong>Structure and Classification:</strong> Here, the phases are classified based on their hierarchical relationships and conditions (indicating success or failure).</li>
+					<li style="margin-left: 20px;"><strong>Tree Construction:</strong> A tree structure is created based on the parsed information where node types (sequence, selector, parallel) are assigned based on the outcomes of the classification. These nodes are then interconnected to construct the overall tree architecture.</li>
+					</ul>
+				</section>
 				
-				<p><strong>Subtree assembly:</strong> After post-processing, we can obtain the raw symbolic tree, which is not the final executable symbolic tree with conditions and actions. Therefore, we apply subtree assembly to replace the subtree titles with the subtrees containing conditions and actions.<br>
-					&nbsp &nbsp 1.Traverse the whole tree and classify tree logic and subtree titles.<br>
-					&nbsp &nbsp 2.Replace subtree titles with the subtrees containing conditions and actions.<br>
-					&nbsp &nbsp (e.g. object_in_view is a subtree with only condition node, explore_foward is a subtree with an action node and a codition node. )<br>
-					&nbsp &nbsp 3.Output the final executable symbolic BT.<br>
-	
-				<div class="wrapper-center">
-				<img src="img/LLM-BT_parser_symbolic_tree-V2.png" height="280" ></div>
-				<p>3 tasks of GPT3 BT generation:</p>
-				<a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/visual_servoing/visual_servoing_using_text-davinci-003.md">Visual Servoing</a>
-				<br><a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/inspection/inspection_using_text-davinci-003.md">Inspection</a>
-				<br><a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blame/main/examples/behavior_tree/aerial_robotics/object_navigation/object_navigation_using_text-davinci-003.md">Object Navigation</a>
-				<br> -->
+				<!-- Subtree Assembly Section -->
+				<section>
+					<h3>Subtree Assembly</h3>
+					<p>In this subsequent step, the raw symbolic tree is further refined to become the final, executable symbolic BT. <br>
+						This involves:</p>
+					<ul>
+					<li style="margin-left: 20px;"><strong>Tree Analysis:</strong> Traversing the entire tree to categorize the different elements of tree logic and identify all the subtree titles.</li>
+					<li style="margin-left: 20px;"><strong>Subtree Replacement:</strong> This step involves substituting the placeholder subtree titles with actual subtrees, which contain specific conditions and actions pertinent to the behavior tree's functionality.</li>
+					<li style="margin-left: 20px;"><strong>Final Output:</strong> The end product is a fully executable symbolic BT, equipped with all necessary conditions and actions for deployment.</li>
+					</ul>
+				</section>
+  
+				<!-- <div class="wrapper-center">
+				<img src="img/LLM-BT_parser_symbolic_tree-V2.png" height="280" ></div> -->
+				<h2>Three tasks of GPT3 BT generation:</h2>
+				The input prompt, pseudo-code formatted BT, and translated symbolic BT in Experiment 1 of GPT-3 generation are shown in below links: <br>
+				<a style="margin-left: 20px;" href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/visual_servoing/visual_servoing_using_text-davinci-003.md">Visual Servoing</a><br>
+				<a style="margin-left: 20px;" href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/inspection/inspection_using_text-davinci-003.md">Inspection</a><br>
+				<a style="margin-left: 20px;" href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blame/main/examples/behavior_tree/aerial_robotics/object_navigation/object_navigation_using_text-davinci-003.md">Object Navigation</a><br>
+				<br>
 
-				<h1>Appendix B : New Tasks in Experiment 3 (RobotX Challenge 2022)</h1>
+				<h1>Appendix C : New Tasks in Experiment 3 (RobotX Challenge 2022)</h1>
 				<p><b>Detect and Dock (Dock.): </b> <br>
 					In this task, there's a floating platform with three bays, each having a different color (red, green, or blue). 
 					The AMS detects the color and docks in the bay with the matching color.
@@ -184,7 +195,7 @@
 					This task involves using a UAV. The UAV takes off from a USV, finds a floating helipad, picks up a small colored tin, 
 					delivers the tin to a circular target area on another floating helipad, and then returns to the USV.
 
-				<h1>Appendix C : Two main failure types</h1>
+				<h1>Appendix D : Two main failure types</h1>
 
 				<p> <b>Type 1 - The inclusion of unnecessary subtrees or a lack of
 					necessary subtrees can result in task failure.</b><br>
@@ -216,7 +227,7 @@
 				<br>
 			
 
-				<h1>Appendix D : Detail Figures of BT-levels subtree, Task, and Real-World Experiment</h1>
+				<h1>Appendix E : Detail Figures of BT-levels subtree, Task, and Real-World Experiment</h1>
 				<p><b>1. Low-level, Mid-level, and Final tree example</b><br>
 					In this figure, you can see a list of low-level and mid-level subtrees, as well as their combination into final BTs.<br>
                     Top-Left: Low-level subtrees are primarily associated with basic position control, rotation control, and perception. <br>
