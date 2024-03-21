@@ -60,7 +60,7 @@
 						BT-Prompt: Hierarchical Behavior Tree Generation for High-level Task Planning using Large Language Models
 					</h0>
 					<h2>
-						Ming-Fong Hsieh<sup>1</sup>, Wei-Li Liu<sup>1</sup>, Sun-Fu Chou<sup>1</sup>, Chang-Jin Wu<sup>1</sup>, Yu-Ting Ko<sup>1</sup>,
+						Ming-Fong Hsieh<sup>1</sup>, Wei-Li Liou<sup>1</sup>, Sun-Fu Chou<sup>1</sup>, Chang-Jin Wu<sup>1</sup>, Yu-Ting Ko<sup>1</sup>,
 						Kuan-Ting Yu<sup>2</sup>, Hsueh-Cheng Wang<sup>*,1</sup>
 					</h2>
 					<h4>_________________________________________________________________</h4>
@@ -74,6 +74,22 @@
 
 				<br><br>
 				</div>
+
+				<div class="wrapper-center">
+					<button onclick="window.open('https://github.com/ARG-NCTU/bt_prompt')"
+						class="button button-gray">Create Executable BT Script</button>
+						<br>
+					<button onclick="window.open('https://github.com/ARG-NCTU/bt_execution')"
+						class="button button-gray">Execution</button>
+					
+					
+					<!-- <button onclick="window.open('https://ieeexplore.ieee.org/document/')"
+						class="button button-gray">paper</button> -->
+					<!-- <button onclick="window.open('https://drive.google.com/drive/u/3/folders/1ylBJXGe7eM66R4D1h8D3BeKrQqKx7sqR')"
+					class="button button-gray">Pre-trained Weight</button> -->
+
+				</div>
+
 
 				<h1>Abstract</h1>
 				<p>
@@ -100,12 +116,61 @@
 					<iframe title="vimeo-player" src="https://player.vimeo.com/video/874116829" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 				</div>
 
-				<div class="wrapper-center">
+				<!-- <div class="wrapper-center">
 					<img src="img/LLM-BT_teaser_v4.png" alt="teaser" height="350">
-				</div>
-				<br><br>
+				</div> -->
+				<!-- <br><br> -->
+				
+				<h1>Appendix A : BT-Prompt Generation and Translation Mechanism with Example for 3 Tasks</h1>
 
-				<h1>Appendix A: Executable BTs Threading and Multiprocessing Mechanisms with ROS</h1>
+				<!-- BTs nodes Parsing Section -->
+				<h2>Two steps of translating pseudo-code z into executable BT script y</h2>
+				<section>
+					<h3>BTs nodes Parsing</h3>
+					<p>This initial phase involves deconstructing the pseudo-code into a raw symbolic tree, identifying the distinct subtrees. <br>
+						The steps include:</p>
+					<ul>
+					<li style="margin-left: 20px;"><strong>Parsing the Pseudo-Code Formatted BT into Tree Logic:</strong> This involves extracting the starting procedures of the tree from the provided responses and organizing the phases according to their layer.</li>
+					<li style="margin-left: 20px;"><strong>Structure and Classification:</strong> Here, the phases are classified based on their hierarchical relationships and conditions (indicating success or failure).</li>
+					<li style="margin-left: 20px;"><strong>Tree Construction:</strong> A tree structure is created based on the parsed information where node types (sequence, selector, parallel) are assigned based on the outcomes of the classification. These nodes are then interconnected to construct the overall tree architecture.</li>
+					</ul>
+				</section>
+				
+				<!-- Subtree Assembly Section -->
+				<section>
+					<h3>Subtree Assembly</h3>
+					<p>In this subsequent step, the raw symbolic tree is further refined to become the final, executable symbolic BT. <br>
+						This involves:</p>
+					<ul>
+					<li style="margin-left: 20px;"><strong>Tree Analysis:</strong> Traversing the entire tree to categorize the different elements of tree logic and identify all the subtree titles.</li>
+					<li style="margin-left: 20px;"><strong>Subtree Replacement:</strong> This step involves substituting the placeholder subtree titles with actual subtrees, which contain specific conditions and actions pertinent to the behavior tree's functionality.</li>
+					<li style="margin-left: 20px;"><strong>Final Output:</strong> The end product is a fully executable symbolic BT, equipped with all necessary conditions and actions for deployment.</li>
+					</ul>
+				</section>
+				<!-- <div class="wrapper-center">
+				<img src="img/LLM-BT_parser_symbolic_tree-V2.png" height="280" ></div> -->
+				<h2>Three tasks of GPT3 BT generation:</h2>
+				The input prompt, pseudo-code formatted BT, and translated symbolic BT in Experiment 1 of GPT-3 generation are shown in below links: <br>
+				<a style="margin-left: 20px;" href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/visual_servoing/visual_servoing_using_text-davinci-003.md">Visual Servoing</a><br>
+				<a style="margin-left: 20px;" href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/inspection/inspection_using_text-davinci-003.md">Inspection</a><br>
+				<a style="margin-left: 20px;" href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blame/main/examples/behavior_tree/aerial_robotics/object_navigation/object_navigation_using_text-davinci-003.md">Object Navigation</a><br>
+				<br>
+
+
+				<h1>Appendix B : Low-level, Mid-level, and Final Tree of BT with Real-World scenario</h1>
+					In this appendix, you can see the relationship between low-level and mid-level subtrees, as well as their combination into final BTs.<br>
+					Top: Hierarchical Subtrees of BTs, Low-level subtrees are primarily associated with basic position control, rotation control, and perception. Mid-level subtrees comprise multiple low-level subtrees that are either hand-coded (hc) or LLM-generated (llm).<br>
+					Middle: Final tree, combination of low-level and mid-level subtrees into final tree.<br>
+					Bottom: Different Explore plan, the trajectory of M<sup>hc</sup> explore pattern block and M<sup>llm</sup> explore subtree.
+					<!-- In this appendix, you can see a list of low-level and mid-level subtrees, as well as their combination into final BTs.<br>
+                    Top-Left: Low-level subtrees are primarily associated with basic position control, rotation control, and perception. <br>
+					Top-Right: Mid-level subtrees comprise multiple low-level subtrees that are either hand-coded (hc) or LLM-generated (llm).<br>
+                    We showcase an example of the final BT with (bottom-left) or without (bottom-right) hand-coded mid-level subtrees. <br>
+					Bottom-right: Without providing M<sup>hc</sup>, LLM generates the functionally equivalent M<sup>llm</sup> to complete the task.<br> -->
+					<div class="wrapper-center">
+					<img src="img/LLM-BT_mid-level-of-BT-v2.png" alt="teaser" height="600"></div>
+
+				<h1>Appendix C : Executable BTs Threading and Multiprocessing Mechanisms with ROS</h1>
 
 				<p>Parallel action in existing Pythonic code generation presents significant challenges due to the need for the LLM planner to generate multi-threading to handle concurrent actions. 
 					To address this, we have developed a method that combines Behavior Trees (BT) with the Robot Operating System (ROS) to facilitate parallel actions more efficiently.
@@ -117,34 +182,9 @@
 				
 				<div class="wrapper-center">
 				<img src="img/LLM-BT_parallel_action.png" height="400" ></div>
+				<br>
 
-				<!-- <h1>Appendix B: BT-Prompt Generation for 3 Tasks</h1>
-				The input prompt, pseudo-code formatted BT, and translated symbolic BT in Experiment 1 of GPT-3 generation are shown in below links:<br>
-				There are 2 steps to translate the pseudo-code formatted BT to symbolic BT:</p>
-				<p><strong>Post-processing:</strong> Split the pseudo-code formatted BT into raw symbolic tree with symbolic tree logic.<br>
-					&nbsp &nbsp1.Parse the pseudo-code formatted BT into tree logic.<br>
-					&nbsp &nbsp &nbsp &nbsp a.Extract procedures (start of the tree) from the response and group the phases by layer.<br>
-					&nbsp &nbsp &nbsp &nbsp	b.Classify phases based on their hierarchical relationship and conditions (success or failure).<br>
-					&nbsp &nbsp2.Create a tree structure based on the parsed data.<br>
-					&nbsp &nbsp &nbsp &nbsp	a.Assign types to nodes (sequence, selector, parallel) based on the results of 1b.<br>
-					&nbsp &nbsp &nbsp &nbsp	b.Connect nodes to form the tree.<br>
-					&nbsp &nbsp3.Output raw symbolic tree with subtree titles.<br>
-				
-				<p><strong>Subtree assembly:</strong> After post-processing, we can obtain the raw symbolic tree, which is not the final executable symbolic tree with conditions and actions. Therefore, we apply subtree assembly to replace the subtree titles with the subtrees containing conditions and actions.<br>
-					&nbsp &nbsp 1.Traverse the whole tree and classify tree logic and subtree titles.<br>
-					&nbsp &nbsp 2.Replace subtree titles with the subtrees containing conditions and actions.<br>
-					&nbsp &nbsp (e.g. object_in_view is a subtree with only condition node, explore_foward is a subtree with an action node and a codition node. )<br>
-					&nbsp &nbsp 3.Output the final executable symbolic BT.<br>
-	
-				<div class="wrapper-center">
-				<img src="img/LLM-BT_parser_symbolic_tree-V2.png" height="280" ></div>
-				<p>3 tasks of GPT3 BT generation:</p>
-				<a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/visual_servoing/visual_servoing_using_text-davinci-003.md">Visual Servoing</a>
-				<br><a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/inspection/inspection_using_text-davinci-003.md">Inspection</a>
-				<br><a href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blame/main/examples/behavior_tree/aerial_robotics/object_navigation/object_navigation_using_text-davinci-003.md">Object Navigation</a>
-				<br> -->
-
-				<h1>Appendix B : New Tasks in Experiment 3 (RobotX Challenge 2022)</h1>
+				<h1>Appendix D : New Tasks in Experiment 3 (RobotX Challenge 2022)</h1>
 				<p><b>Detect and Dock (Dock.): </b> <br>
 					In this task, there's a floating platform with three bays, each having a different color (red, green, or blue). 
 					The AMS detects the color and docks in the bay with the matching color.
@@ -184,7 +224,7 @@
 					This task involves using a UAV. The UAV takes off from a USV, finds a floating helipad, picks up a small colored tin, 
 					delivers the tin to a circular target area on another floating helipad, and then returns to the USV.
 
-				<h1>Appendix C : Two main failure types</h1>
+				<h1>Appendix E : Analysis of Failure BT Generation - Two Types of Failure</h1>
 
 				<p> <b>Type 1 - The inclusion of unnecessary subtrees or a lack of
 					necessary subtrees can result in task failure.</b><br>
@@ -214,30 +254,7 @@
 					<div class="wrapper-center">
 					<img src="img/method_failure_2.png" alt="teaser" height="380"></div>
 				<br>
-			
 
-				<h1>Appendix D : Detail Figures of BT-levels subtree, Task, and Real-World Experiment</h1>
-				<p><b>1. Low-level, Mid-level, and Final tree example</b><br>
-					In this figure, you can see a list of low-level and mid-level subtrees, as well as their combination into final BTs.<br>
-                    Top-Left: Low-level subtrees are primarily associated with basic position control, rotation control, and perception. <br>
-					Top-Right: Mid-level subtrees comprise multiple low-level subtrees that are either hand-coded (hc) or LLM-generated (llm).<br>
-                    We showcase an example of the final BT with (bottom-left) or without (bottom-right) hand-coded mid-level subtrees. <br>
-					Bottom-right: Without providing M<sup>hc</sup>, LLM generates the functionally equivalent M<sup>llm</sup> to complete the task.<br>
-					<div class="wrapper-center">
-					<img src="img/LLM-BT_level_and_examples_v4.png" alt="teaser" height="400"></div>
-				<p><b>2. Visual Servoing task for UAV in simulated environment</b><br>
-					This figure shows the visual servoing task in the execution pipeline in simulation environment.<br> 
-					UAV in a simulated environment executing visual servoing based on results generated from the LLM. 
-					The LLM must correctly combine multiple position controllers and perception-related subtrees to achieve the goal of continuously tracking the moving red ball through visual observations.<br>
-					<div class="wrapper-center">
-						<img src="img/LLM-BT_execution_visual_servoing.png" alt="teaser" height="400"></div>
-				<p><b>3. Inspection trajectory with Low-level only and Low and Mid-level subtree in realworld experiment</b><br>
-					This figure shows two different inspection trajecory in real-world with different existing function setup (L and L + M<sup>hc</sup>)<br>
-					<div class="wrapper-center">
-						<img src="img/LLM-BT_real_world_trajectory.png" alt="teaser" height="250"></div>
-	
-
-				
 			<div class="footer">
 
 				<span class="left">
