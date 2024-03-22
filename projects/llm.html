@@ -93,27 +93,35 @@
 
 				<h1>Abstract</h1>
 				<p>
-					Recent advancement of Large Language Models (LLMs) have made it possible for LLMs to be incorporated in the development of 
-					high-level task planners alongside human user. Prior works of LLMs emphaises on the generation of  sequential plans, thereby closing 
-					the doors to execution of more complex applications. This research delves into how prompting engineering affect the generation of 
-					Behavior Trees (BTs) using LLMs. In order to enhance the understanding of LLMs for few-shot example tasks and improve the success rate 
-					of generated tasks. First, we introduced BT-Prompt in Experiment 1, a specially designed example task format which allows LLMs to 
-					maximize their few-shot learning performance. The results obtained in Experiment 1 illustrate the effectiveness of LLM-generated BTs 
-					compared to other formats in few-shot scenarios. Second, we aim to demonstrate our method's ability to design a hierarchy structure in 
-					Experiment 2, in additionally this would highlights the pivotal role of mid-level subtrees in successfully executed complex tasks across 
-					various LLM backbones and temperature settings. As intended by the research setup, for sub-optimal BTs, LLMs were used in attempts to 
-					autonomously generate mid-level subtrees without human guidance. The result of these autonomously generated mid-level subtrees then 
-					become a central element in Experiment 3, where we applied our methods to an series of challenging task defined by a robotics competition. 
-					In this context, it became evident that the pre-existing hand-coded mid-level subtrees were insufficient, where as integrating the 
-					LLM-generated mid-level subtrees into existing functions resulting in enhanced task execution for these intricate challenges. 
-					Finally, this research collected illustrative examples of positive and negative prompting strategies of LLM-generated BTs, with 
-					demonstrations of successful executions in virtual and real environments.
+					Advancements in large language models (LLMs) have
+					facilitated their incorporation into human-operated high-level
+					robotic task planners. Research on task planning involving LLMs
+					has focused on generating sequential plans; however, such plans
+					might be insufficient for complex applications. We investigated the
+					effects of prompt engineering on behavior tree (BT) generation by
+					LLMs to enhance the performance of LLMs in few-shot example
+					tasks and to improve task success rates. First, we developed BT-Prompt, an example task format that maximizes the few-shot
+					learning performance of LLMs. Experiments indicated that LLM-generated BTs were more effective for task completion than other
+					formats in few-shot scenarios. Second, we demonstrated that BT-Prompt can facilitate designing hierarchical task structures, i.e.,
+					mid-level subtrees organizing a collection of low-level controllers.
+					Experiments revealed that LLM-generated mid-level subtrees
+					could achieve comparable success rates to those of hand-coded
+					mid-level subtrees in complex tasks performed with various LLM
+					backbones and under different temperature settings. LLMs with
+					nonzero temperature were used to generate nondeterministic BTs
+					for autonomously producing mid-level subtrees requiring minimal
+					human guidance; these subtrees were tested through application
+					in a series of challenging tasks. For these tasks, preexisting hand-coded mid-level subtrees were insufficient; however, integrating
+					the LLM-generated subtrees with the preexisting hand-coded
+					mid-level subtrees improved the task performance. Finally, the
+					proposed system was successfully executed in virtual and real
+					environments.
 				</p>
 
 				<h1>Video</h1>
 				<p></p>
 				<div class="container" align="middle">
-					<iframe title="vimeo-player" src="https://player.vimeo.com/video/874116829" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+					<iframe title="vimeo-player" src="https://player.vimeo.com/video/926299982" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 				</div>
 
 				<!-- <div class="wrapper-center">
@@ -121,12 +129,12 @@
 				</div> -->
 				<!-- <br><br> -->
 				
-				<h1>Appendix A : BT-Prompt Generation and Translation Mechanism with Example for 3 Tasks</h1>
+				<h1>Appendix A: BT-Prompt Generation and Translation Mechanism with Example for 3 Tasks</h1>
 
 				<!-- BTs nodes Parsing Section -->
 				<h2>Two steps of translating pseudo-code z into executable BT script y</h2>
 				<section>
-					<h3>BTs nodes Parsing</h3>
+					<h3>BTs Nodes Parsing</h3>
 					<p>This initial phase involves deconstructing the pseudo-code into a raw symbolic tree, identifying the distinct subtrees. <br>
 						The steps include:</p>
 					<ul>
@@ -149,28 +157,23 @@
 				</section>
 				<!-- <div class="wrapper-center">
 				<img src="img/LLM-BT_parser_symbolic_tree-V2.png" height="280" ></div> -->
-				<h2>Three tasks of GPT3 BT generation:</h2>
-				The input prompt, pseudo-code formatted BT, and translated symbolic BT in Experiment 1 of GPT-3 generation are shown in below links: <br>
+				<h2>Three Tasks of GPT-3 BT Generation:</h2>
+				The input prompt, pseudo-code formatted BT, and translated executable BT script in Experiment 1 of GPT-3 generation are shown in below links: <br>
 				<a style="margin-left: 20px;" href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/visual_servoing/visual_servoing_using_text-davinci-003.md">Visual Servoing</a><br>
 				<a style="margin-left: 20px;" href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blob/main/examples/behavior_tree/aerial_robotics/inspection/inspection_using_text-davinci-003.md">Inspection</a><br>
 				<a style="margin-left: 20px;" href="https://github.com/ARG-NCTU/PromptCraft-Robotics/blame/main/examples/behavior_tree/aerial_robotics/object_navigation/object_navigation_using_text-davinci-003.md">Object Navigation</a><br>
 				<br>
 
 
-				<h1>Appendix B : Low-level, Mid-level, and Final Tree of BT with Real-World scenario</h1>
+				<h1>Appendix B: Low-level, Mid-level, and Final Tree of BT with Real-World Scenario</h1>
 					In this appendix, you can see the relationship between low-level and mid-level subtrees, as well as their combination into final BTs.<br>
 					Top: Hierarchical Subtrees of BTs, Low-level subtrees are primarily associated with basic position control, rotation control, and perception. Mid-level subtrees comprise multiple low-level subtrees that are either hand-coded (hc) or LLM-generated (llm).<br>
 					Middle: Final tree, combination of low-level and mid-level subtrees into final tree.<br>
 					Bottom: Different Explore plan, the trajectory of M<sup>hc</sup> explore pattern block and M<sup>llm</sup> explore subtree.
-					<!-- In this appendix, you can see a list of low-level and mid-level subtrees, as well as their combination into final BTs.<br>
-                    Top-Left: Low-level subtrees are primarily associated with basic position control, rotation control, and perception. <br>
-					Top-Right: Mid-level subtrees comprise multiple low-level subtrees that are either hand-coded (hc) or LLM-generated (llm).<br>
-                    We showcase an example of the final BT with (bottom-left) or without (bottom-right) hand-coded mid-level subtrees. <br>
-					Bottom-right: Without providing M<sup>hc</sup>, LLM generates the functionally equivalent M<sup>llm</sup> to complete the task.<br> -->
 					<div class="wrapper-center">
 					<img src="img/LLM-BT_mid-level-of-BT-v2.png" alt="teaser" height="600"></div>
 
-				<h1>Appendix C : Executable BTs Threading and Multiprocessing Mechanisms with ROS</h1>
+				<h1>Appendix C: Executable BTs Threading and Multiprocessing Mechanisms with ROS</h1>
 
 				<p>Parallel action in existing Pythonic code generation presents significant challenges due to the need for the LLM planner to generate multi-threading to handle concurrent actions. 
 					To address this, we have developed a method that combines Behavior Trees (BT) with the Robot Operating System (ROS) to facilitate parallel actions more efficiently.
@@ -184,7 +187,7 @@
 				<img src="img/LLM-BT_parallel_action.png" height="400" ></div>
 				<br>
 
-				<h1>Appendix D : New Tasks in Experiment 3 (RobotX Challenge 2022)</h1>
+				<h1>Appendix D: New Tasks in Experiment 3 (RobotX Challenge 2022)</h1>
 				<p><b>Detect and Dock (Dock.): </b> <br>
 					In this task, there's a floating platform with three bays, each having a different color (red, green, or blue). 
 					The AMS detects the color and docks in the bay with the matching color.
@@ -224,7 +227,7 @@
 					This task involves using a UAV. The UAV takes off from a USV, finds a floating helipad, picks up a small colored tin, 
 					delivers the tin to a circular target area on another floating helipad, and then returns to the USV.
 
-				<h1>Appendix E : Analysis of Failure BT Generation - Two Types of Failure</h1>
+				<h1>Appendix E: Analysis of Failure BT Generation - Two Types of Failure</h1>
 
 				<p> <b>Type 1 - The inclusion of unnecessary subtrees or a lack of
 					necessary subtrees can result in task failure.</b><br>
@@ -254,6 +257,10 @@
 					<div class="wrapper-center">
 					<img src="img/method_failure_2.png" alt="teaser" height="380"></div>
 				<br>
+
+				<h1>Appendix F: Real-World Inspection Trajectory with L and L + M<sup>hc</sup>  </h1>
+				<div class="wrapper-center">
+				<img src="img/LLM-BT_real_world_inspection_trajectory.png" height="400" ></div>
 
 			<div class="footer">
 
